@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using LMS.Models;
+using LibraryManagementSystem.Models;
 
-namespace LMS.Controllers
+namespace LibraryManagementSystem.Controllers
 {
 
     [HandleError]

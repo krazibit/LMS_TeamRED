@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LMS;
-using LMS.Controllers;
+using LibraryManagementSystem;
+using LibraryManagementSystem.Controllers;
 
 namespace LibraryManagementSystem.Tests.Controllers
 {

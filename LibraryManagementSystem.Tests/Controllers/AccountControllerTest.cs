@@ -5,9 +5,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LMS;
-using LMS.Controllers;
-using LMS.Models;
+using LibraryManagementSystem;
+using LibraryManagementSystem.Controllers;
+using LibraryManagementSystem.Models;
 
 namespace LibraryManagementSystem.Tests.Controllers
 {
