@@ -1,17 +1,56 @@
 ﻿/*----------------------------------------------------------
-The base color for this template is #5c87b2. If you'd like
-to use a different color start by replacing all instances of
-#5c87b2 with your new color. 
+
 ----------------------------------------------------------*/
+@font-face
+{
+    font-family: nevis;
+    src: url(../Fonts/nevis.woff);
+}
+
 body
 {
-        background-color: #5c87b2;
-    font-size: .75em;
-    font-family: Verdana, Helvetica, Sans-Serif;
-    margin: 0;
-    padding: 0;
-    color: #696969;
+    background-color: #F0F0F0;
 }
+
+#mainContainer {
+    height: auto;
+    width:960px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+#header 
+{
+    width: 100%;
+    height: 105px;
+    text-align: center;
+    background-color: #004158;
+     
+}
+
+span#bottomLine 
+{
+    height: 5px;
+    background-image: url(../Images/line.png);
+    display: block;
+    position: relative;
+    top: 15px;
+}
+span#headerText
+{
+    font-family: Segoe UI, Sans-Serif;
+    font-weight: Bold;
+    font-size: 3em;
+    color: #FFFFFF;
+    display: block;
+    padding: 20px 0;
+}
+
+
+
+
+
+
 
 a:link
 {
