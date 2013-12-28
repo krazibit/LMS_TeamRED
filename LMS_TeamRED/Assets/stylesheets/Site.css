@@ -7,9 +7,18 @@
     src: url(../Fonts/nevis.woff);
 }
 
+h1,p {
+    font-family: Trebuchet MS, Arial, Sans-Serif;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;   
+}
+
 body
 {
     background-color: #F0F0F0;
+    font-smoothing: antialiased;
 }
 
 #mainContainer {
@@ -19,13 +28,28 @@ body
     background-color: #FFFFFF;
 }
 
+div#header, 
+div#footer, 
+div#contentHeader {
+     
+    background-color: #004158;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
 #header 
 {
     width: 100%;
-    height: 105px;
-    text-align: center;
+    height: 105px;         
+}
+
+#footer {
+    width: 100%;
+    line-height: normal;
+    height: 40px;
+    padding: 5px 0;
     background-color: #004158;
-     
 }
 
 span#bottomLine 
@@ -40,18 +64,88 @@ span#headerText
 {
     font-family: Segoe UI, Sans-Serif;
     font-weight: Bold;
-    font-size: 3em;
+    font-size: 58px;
     color: #FFFFFF;
     display: block;
-    padding: 20px 0;
+    padding: 15px 0;
+}
+
+span#logoHolder {
+    display: inline-block;
+    height: 85px;
+    width: 50px;
+    background-image: url(../Images/ctl_logo_2.png);
+    float: left;
+    margin: 7.5px 40px;   
+}
+
+span#hotdogMenu {
+    height: 50px;
+    width: 50px;
+    padding: 2px;    
+    display: block;
+    border: 2px solid #004158;
+    cursor: pointer;
+    background-image: url(../Images/Icons/hotdogMenu.png);
+    background-repeat:no-repeat;
+    background-position: center;
+    position: relative;
+    bottom: 56px;
+    left: 890px;
+}
+
+span#hotdogMenu:hover 
+{
+    border-color: #FFFFFF;
+    border-radius: 5px;
+}
+
+
+div#contentHeader {
+    height: 65px;
+}
+
+div#contentHeader h1{
+    display: block;
+    padding-top: 20px;
+    font-size: 40px;  
+
+}
+
+table#dashBoardTable {   
+    margin: 10px auto;  
+    border-spacing: 20px;
+    border-collapse: separate;
+    
+}
+
+table#dashBoardTable td {
+    width: 265px;
+    height: 200px;
+    text-align: center;
+    background-color: #F1F2F2;  
+}
+
+table#dashBoardTable td a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: block;
+}
+
+.menuIcons {
+    margin: 20px 0 10px ;
+}
+
+.menuIconText {
+    font-family: Arial, Sans-Serif;
+    font-size: 26px;
+    color: #004158;    
 }
 
 
 
-
-
-
-
+/*
 a:link
 {
     color: #034af3;
@@ -71,15 +165,9 @@ a:active
     color: #12eb87;
 }
 
-p, ul
-{
-    margin-bottom: 20px;
-    line-height: 1.6em;
-}
 
-/* HEADINGS   
-----------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6
+ HEADINGS   
+----------------------------------------------------------
 {
     font-size: 1.5em;
     color: #000;
@@ -109,18 +197,17 @@ h5, h6
     font-size: 1em;
 }
 
-/* this rule styles <h2> tags that are the 
-first child of the left and right table columns */
+ this rule styles <h2> tags that are the 
+first child of the left and right table columns 
 .rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
 {
     margin-top: 0;
 }
 
-/* PRIMARY LAYOUT ELEMENTS   
-----------------------------------------------------------*/
-
-/* you can specify a greater or lesser percentage for the 
-page width. Or, you can specify an exact pixel width. */
+PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------
+ you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. 
 .page
 {
     width: 90%;
@@ -153,21 +240,11 @@ page width. Or, you can specify an exact pixel width. */
     padding: 30px 30px 15px 30px;
     background-color: #fff;
     margin-bottom: 30px;
-    _height: 1px; /* only IE6 applies CSS properties starting with an underscore */
+    _height: 1px; /* only IE6 applies CSS properties starting with an underscore 
 }
 
-#footer
-{
-    color: #999;
-    padding: 10px 0;
-    text-align: center;
-    line-height: normal;
-    margin: 0;
-    font-size: .9em;
-}
-
-/* TAB MENU   
-----------------------------------------------------------*/
+TAB MENU   
+----------------------------------------------------------
 ul#menu
 {
     border-bottom: 1px #5C87B2 solid;
@@ -220,8 +297,8 @@ ul#menu li.selected a
     color: #000;
 }
 
-/* FORM LAYOUT ELEMENTS   
-----------------------------------------------------------*/
+ FORM LAYOUT ELEMENTS   
+----------------------------------------------------------
 
 fieldset 
 {
@@ -254,8 +331,8 @@ input[type="password"]
     border: 1px solid #CCC;
 }
 
-/* TABLE
-----------------------------------------------------------*/
+ TABLE
+----------------------------------------------------------
 
 table 
 {
@@ -277,8 +354,8 @@ table th
   border: solid 1px #e8eef4;   
 }
 
-/* MISC  
-----------------------------------------------------------*/
+ MISC  
+----------------------------------------------------------
 .clear
 {
     clear: both;
@@ -328,8 +405,8 @@ div#title
     text-decoration: none;
 }
 
-/* Styles for validation helpers
------------------------------------------------------------*/
+Styles for validation helpers
+-----------------------------------------------------------
 .field-validation-error
 {
     color: #ff0000;
@@ -357,13 +434,13 @@ div#title
     display: none;
 }
 
-/* Styles for editor and display helpers
-----------------------------------------------------------*/
+Styles for editor and display helpers
+----------------------------------------------------------
 .display-label,
 .editor-label,
 .display-field,
 .editor-field
-{
+
     margin: 0.5em 0;
 }
 
@@ -381,3 +458,4 @@ div#title
 {
     width: 6em;
 }
+*/

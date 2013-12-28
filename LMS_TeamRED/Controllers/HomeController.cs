@@ -11,12 +11,27 @@ namespace LibraryManagementSystem.Controllers
     {
         public ActionResult Index()
         {
-            ViewData["Message"] = "Welcome to ASP.NET MVC!";
+            ViewData["Message"] = "Krazibit in the building!";
 
             return View();
         }
 
         public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult AddBook()
+        {
+            return View();
+        }
+
+        public ActionResult ReturnBook()
+        {
+            return View();
+        }
+
+        public ActionResult CheckStudentStatus()
         {
             return View();
         }

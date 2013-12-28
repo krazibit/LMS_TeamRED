@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -82,9 +83,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Images\ctl_logo.png" />
+    <Content Include="Assets\Images\ctl_logo_2.png" />
+    <Content Include="Assets\Images\Icons\addBook.png" />
+    <Content Include="Assets\Images\Icons\borrowedBooks.png" />
+    <Content Include="Assets\Images\Icons\checkStudent.png" />
+    <Content Include="Assets\Images\Icons\dueBooks.png" />
+    <Content Include="Assets\Images\Icons\hotdogMenu.png" />
+    <Content Include="Assets\Images\Icons\returnBook.png" />
+    <Content Include="Assets\Images\Icons\searchBook.png" />
     <Content Include="Assets\Images\line.png" />
     <Content Include="Assets\stylesheets\Reset.css" />
     <Content Include="Global.asax" />
+    <Content Include="Views\Home\AddBook.ascx" />
+    <Content Include="Views\Home\CheckStudentStatus.ascx" />
+    <Content Include="Views\Home\ReturnBook.aspx" />
+    <Content Include="Views\Search\BorrowedBooks.aspx" />
+    <Content Include="Views\Search\DueBooks.aspx" />
+    <Content Include="Views\Search\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

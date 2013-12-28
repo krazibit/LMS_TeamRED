@@ -10,15 +10,24 @@
 <body>
     <div id="mainContainer">
         <div id="header">
+            <span id="logoHolder"> </span>
             <span id="headerText"> Library Management System </span>
             <span id="bottomLine"></span>
         </div>
 
-        <div id="content">
+        <div id="ContentPlaceholder">
+            
+            <div id="contentHeader">
+              <asp:ContentPlaceHolder ID="ContentHeaderText" runat="server"/>
+              <span id="hotdogMenu"></span> 
+            </div>
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-        </div>
+        </>
 
          <div id ="footer">
+             <p>Software Engineering II Project.</p>
+             <p>Copyright &copy; 2013 Team R.E.D. All Rights Reserved. </p>
          </div>
     </div>
 </body>

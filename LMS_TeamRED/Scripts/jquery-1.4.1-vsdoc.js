@@ -6419,7 +6419,7 @@ jQuery.extend({
 		}
 	},
 
-	// Last-Modified header cache for next request
+	// Last-Modified pageHeader cache for next request
 	lastModified: {},
 	etag: {},
 
@@ -6571,12 +6571,12 @@ jQuery.extend({
 
 		// Need an extra try/catch for cross domain requests in Firefox 3
 		try {
-			// Set the correct header, if data is being sent
+			// Set the correct pageHeader, if data is being sent
 			if ( s.data || origSettings && origSettings.contentType ) {
 				xhr.setRequestHeader("Content-Type", s.contentType);
 			}
 
-			// Set the If-Modified-Since and/or If-None-Match header, if in ifModified mode.
+			// Set the If-Modified-Since and/or If-None-Match pageHeader, if in ifModified mode.
 			if ( s.ifModified ) {
 				if ( jQuery.lastModified[s.url] ) {
 					xhr.setRequestHeader("If-Modified-Since", jQuery.lastModified[s.url]);
@@ -6587,19 +6587,19 @@ jQuery.extend({
 				}
 			}
 
-			// Set header so the called script knows that it's an XMLHttpRequest
-			// Only send the header if it's not a remote XHR
+			// Set pageHeader so the called script knows that it's an XMLHttpRequest
+			// Only send the pageHeader if it's not a remote XHR
 			if ( !remote ) {
 				xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 			}
 
-			// Set the Accepts header for the server, depending on the dataType
+			// Set the Accepts pageHeader for the server, depending on the dataType
 			xhr.setRequestHeader("Accept", s.dataType && s.accepts[ s.dataType ] ?
 				s.accepts[ s.dataType ] + ", */*" :
 				s.accepts._default );
 		} catch(e) {}
 
-		// Allow custom headers/mimetypes and early abort
+		// Allow custom pageHeaders/mimetypes and early abort
 		if ( s.beforeSend && s.beforeSend.call(callbackContext, xhr, s) === false ) {
 			// Handle the global AJAX counter
 			if ( s.global && ! --jQuery.active ) {

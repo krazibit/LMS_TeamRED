@@ -5861,9 +5861,9 @@ Sys.Net.WebRequestExecutor = function Sys$Net$WebRequestExecutor() {
     }
     function Sys$Net$WebRequestExecutor$getResponseHeader(header) {
         /// <summary locid="M:J#Sys.Net.WebRequestExecutor.getResponseHeader" />
-        /// <param name="header" type="String"></param>
+        /// <param name="pageHeader" type="String"></param>
         var e = Function._validateParams(arguments, [
-            {name: "header", type: String}
+            {name: "pageHeader", type: String}
         ]);
         if (e) throw e;
         throw Error.notImplemented();
@@ -6034,10 +6034,10 @@ Sys.Net.XMLHttpExecutor = function Sys$Net$XMLHttpExecutor() {
     }
     function Sys$Net$XMLHttpExecutor$getResponseHeader(header) {
         /// <summary locid="M:J#Sys.Net.XMLHttpExecutor.getResponseHeader" />
-        /// <param name="header" type="String"></param>
+        /// <param name="pageHeader" type="String"></param>
         /// <returns type="String"></returns>
         var e = Function._validateParams(arguments, [
-            {name: "header", type: String}
+            {name: "pageHeader", type: String}
         ]);
         if (e) throw e;
         if (!this._responseAvailable) {
@@ -6349,7 +6349,7 @@ Sys.Net.WebRequest = function Sys$Net$WebRequest() {
         this._url = value;
     }
     function Sys$Net$WebRequest$get_headers() {
-        /// <value locid="P:J#Sys.Net.WebRequest.headers"></value>
+        /// <value locid="P:J#Sys.Net.WebRequest.pageHeaders"></value>
         if (arguments.length !== 0) throw Error.parameterCount();
         return this._headers;
     }
