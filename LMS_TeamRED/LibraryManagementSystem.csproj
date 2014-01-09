@@ -74,12 +74,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\LMS_DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LMS_DataModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="Models\AccountModels\AccountModels.cs" />
+    <Compile Include="Models\BookModels\BookModels.cs" />
+    <Compile Include="Models\Common\Common.cs" />
+    <Compile Include="Models\StudentModels\StudentModels.cs" />
+    <Compile Include="Models\UserModels\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,14 +135,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\LMS_DataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LMS_DataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Assets\Fonts\nevis.ttf" />
     <None Include="Assets\Fonts\nevis.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibraryManagementSystemDAL\LibraryManagementSystemDAL.csproj">
+      <Project>{7E8715F0-B7C6-46A3-A1ED-A56BA5966832}</Project>
+      <Name>LibraryManagementSystemDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

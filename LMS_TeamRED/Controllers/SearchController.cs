@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LibraryManagementSystem.Models.BookModels;
 
 namespace LibraryManagementSystem.Controllers
 {
@@ -13,15 +14,15 @@ namespace LibraryManagementSystem.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            ViewData["IsEmpty"] = "1";
+            //ViewData["IsEmpty"] = "1"
             return View();
         }
 
         [HttpPost]
-        public ActionResult Index(String searchTerm, String searchType)
+        public ActionResult Index(SearchBookModel model)
         {
-            ViewData["IsEmpty"] = "1";
-            return View();
+            var books = new List<BookModel> {new BookModel(), new BookModel(), new BookModel()};
+            return View(books);
         }
 
 

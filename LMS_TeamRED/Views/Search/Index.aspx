@@ -1,4 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<dynamic>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" 
+Inherits="System.Web.Mvc.ViewPage<IEnumerable<LibraryManagementSystem.Models.BookModels.BookModel>>" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
 	Search
@@ -10,16 +12,19 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
-    <% 
-        if (ViewData["IsEmpty"].Equals("2"))
+    <%
+       
+        if (Model!=null)
         { 
-     %>
-        <h2>Search is Empty!</h2>
-      <%
-        } else {
-      %>
-         <h2>Search is not Empty!</h2>
-      <% } %>
+      foreach (var bookModel in Model)
+            {
+   %>
+             <h2>Search is not Empty!</h2>
+        <%   } } else { %>
+          
+             <h2>Search is not Empty!</h2>
+     
+       <% } %>
        
 </asp:Content>
 

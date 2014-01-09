@@ -4,63 +4,63 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="ModelStoreContainer">
-          <EntitySet Name="authors" EntityType="Model.Store.authors" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="book_author" EntityType="Model.Store.book_author" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="books" EntityType="Model.Store.books" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="department" EntityType="Model.Store.department" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="publisher" EntityType="Model.Store.publisher" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="sex" EntityType="Model.Store.sex" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="student_book_loan" EntityType="Model.Store.student_book_loan" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="students" EntityType="Model.Store.students" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="system_users" EntityType="Model.Store.system_users" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="user_role" EntityType="Model.Store.user_role" store:Type="Tables" Schema="lms-dwh" />
-          <AssociationSet Name="fk_book_author_author1" Association="Model.Store.fk_book_author_author1">
+      <Schema Namespace="LMS_DataModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LMS_DataModelStoreContainer">
+          <EntitySet Name="authors" EntityType="LMS_DataModel.Store.authors" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="book_author" EntityType="LMS_DataModel.Store.book_author" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="books" EntityType="LMS_DataModel.Store.books" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="department" EntityType="LMS_DataModel.Store.department" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="publisher" EntityType="LMS_DataModel.Store.publisher" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="sex" EntityType="LMS_DataModel.Store.sex" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="student_book_loan" EntityType="LMS_DataModel.Store.student_book_loan" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="students" EntityType="LMS_DataModel.Store.students" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="system_users" EntityType="LMS_DataModel.Store.system_users" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="user_role" EntityType="LMS_DataModel.Store.user_role" store:Type="Tables" Schema="lms-dwh" />
+          <AssociationSet Name="fk_book_author_author1" Association="LMS_DataModel.Store.fk_book_author_author1">
             <End Role="authors" EntitySet="authors" />
             <End Role="book_author" EntitySet="book_author" />
           </AssociationSet>
-          <AssociationSet Name="fk_book_author_books1" Association="Model.Store.fk_book_author_books1">
+          <AssociationSet Name="fk_book_author_books1" Association="LMS_DataModel.Store.fk_book_author_books1">
             <End Role="books" EntitySet="books" />
             <End Role="book_author" EntitySet="book_author" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_department1" Association="Model.Store.fk_books_department1">
+          <AssociationSet Name="fk_books_department1" Association="LMS_DataModel.Store.fk_books_department1">
             <End Role="department" EntitySet="department" />
             <End Role="books" EntitySet="books" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_publisher1" Association="Model.Store.fk_books_publisher1">
+          <AssociationSet Name="fk_books_publisher1" Association="LMS_DataModel.Store.fk_books_publisher1">
             <End Role="publisher" EntitySet="publisher" />
             <End Role="books" EntitySet="books" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_system_users1" Association="Model.Store.fk_books_system_users1">
+          <AssociationSet Name="fk_books_system_users1" Association="LMS_DataModel.Store.fk_books_system_users1">
             <End Role="system_users" EntitySet="system_users" />
             <End Role="books" EntitySet="books" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_books1" Association="Model.Store.fk_student_book_loan_books1">
+          <AssociationSet Name="fk_student_book_loan_books1" Association="LMS_DataModel.Store.fk_student_book_loan_books1">
             <End Role="books" EntitySet="books" />
             <End Role="student_book_loan" EntitySet="student_book_loan" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_students1" Association="Model.Store.fk_student_book_loan_students1">
+          <AssociationSet Name="fk_student_book_loan_students1" Association="LMS_DataModel.Store.fk_student_book_loan_students1">
             <End Role="students" EntitySet="students" />
             <End Role="student_book_loan" EntitySet="student_book_loan" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_system_users1" Association="Model.Store.fk_student_book_loan_system_users1">
+          <AssociationSet Name="fk_student_book_loan_system_users1" Association="LMS_DataModel.Store.fk_student_book_loan_system_users1">
             <End Role="system_users" EntitySet="system_users" />
             <End Role="student_book_loan" EntitySet="student_book_loan" />
           </AssociationSet>
-          <AssociationSet Name="fk_students_department1" Association="Model.Store.fk_students_department1">
+          <AssociationSet Name="fk_students_department1" Association="LMS_DataModel.Store.fk_students_department1">
             <End Role="department" EntitySet="department" />
             <End Role="students" EntitySet="students" />
           </AssociationSet>
-          <AssociationSet Name="fk_students_sex1" Association="Model.Store.fk_students_sex1">
+          <AssociationSet Name="fk_students_sex1" Association="LMS_DataModel.Store.fk_students_sex1">
             <End Role="sex" EntitySet="sex" />
             <End Role="students" EntitySet="students" />
           </AssociationSet>
-          <AssociationSet Name="fk_system_users_sex1" Association="Model.Store.fk_system_users_sex1">
+          <AssociationSet Name="fk_system_users_sex1" Association="LMS_DataModel.Store.fk_system_users_sex1">
             <End Role="sex" EntitySet="sex" />
             <End Role="system_users" EntitySet="system_users" />
           </AssociationSet>
-          <AssociationSet Name="fk_system_users_user_role" Association="Model.Store.fk_system_users_user_role">
+          <AssociationSet Name="fk_system_users_user_role" Association="LMS_DataModel.Store.fk_system_users_user_role">
             <End Role="user_role" EntitySet="user_role" />
             <End Role="system_users" EntitySet="system_users" />
           </AssociationSet>
@@ -169,8 +169,8 @@
           <Property Name="description" Type="varchar" Nullable="false" MaxLength="45" />
         </EntityType>
         <Association Name="fk_book_author_author1">
-          <End Role="authors" Type="Model.Store.authors" Multiplicity="1" />
-          <End Role="book_author" Type="Model.Store.book_author" Multiplicity="*" />
+          <End Role="authors" Type="LMS_DataModel.Store.authors" Multiplicity="1" />
+          <End Role="book_author" Type="LMS_DataModel.Store.book_author" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="authors">
               <PropertyRef Name="id" />
@@ -181,8 +181,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_book_author_books1">
-          <End Role="books" Type="Model.Store.books" Multiplicity="1" />
-          <End Role="book_author" Type="Model.Store.book_author" Multiplicity="*" />
+          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="1" />
+          <End Role="book_author" Type="LMS_DataModel.Store.book_author" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="books">
               <PropertyRef Name="id" />
@@ -193,8 +193,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_department1">
-          <End Role="department" Type="Model.Store.department" Multiplicity="1" />
-          <End Role="books" Type="Model.Store.books" Multiplicity="*" />
+          <End Role="department" Type="LMS_DataModel.Store.department" Multiplicity="1" />
+          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -205,8 +205,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_publisher1">
-          <End Role="publisher" Type="Model.Store.publisher" Multiplicity="1" />
-          <End Role="books" Type="Model.Store.books" Multiplicity="*" />
+          <End Role="publisher" Type="LMS_DataModel.Store.publisher" Multiplicity="1" />
+          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="publisher">
               <PropertyRef Name="id" />
@@ -217,8 +217,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_system_users1">
-          <End Role="system_users" Type="Model.Store.system_users" Multiplicity="1" />
-          <End Role="books" Type="Model.Store.books" Multiplicity="*" />
+          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="1" />
+          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="system_users">
               <PropertyRef Name="id" />
@@ -229,8 +229,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_books1">
-          <End Role="books" Type="Model.Store.books" Multiplicity="1" />
-          <End Role="student_book_loan" Type="Model.Store.student_book_loan" Multiplicity="*" />
+          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="1" />
+          <End Role="student_book_loan" Type="LMS_DataModel.Store.student_book_loan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="books">
               <PropertyRef Name="id" />
@@ -241,8 +241,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_students1">
-          <End Role="students" Type="Model.Store.students" Multiplicity="1" />
-          <End Role="student_book_loan" Type="Model.Store.student_book_loan" Multiplicity="*" />
+          <End Role="students" Type="LMS_DataModel.Store.students" Multiplicity="1" />
+          <End Role="student_book_loan" Type="LMS_DataModel.Store.student_book_loan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="students">
               <PropertyRef Name="reg_no" />
@@ -253,8 +253,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_system_users1">
-          <End Role="system_users" Type="Model.Store.system_users" Multiplicity="1" />
-          <End Role="student_book_loan" Type="Model.Store.student_book_loan" Multiplicity="*" />
+          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="1" />
+          <End Role="student_book_loan" Type="LMS_DataModel.Store.student_book_loan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="system_users">
               <PropertyRef Name="id" />
@@ -265,8 +265,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_department1">
-          <End Role="department" Type="Model.Store.department" Multiplicity="1" />
-          <End Role="students" Type="Model.Store.students" Multiplicity="*" />
+          <End Role="department" Type="LMS_DataModel.Store.department" Multiplicity="1" />
+          <End Role="students" Type="LMS_DataModel.Store.students" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -277,8 +277,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_sex1">
-          <End Role="sex" Type="Model.Store.sex" Multiplicity="1" />
-          <End Role="students" Type="Model.Store.students" Multiplicity="*" />
+          <End Role="sex" Type="LMS_DataModel.Store.sex" Multiplicity="1" />
+          <End Role="students" Type="LMS_DataModel.Store.students" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
               <PropertyRef Name="id" />
@@ -289,8 +289,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_sex1">
-          <End Role="sex" Type="Model.Store.sex" Multiplicity="1" />
-          <End Role="system_users" Type="Model.Store.system_users" Multiplicity="*" />
+          <End Role="sex" Type="LMS_DataModel.Store.sex" Multiplicity="1" />
+          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
               <PropertyRef Name="id" />
@@ -301,8 +301,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_user_role">
-          <End Role="user_role" Type="Model.Store.user_role" Multiplicity="1" />
-          <End Role="system_users" Type="Model.Store.system_users" Multiplicity="*" />
+          <End Role="user_role" Type="LMS_DataModel.Store.user_role" Multiplicity="1" />
+          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user_role">
               <PropertyRef Name="id" />
@@ -316,63 +316,63 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="authors" EntityType="Model.author" />
-          <EntitySet Name="book_author" EntityType="Model.book_author" />
-          <EntitySet Name="books" EntityType="Model.book" />
-          <EntitySet Name="departments" EntityType="Model.department" />
-          <EntitySet Name="publishers" EntityType="Model.publisher" />
-          <EntitySet Name="sexes" EntityType="Model.sex" />
-          <EntitySet Name="student_book_loan" EntityType="Model.student_book_loan" />
-          <EntitySet Name="students" EntityType="Model.student" />
-          <EntitySet Name="system_users" EntityType="Model.system_users" />
-          <EntitySet Name="user_role" EntityType="Model.user_role" />
-          <AssociationSet Name="fk_book_author_author1" Association="Model.fk_book_author_author1">
+      <Schema Namespace="LMSDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="LMSDataModelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="authors" EntityType="LMSDataModel.author" />
+          <EntitySet Name="book_author" EntityType="LMSDataModel.book_author" />
+          <EntitySet Name="books" EntityType="LMSDataModel.book" />
+          <EntitySet Name="departments" EntityType="LMSDataModel.department" />
+          <EntitySet Name="publishers" EntityType="LMSDataModel.publisher" />
+          <EntitySet Name="sexes" EntityType="LMSDataModel.sex" />
+          <EntitySet Name="student_book_loan" EntityType="LMSDataModel.student_book_loan" />
+          <EntitySet Name="students" EntityType="LMSDataModel.student" />
+          <EntitySet Name="system_users" EntityType="LMSDataModel.system_users" />
+          <EntitySet Name="user_role" EntityType="LMSDataModel.user_role" />
+          <AssociationSet Name="fk_book_author_author1" Association="LMSDataModel.fk_book_author_author1">
             <End Role="authors" EntitySet="authors" />
             <End Role="book_author" EntitySet="book_author" />
           </AssociationSet>
-          <AssociationSet Name="fk_book_author_books1" Association="Model.fk_book_author_books1">
+          <AssociationSet Name="fk_book_author_books1" Association="LMSDataModel.fk_book_author_books1">
             <End Role="books" EntitySet="books" />
             <End Role="book_author" EntitySet="book_author" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_department1" Association="Model.fk_books_department1">
+          <AssociationSet Name="fk_books_department1" Association="LMSDataModel.fk_books_department1">
             <End Role="department" EntitySet="departments" />
             <End Role="books" EntitySet="books" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_publisher1" Association="Model.fk_books_publisher1">
+          <AssociationSet Name="fk_books_publisher1" Association="LMSDataModel.fk_books_publisher1">
             <End Role="publisher" EntitySet="publishers" />
             <End Role="books" EntitySet="books" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_system_users1" Association="Model.fk_books_system_users1">
+          <AssociationSet Name="fk_books_system_users1" Association="LMSDataModel.fk_books_system_users1">
             <End Role="system_users" EntitySet="system_users" />
             <End Role="books" EntitySet="books" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_books1" Association="Model.fk_student_book_loan_books1">
+          <AssociationSet Name="fk_student_book_loan_books1" Association="LMSDataModel.fk_student_book_loan_books1">
             <End Role="books" EntitySet="books" />
             <End Role="student_book_loan" EntitySet="student_book_loan" />
           </AssociationSet>
-          <AssociationSet Name="fk_students_department1" Association="Model.fk_students_department1">
+          <AssociationSet Name="fk_students_department1" Association="LMSDataModel.fk_students_department1">
             <End Role="department" EntitySet="departments" />
             <End Role="students" EntitySet="students" />
           </AssociationSet>
-          <AssociationSet Name="fk_students_sex1" Association="Model.fk_students_sex1">
+          <AssociationSet Name="fk_students_sex1" Association="LMSDataModel.fk_students_sex1">
             <End Role="sex" EntitySet="sexes" />
             <End Role="students" EntitySet="students" />
           </AssociationSet>
-          <AssociationSet Name="fk_system_users_sex1" Association="Model.fk_system_users_sex1">
+          <AssociationSet Name="fk_system_users_sex1" Association="LMSDataModel.fk_system_users_sex1">
             <End Role="sex" EntitySet="sexes" />
             <End Role="system_users" EntitySet="system_users" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_students1" Association="Model.fk_student_book_loan_students1">
+          <AssociationSet Name="fk_student_book_loan_students1" Association="LMSDataModel.fk_student_book_loan_students1">
             <End Role="students" EntitySet="students" />
             <End Role="student_book_loan" EntitySet="student_book_loan" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_system_users1" Association="Model.fk_student_book_loan_system_users1">
+          <AssociationSet Name="fk_student_book_loan_system_users1" Association="LMSDataModel.fk_student_book_loan_system_users1">
             <End Role="system_users" EntitySet="system_users" />
             <End Role="student_book_loan" EntitySet="student_book_loan" />
           </AssociationSet>
-          <AssociationSet Name="fk_system_users_user_role" Association="Model.fk_system_users_user_role">
+          <AssociationSet Name="fk_system_users_user_role" Association="LMSDataModel.fk_system_users_user_role">
             <End Role="user_role" EntitySet="user_role" />
             <End Role="system_users" EntitySet="system_users" />
           </AssociationSet>
@@ -386,7 +386,7 @@
           <Property Name="first_name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="last_name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="middle_name" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="book_author" Relationship="Model.fk_book_author_author1" FromRole="authors" ToRole="book_author" />
+          <NavigationProperty Name="book_author" Relationship="LMSDataModel.fk_book_author_author1" FromRole="authors" ToRole="book_author" />
         </EntityType>
         <EntityType Name="book_author">
           <Key>
@@ -395,8 +395,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="authors_id" Type="Int32" Nullable="false" />
           <Property Name="books_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="author" Relationship="Model.fk_book_author_author1" FromRole="book_author" ToRole="authors" />
-          <NavigationProperty Name="book" Relationship="Model.fk_book_author_books1" FromRole="book_author" ToRole="books" />
+          <NavigationProperty Name="author" Relationship="LMSDataModel.fk_book_author_author1" FromRole="book_author" ToRole="authors" />
+          <NavigationProperty Name="book" Relationship="LMSDataModel.fk_book_author_books1" FromRole="book_author" ToRole="books" />
         </EntityType>
         <EntityType Name="book">
           <Key>
@@ -411,11 +411,11 @@
           <Property Name="publisher_id" Type="Int32" Nullable="false" />
           <Property Name="department_id" Type="Int32" Nullable="false" />
           <Property Name="added_by" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="book_author" Relationship="Model.fk_book_author_books1" FromRole="books" ToRole="book_author" />
-          <NavigationProperty Name="department" Relationship="Model.fk_books_department1" FromRole="books" ToRole="department" />
-          <NavigationProperty Name="publisher" Relationship="Model.fk_books_publisher1" FromRole="books" ToRole="publisher" />
-          <NavigationProperty Name="system_users" Relationship="Model.fk_books_system_users1" FromRole="books" ToRole="system_users" />
-          <NavigationProperty Name="student_book_loan" Relationship="Model.fk_student_book_loan_books1" FromRole="books" ToRole="student_book_loan" />
+          <NavigationProperty Name="book_author" Relationship="LMSDataModel.fk_book_author_books1" FromRole="books" ToRole="book_author" />
+          <NavigationProperty Name="department" Relationship="LMSDataModel.fk_books_department1" FromRole="books" ToRole="department" />
+          <NavigationProperty Name="publisher" Relationship="LMSDataModel.fk_books_publisher1" FromRole="books" ToRole="publisher" />
+          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_books_system_users1" FromRole="books" ToRole="system_users" />
+          <NavigationProperty Name="student_book_loan" Relationship="LMSDataModel.fk_student_book_loan_books1" FromRole="books" ToRole="student_book_loan" />
         </EntityType>
         <EntityType Name="department">
           <Key>
@@ -423,8 +423,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="books" Relationship="Model.fk_books_department1" FromRole="department" ToRole="books" />
-          <NavigationProperty Name="students" Relationship="Model.fk_students_department1" FromRole="department" ToRole="students" />
+          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_department1" FromRole="department" ToRole="books" />
+          <NavigationProperty Name="students" Relationship="LMSDataModel.fk_students_department1" FromRole="department" ToRole="students" />
         </EntityType>
         <EntityType Name="publisher">
           <Key>
@@ -435,7 +435,7 @@
           <Property Name="telephone" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="email" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
           <Property Name="address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="books" Relationship="Model.fk_books_publisher1" FromRole="publisher" ToRole="books" />
+          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_publisher1" FromRole="publisher" ToRole="books" />
         </EntityType>
         <EntityType Name="sex">
           <Key>
@@ -443,8 +443,8 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="students" Relationship="Model.fk_students_sex1" FromRole="sex" ToRole="students" />
-          <NavigationProperty Name="system_users" Relationship="Model.fk_system_users_sex1" FromRole="sex" ToRole="system_users" />
+          <NavigationProperty Name="students" Relationship="LMSDataModel.fk_students_sex1" FromRole="sex" ToRole="students" />
+          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_system_users_sex1" FromRole="sex" ToRole="system_users" />
         </EntityType>
         <EntityType Name="student_book_loan">
           <Key>
@@ -457,9 +457,9 @@
           <Property Name="issuer" Type="Int32" Nullable="false" />
           <Property Name="books_id" Type="Int32" Nullable="false" />
           <Property Name="students_reg_no" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="book" Relationship="Model.fk_student_book_loan_books1" FromRole="student_book_loan" ToRole="books" />
-          <NavigationProperty Name="student" Relationship="Model.fk_student_book_loan_students1" FromRole="student_book_loan" ToRole="students" />
-          <NavigationProperty Name="system_users" Relationship="Model.fk_student_book_loan_system_users1" FromRole="student_book_loan" ToRole="system_users" />
+          <NavigationProperty Name="book" Relationship="LMSDataModel.fk_student_book_loan_books1" FromRole="student_book_loan" ToRole="books" />
+          <NavigationProperty Name="student" Relationship="LMSDataModel.fk_student_book_loan_students1" FromRole="student_book_loan" ToRole="students" />
+          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_student_book_loan_system_users1" FromRole="student_book_loan" ToRole="system_users" />
         </EntityType>
         <EntityType Name="student">
           <Key>
@@ -476,9 +476,9 @@
           <Property Name="currently_registered" Type="Boolean" />
           <Property Name="sex_id" Type="Int32" Nullable="false" />
           <Property Name="department_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="department" Relationship="Model.fk_students_department1" FromRole="students" ToRole="department" />
-          <NavigationProperty Name="sex" Relationship="Model.fk_students_sex1" FromRole="students" ToRole="sex" />
-          <NavigationProperty Name="student_book_loan" Relationship="Model.fk_student_book_loan_students1" FromRole="students" ToRole="student_book_loan" />
+          <NavigationProperty Name="department" Relationship="LMSDataModel.fk_students_department1" FromRole="students" ToRole="department" />
+          <NavigationProperty Name="sex" Relationship="LMSDataModel.fk_students_sex1" FromRole="students" ToRole="sex" />
+          <NavigationProperty Name="student_book_loan" Relationship="LMSDataModel.fk_student_book_loan_students1" FromRole="students" ToRole="student_book_loan" />
         </EntityType>
         <EntityType Name="system_users">
           <Key>
@@ -491,10 +491,10 @@
           <Property Name="last_login" Type="DateTime" />
           <Property Name="user_role_id" Type="Int32" Nullable="false" />
           <Property Name="sex_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="books" Relationship="Model.fk_books_system_users1" FromRole="system_users" ToRole="books" />
-          <NavigationProperty Name="sex" Relationship="Model.fk_system_users_sex1" FromRole="system_users" ToRole="sex" />
-          <NavigationProperty Name="student_book_loan" Relationship="Model.fk_student_book_loan_system_users1" FromRole="system_users" ToRole="student_book_loan" />
-          <NavigationProperty Name="user_role" Relationship="Model.fk_system_users_user_role" FromRole="system_users" ToRole="user_role" />
+          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_system_users1" FromRole="system_users" ToRole="books" />
+          <NavigationProperty Name="sex" Relationship="LMSDataModel.fk_system_users_sex1" FromRole="system_users" ToRole="sex" />
+          <NavigationProperty Name="student_book_loan" Relationship="LMSDataModel.fk_student_book_loan_system_users1" FromRole="system_users" ToRole="student_book_loan" />
+          <NavigationProperty Name="user_role" Relationship="LMSDataModel.fk_system_users_user_role" FromRole="system_users" ToRole="user_role" />
         </EntityType>
         <EntityType Name="user_role">
           <Key>
@@ -502,11 +502,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="description" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="system_users" Relationship="Model.fk_system_users_user_role" FromRole="user_role" ToRole="system_users" />
+          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_system_users_user_role" FromRole="user_role" ToRole="system_users" />
         </EntityType>
         <Association Name="fk_book_author_author1">
-          <End Role="authors" Type="Model.author" Multiplicity="1" />
-          <End Role="book_author" Type="Model.book_author" Multiplicity="*" />
+          <End Role="authors" Type="LMSDataModel.author" Multiplicity="1" />
+          <End Role="book_author" Type="LMSDataModel.book_author" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="authors">
               <PropertyRef Name="id" />
@@ -517,8 +517,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_book_author_books1">
-          <End Role="books" Type="Model.book" Multiplicity="1" />
-          <End Role="book_author" Type="Model.book_author" Multiplicity="*" />
+          <End Role="books" Type="LMSDataModel.book" Multiplicity="1" />
+          <End Role="book_author" Type="LMSDataModel.book_author" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="books">
               <PropertyRef Name="id" />
@@ -529,8 +529,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_department1">
-          <End Role="department" Type="Model.department" Multiplicity="1" />
-          <End Role="books" Type="Model.book" Multiplicity="*" />
+          <End Role="department" Type="LMSDataModel.department" Multiplicity="1" />
+          <End Role="books" Type="LMSDataModel.book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -541,8 +541,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_publisher1">
-          <End Role="publisher" Type="Model.publisher" Multiplicity="1" />
-          <End Role="books" Type="Model.book" Multiplicity="*" />
+          <End Role="publisher" Type="LMSDataModel.publisher" Multiplicity="1" />
+          <End Role="books" Type="LMSDataModel.book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="publisher">
               <PropertyRef Name="id" />
@@ -553,8 +553,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_system_users1">
-          <End Role="system_users" Type="Model.system_users" Multiplicity="1" />
-          <End Role="books" Type="Model.book" Multiplicity="*" />
+          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="1" />
+          <End Role="books" Type="LMSDataModel.book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="system_users">
               <PropertyRef Name="id" />
@@ -565,8 +565,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_books1">
-          <End Role="books" Type="Model.book" Multiplicity="1" />
-          <End Role="student_book_loan" Type="Model.student_book_loan" Multiplicity="*" />
+          <End Role="books" Type="LMSDataModel.book" Multiplicity="1" />
+          <End Role="student_book_loan" Type="LMSDataModel.student_book_loan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="books">
               <PropertyRef Name="id" />
@@ -577,8 +577,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_department1">
-          <End Role="department" Type="Model.department" Multiplicity="1" />
-          <End Role="students" Type="Model.student" Multiplicity="*" />
+          <End Role="department" Type="LMSDataModel.department" Multiplicity="1" />
+          <End Role="students" Type="LMSDataModel.student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
               <PropertyRef Name="id" />
@@ -589,8 +589,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_sex1">
-          <End Role="sex" Type="Model.sex" Multiplicity="1" />
-          <End Role="students" Type="Model.student" Multiplicity="*" />
+          <End Role="sex" Type="LMSDataModel.sex" Multiplicity="1" />
+          <End Role="students" Type="LMSDataModel.student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
               <PropertyRef Name="id" />
@@ -601,8 +601,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_sex1">
-          <End Role="sex" Type="Model.sex" Multiplicity="1" />
-          <End Role="system_users" Type="Model.system_users" Multiplicity="*" />
+          <End Role="sex" Type="LMSDataModel.sex" Multiplicity="1" />
+          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
               <PropertyRef Name="id" />
@@ -613,8 +613,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_students1">
-          <End Role="students" Type="Model.student" Multiplicity="1" />
-          <End Role="student_book_loan" Type="Model.student_book_loan" Multiplicity="*" />
+          <End Role="students" Type="LMSDataModel.student" Multiplicity="1" />
+          <End Role="student_book_loan" Type="LMSDataModel.student_book_loan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="students">
               <PropertyRef Name="reg_no" />
@@ -625,8 +625,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_system_users1">
-          <End Role="system_users" Type="Model.system_users" Multiplicity="1" />
-          <End Role="student_book_loan" Type="Model.student_book_loan" Multiplicity="*" />
+          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="1" />
+          <End Role="student_book_loan" Type="LMSDataModel.student_book_loan" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="system_users">
               <PropertyRef Name="id" />
@@ -637,8 +637,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_user_role">
-          <End Role="user_role" Type="Model.user_role" Multiplicity="1" />
-          <End Role="system_users" Type="Model.system_users" Multiplicity="*" />
+          <End Role="user_role" Type="LMSDataModel.user_role" Multiplicity="1" />
+          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="user_role">
               <PropertyRef Name="id" />
@@ -653,20 +653,20 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="authors"><EntityTypeMapping TypeName="Model.author"><MappingFragment StoreEntitySet="authors">
+        <EntityContainerMapping StorageEntityContainer="LMS_DataModelStoreContainer" CdmEntityContainer="LMSDataModelEntities">
+          <EntitySetMapping Name="authors"><EntityTypeMapping TypeName="LMSDataModel.author"><MappingFragment StoreEntitySet="authors">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="salutation" ColumnName="salutation" />
             <ScalarProperty Name="first_name" ColumnName="first_name" />
             <ScalarProperty Name="last_name" ColumnName="last_name" />
             <ScalarProperty Name="middle_name" ColumnName="middle_name" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="book_author"><EntityTypeMapping TypeName="Model.book_author"><MappingFragment StoreEntitySet="book_author">
+          <EntitySetMapping Name="book_author"><EntityTypeMapping TypeName="LMSDataModel.book_author"><MappingFragment StoreEntitySet="book_author">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="authors_id" ColumnName="authors_id" />
             <ScalarProperty Name="books_id" ColumnName="books_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="books"><EntityTypeMapping TypeName="Model.book"><MappingFragment StoreEntitySet="books">
+          <EntitySetMapping Name="books"><EntityTypeMapping TypeName="LMSDataModel.book"><MappingFragment StoreEntitySet="books">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="isbn" ColumnName="isbn" />
             <ScalarProperty Name="title" ColumnName="title" />
@@ -677,22 +677,22 @@
             <ScalarProperty Name="department_id" ColumnName="department_id" />
             <ScalarProperty Name="added_by" ColumnName="added_by" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="Model.department"><MappingFragment StoreEntitySet="department">
+          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="LMSDataModel.department"><MappingFragment StoreEntitySet="department">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="name" ColumnName="name" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="publishers"><EntityTypeMapping TypeName="Model.publisher"><MappingFragment StoreEntitySet="publisher">
+          <EntitySetMapping Name="publishers"><EntityTypeMapping TypeName="LMSDataModel.publisher"><MappingFragment StoreEntitySet="publisher">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="name" ColumnName="name" />
             <ScalarProperty Name="telephone" ColumnName="telephone" />
             <ScalarProperty Name="email" ColumnName="email" />
             <ScalarProperty Name="address" ColumnName="address" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sexes"><EntityTypeMapping TypeName="Model.sex"><MappingFragment StoreEntitySet="sex">
+          <EntitySetMapping Name="sexes"><EntityTypeMapping TypeName="LMSDataModel.sex"><MappingFragment StoreEntitySet="sex">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="description" ColumnName="description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="student_book_loan"><EntityTypeMapping TypeName="Model.student_book_loan"><MappingFragment StoreEntitySet="student_book_loan">
+          <EntitySetMapping Name="student_book_loan"><EntityTypeMapping TypeName="LMSDataModel.student_book_loan"><MappingFragment StoreEntitySet="student_book_loan">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="issue_date" ColumnName="issue_date" />
             <ScalarProperty Name="due_date" ColumnName="due_date" />
@@ -701,7 +701,7 @@
             <ScalarProperty Name="books_id" ColumnName="books_id" />
             <ScalarProperty Name="students_reg_no" ColumnName="students_reg_no" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="students"><EntityTypeMapping TypeName="Model.student"><MappingFragment StoreEntitySet="students">
+          <EntitySetMapping Name="students"><EntityTypeMapping TypeName="LMSDataModel.student"><MappingFragment StoreEntitySet="students">
             <ScalarProperty Name="reg_no" ColumnName="reg_no" />
             <ScalarProperty Name="first_name" ColumnName="first_name" />
             <ScalarProperty Name="last_name" ColumnName="last_name" />
@@ -714,7 +714,7 @@
             <ScalarProperty Name="sex_id" ColumnName="sex_id" />
             <ScalarProperty Name="department_id" ColumnName="department_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="system_users"><EntityTypeMapping TypeName="Model.system_users"><MappingFragment StoreEntitySet="system_users">
+          <EntitySetMapping Name="system_users"><EntityTypeMapping TypeName="LMSDataModel.system_users"><MappingFragment StoreEntitySet="system_users">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="username" ColumnName="username" />
             <ScalarProperty Name="password" ColumnName="password" />
@@ -723,7 +723,7 @@
             <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
             <ScalarProperty Name="sex_id" ColumnName="sex_id" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="user_role"><EntityTypeMapping TypeName="Model.user_role"><MappingFragment StoreEntitySet="user_role">
+          <EntitySetMapping Name="user_role"><EntityTypeMapping TypeName="LMSDataModel.user_role"><MappingFragment StoreEntitySet="user_role">
             <ScalarProperty Name="id" ColumnName="id" />
             <ScalarProperty Name="description" ColumnName="description" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
@@ -748,31 +748,31 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="Model1">
-        <EntityTypeShape EntityType="Model.author" Width="1.5" PointX="11.25" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.book_author" Width="1.5" PointX="13.5" PointY="5" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.book" Width="1.5" PointX="11.25" PointY="4.125" Height="3.7109993489583335" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.department" Width="1.5" PointX="0.75" PointY="2.125" Height="1.7879850260416657" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.publisher" Width="1.5" PointX="9" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.sex" Width="1.5" PointX="0.75" PointY="5.125" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.student_book_loan" Width="1.5" PointX="8.25" PointY="4.5" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.student" Width="1.5" PointX="3" PointY="4.125" Height="3.7109993489583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.system_users" Width="1.5" PointX="6" PointY="4.5" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.user_role" Width="1.5" PointX="2.75" PointY="1" Height="1.5956835937499996" IsExpanded="true" />
-        <AssociationConnector Association="Model.fk_book_author_author1" ManuallyRouted="false">
+        <EntityTypeShape EntityType="LMSDataModel.author" Width="1.5" PointX="11.25" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.book_author" Width="1.5" PointX="13.5" PointY="5" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.book" Width="1.5" PointX="11.25" PointY="4.125" Height="3.7109993489583335" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.department" Width="1.5" PointX="0.75" PointY="2.125" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.publisher" Width="1.5" PointX="9" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.sex" Width="1.5" PointX="0.75" PointY="5.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.student_book_loan" Width="1.5" PointX="8.25" PointY="4.5" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.student" Width="1.5" PointX="3" PointY="4.125" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.system_users" Width="1.5" PointX="6" PointY="4.5" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.user_role" Width="1.5" PointX="3.75" PointY="1.25" Height="1.5956835937499996" IsExpanded="true" />
+        <AssociationConnector Association="LMSDataModel.fk_book_author_author1" ManuallyRouted="false">
           <ConnectorPoint PointX="12.75" PointY="1.9612939453124998" />
           <ConnectorPoint PointX="14.25" PointY="1.9612939453124998" />
           <ConnectorPoint PointX="14.25" PointY="5" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_book_author_books1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_book_author_books1" ManuallyRouted="false">
           <ConnectorPoint PointX="12.75" PointY="5.9901432291666667" />
           <ConnectorPoint PointX="13.5" PointY="5.9901432291666667" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_books_department1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_books_department1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="3.9129850260416656" />
           <ConnectorPoint PointX="2.625" PointY="4.2879850260416656" />
           <ConnectorPoint PointX="2.625" PointY="3.75" />
-          <ConnectorPoint PointX="4.322916666666667" PointY="3.7499999999999996" />
-          <ConnectorPoint PointX="4.489583333333333" PointY="3.75" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="3.7499999999999996" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="3.75" />
           <ConnectorPoint PointX="6.666666666666667" PointY="3.7499999999999996" />
           <ConnectorPoint PointX="6.833333333333333" PointY="3.75" />
           <ConnectorPoint PointX="10.072916666666666" PointY="3.7499999999999996" />
@@ -780,12 +780,12 @@
           <ConnectorPoint PointX="10.875" PointY="3.75" />
           <ConnectorPoint PointX="11.25" PointY="4.125" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_books_publisher1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_books_publisher1" ManuallyRouted="false">
           <ConnectorPoint PointX="10.15625" PointY="2.9225878906249996" />
           <ConnectorPoint PointX="10.15625" PointY="7.6701464843750005" />
           <ConnectorPoint PointX="11.25" PointY="7.6701464843750005" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_books_system_users1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_books_system_users1" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="7.5691943359375" />
           <ConnectorPoint PointX="8.9166666666666661" PointY="7.5691943359374987" />
           <ConnectorPoint PointX="9.0833333333333339" PointY="7.5691943359375" />
@@ -793,44 +793,44 @@
           <ConnectorPoint PointX="10.239583333333334" PointY="7.5691943359375" />
           <ConnectorPoint PointX="11.25" PointY="7.5691943359375" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_student_book_loan_books1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_student_book_loan_books1" ManuallyRouted="false">
           <ConnectorPoint PointX="11.25" PointY="5.9708968098958337" />
           <ConnectorPoint PointX="10.239583333333334" PointY="5.9708968098958328" />
           <ConnectorPoint PointX="10.072916666666666" PointY="5.9708968098958337" />
           <ConnectorPoint PointX="9.75" PointY="5.9708968098958337" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_students_department1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="3.204091796875" />
-          <ConnectorPoint PointX="4.40625" PointY="3.204091796875" />
-          <ConnectorPoint PointX="4.40625" PointY="4.125" />
+        <AssociationConnector Association="LMSDataModel.fk_students_department1" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.329091796875" />
+          <ConnectorPoint PointX="3.34375" PointY="3.329091796875" />
+          <ConnectorPoint PointX="3.34375" PointY="4.125" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_students_sex1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_students_sex1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="6.0189925130208337" />
           <ConnectorPoint PointX="2.6666666666666665" PointY="6.0189925130208328" />
           <ConnectorPoint PointX="2.8333333333333335" PointY="6.0189925130208337" />
           <ConnectorPoint PointX="3" PointY="6.0189925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_system_users_sex1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_system_users_sex1" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="5.5407442565104166" />
           <ConnectorPoint PointX="2.75" PointY="5.5407442565104166" />
           <ConnectorPoint PointX="2.75" PointY="8.0859993489583317" />
           <ConnectorPoint PointX="6.75" PointY="8.0859993489583317" />
           <ConnectorPoint PointX="6.75" PointY="7.6340950520833317" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_student_book_loan_students1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_student_book_loan_students1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="7.7662972005208317" />
           <ConnectorPoint PointX="6.666666666666667" PointY="7.7662972005208308" />
           <ConnectorPoint PointX="6.833333333333333" PointY="7.7662972005208317" />
           <ConnectorPoint PointX="9" PointY="7.7662972005208317" />
           <ConnectorPoint PointX="9" PointY="7.4417936197916674" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_student_book_loan_system_users1" ManuallyRouted="false">
+        <AssociationConnector Association="LMSDataModel.fk_student_book_loan_system_users1" ManuallyRouted="false">
           <ConnectorPoint PointX="7.5" PointY="5.9708968098958337" />
           <ConnectorPoint PointX="8.25" PointY="5.9708968098958337" />
         </AssociationConnector>
-        <AssociationConnector Association="Model.fk_system_users_user_role" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.25" PointY="1.7978417968749998" />
-          <ConnectorPoint PointX="6.75" PointY="1.7978417968749998" />
+        <AssociationConnector Association="LMSDataModel.fk_system_users_user_role" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="2.047841796875" />
+          <ConnectorPoint PointX="6.75" PointY="2.047841796875" />
           <ConnectorPoint PointX="6.75" PointY="4.5" />
         </AssociationConnector>
       </Diagram>
