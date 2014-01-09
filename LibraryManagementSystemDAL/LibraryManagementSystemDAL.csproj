@@ -66,7 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LMSDataModel.Designer.cs">
+    <Compile Include="Data\LMSDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LMSDataModel.edmx</DependentUpon>
@@ -101,7 +101,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LMSDataModel.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="LMSDataModel.edmx">
+    <EntityDeploy Include="Data\LMSDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>LMSDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>

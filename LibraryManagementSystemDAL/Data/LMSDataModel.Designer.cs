@@ -8,32 +8,33 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_author1", "authors", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.author), "book_author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.book_author), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_books1", "books", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.book), "book_author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.book_author), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.department), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_publisher1", "publisher", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.publisher), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_system_users1", "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.system_users), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_books1", "books", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.book), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.student_book_loan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.department), "students", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.student), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.sex), "students", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.student), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.sex), "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.system_users), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_students1", "students", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.student), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.student_book_loan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.system_users), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.student_book_loan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_user_role", "user_role", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.user_role), "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.system_users), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_author1", "authors", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.author), "book_author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book_author), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_books1", "books", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.book), "book_author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book_author), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.department), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_publisher1", "publisher", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.publisher), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_system_users1", "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.system_users), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_books1", "books", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.book), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student_book_loan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.department), "students", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.sex), "students", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.sex), "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.system_users), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_students1", "students", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.student), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student_book_loan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.system_users), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student_book_loan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_user_role", "user_role", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.user_role), "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.system_users), true)]
 
 #endregion
 
-namespace LibraryManagementSystemDAL
+namespace LibraryManagementSystemDAL.Data
 {
     #region Contexts
     
@@ -242,6 +243,7 @@ namespace LibraryManagementSystemDAL
         private ObjectSet<user_role> _user_role;
 
         #endregion
+
         #region AddTo Methods
     
         /// <summary>
@@ -325,11 +327,11 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region Entities
     
     /// <summary>
@@ -358,6 +360,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -484,6 +487,7 @@ namespace LibraryManagementSystemDAL
         partial void Onmiddle_nameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -510,6 +514,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -550,6 +555,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -772,6 +778,7 @@ namespace LibraryManagementSystemDAL
         partial void Onadded_byChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -934,6 +941,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -962,6 +970,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1040,6 +1049,7 @@ namespace LibraryManagementSystemDAL
         partial void Onbooks_idChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1120,6 +1130,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1146,6 +1157,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1200,6 +1212,7 @@ namespace LibraryManagementSystemDAL
         partial void OnnameChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1248,6 +1261,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1274,6 +1288,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1400,6 +1415,7 @@ namespace LibraryManagementSystemDAL
         partial void OnaddressChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1426,6 +1442,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1452,6 +1469,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1506,6 +1524,7 @@ namespace LibraryManagementSystemDAL
         partial void OndescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1554,6 +1573,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -1596,6 +1616,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -1866,6 +1887,7 @@ namespace LibraryManagementSystemDAL
         partial void Ondepartment_idChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -1968,6 +1990,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2004,6 +2027,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2178,6 +2202,7 @@ namespace LibraryManagementSystemDAL
         partial void Onstudents_reg_noChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2296,6 +2321,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2326,6 +2352,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2500,6 +2527,7 @@ namespace LibraryManagementSystemDAL
         partial void Onsex_idChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2624,6 +2652,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -2650,6 +2679,7 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
         #region Primitive Properties
     
         /// <summary>
@@ -2704,6 +2734,7 @@ namespace LibraryManagementSystemDAL
         partial void OndescriptionChanged();
 
         #endregion
+
     
         #region Navigation Properties
     
@@ -2730,8 +2761,10 @@ namespace LibraryManagementSystemDAL
         }
 
         #endregion
+
     }
 
     #endregion
+
     
 }
