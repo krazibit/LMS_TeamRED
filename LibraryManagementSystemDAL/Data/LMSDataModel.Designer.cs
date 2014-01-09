@@ -24,13 +24,13 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Department), "book", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Book), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_publisher1", "publisher", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Publisher), "book", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Book), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_system_users1", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "book", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_books1", "book", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Book), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_StudentBookLoan_Book", "book", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Book), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Department), "student", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Student), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_Session_SystemUser", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "session", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Session), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Sex), "student", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Student), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Sex), "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.SystemUser), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_students1", "student", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Student), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_student", "student", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Student), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_system_user", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
 [assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_user_role", "userrole", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.UserRole), "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.SystemUser), true)]
 
 #endregion
@@ -949,18 +949,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_books1", "studentbookloan")]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_StudentBookLoan_Book", "studentbookloan")]
         public EntityCollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_books1", "studentbookloan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_StudentBookLoan_Book", "studentbookloan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_books1", "studentbookloan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_StudentBookLoan_Book", "studentbookloan", value);
                 }
             }
         }
@@ -2225,18 +2225,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_students1", "studentbookloan")]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_student", "studentbookloan")]
         public EntityCollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_students1", "studentbookloan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_student", "studentbookloan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_students1", "studentbookloan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_student", "studentbookloan", value);
                 }
             }
         }
@@ -2263,9 +2263,9 @@ namespace LibraryManagementSystemDAL.Data
         /// <param name="dueDate">Initial value of the DueDate property.</param>
         /// <param name="returnDate">Initial value of the ReturnDate property.</param>
         /// <param name="issuerID">Initial value of the IssuerID property.</param>
-        /// <param name="bookID">Initial value of the BookID property.</param>
         /// <param name="studentID">Initial value of the StudentID property.</param>
-        public static StudentBookLoan CreateStudentBookLoan(global::System.Int32 id, global::System.DateTime issueDate, global::System.DateTime dueDate, global::System.DateTime returnDate, global::System.Int32 issuerID, global::System.Int32 bookID, global::System.Int32 studentID)
+        /// <param name="bookId">Initial value of the BookId property.</param>
+        public static StudentBookLoan CreateStudentBookLoan(global::System.Int32 id, global::System.DateTime issueDate, global::System.DateTime dueDate, global::System.DateTime returnDate, global::System.Int32 issuerID, global::System.Int32 studentID, global::System.Int32 bookId)
         {
             StudentBookLoan studentBookLoan = new StudentBookLoan();
             studentBookLoan.id = id;
@@ -2273,8 +2273,8 @@ namespace LibraryManagementSystemDAL.Data
             studentBookLoan.DueDate = dueDate;
             studentBookLoan.ReturnDate = returnDate;
             studentBookLoan.IssuerID = issuerID;
-            studentBookLoan.BookID = bookID;
             studentBookLoan.StudentID = studentID;
+            studentBookLoan.BookId = bookId;
             return studentBookLoan;
         }
 
@@ -2410,30 +2410,6 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 BookID
-        {
-            get
-            {
-                return _BookID;
-            }
-            set
-            {
-                OnBookIDChanging(value);
-                ReportPropertyChanging("BookID");
-                _BookID = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("BookID");
-                OnBookIDChanged();
-            }
-        }
-        private global::System.Int32 _BookID;
-        partial void OnBookIDChanging(global::System.Int32 value);
-        partial void OnBookIDChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
         public global::System.Int32 StudentID
         {
             get
@@ -2452,6 +2428,30 @@ namespace LibraryManagementSystemDAL.Data
         private global::System.Int32 _StudentID;
         partial void OnStudentIDChanging(global::System.Int32 value);
         partial void OnStudentIDChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 BookId
+        {
+            get
+            {
+                return _BookId;
+            }
+            set
+            {
+                OnBookIdChanging(value);
+                ReportPropertyChanging("BookId");
+                _BookId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BookId");
+                OnBookIdChanged();
+            }
+        }
+        private global::System.Int32 _BookId;
+        partial void OnBookIdChanging(global::System.Int32 value);
+        partial void OnBookIdChanged();
 
         #endregion
 
@@ -2464,16 +2464,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_books1", "book")]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_StudentBookLoan_Book", "book")]
         public Book book
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_StudentBookLoan_Book", "book").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_StudentBookLoan_Book", "book").Value = value;
             }
         }
         /// <summary>
@@ -2485,13 +2485,13 @@ namespace LibraryManagementSystemDAL.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_StudentBookLoan_Book", "book");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Book>("LMSDataModel.fk_StudentBookLoan_Book", "book", value);
                 }
             }
         }
@@ -2502,16 +2502,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_students1", "student")]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_student", "student")]
         public Student student
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_student", "student").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_student", "student").Value = value;
             }
         }
         /// <summary>
@@ -2523,13 +2523,13 @@ namespace LibraryManagementSystemDAL.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_student", "student");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Student>("LMSDataModel.fk_student_book_loan_student", "student", value);
                 }
             }
         }
@@ -2540,16 +2540,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "systemuser")]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_user", "systemuser")]
         public SystemUser systemuser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_user", "systemuser").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_user", "systemuser").Value = value;
             }
         }
         /// <summary>
@@ -2561,13 +2561,13 @@ namespace LibraryManagementSystemDAL.Data
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_user", "systemuser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_user", "systemuser", value);
                 }
             }
         }
@@ -2923,18 +2923,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "studentbookloan")]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_user", "studentbookloan")]
         public EntityCollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_system_users1", "studentbookloan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_system_user", "studentbookloan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_system_users1", "studentbookloan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_system_user", "studentbookloan", value);
                 }
             }
         }

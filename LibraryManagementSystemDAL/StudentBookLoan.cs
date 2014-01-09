@@ -60,23 +60,6 @@ namespace LibraryManagementSystemDAL
         }
         private int _issuerID;
     
-        public virtual int BookID
-        {
-            get { return _bookID; }
-            set
-            {
-                if (_bookID != value)
-                {
-                    if (book != null && book.Id != value)
-                    {
-                        book = null;
-                    }
-                    _bookID = value;
-                }
-            }
-        }
-        private int _bookID;
-    
         public virtual int StudentID
         {
             get { return _studentID; }
@@ -93,6 +76,23 @@ namespace LibraryManagementSystemDAL
             }
         }
         private int _studentID;
+    
+        public virtual int BookId
+        {
+            get { return _bookId; }
+            set
+            {
+                if (_bookId != value)
+                {
+                    if (book != null && book.Id != value)
+                    {
+                        book = null;
+                    }
+                    _bookId = value;
+                }
+            }
+        }
+        private int _bookId;
 
         #endregion
         #region Navigation Properties
@@ -158,9 +158,9 @@ namespace LibraryManagementSystemDAL
                 {
                     book.studentbookloans.Add(this);
                 }
-                if (BookID != book.Id)
+                if (BookId != book.Id)
                 {
-                    BookID = book.Id;
+                    BookId = book.Id;
                 }
             }
         }
