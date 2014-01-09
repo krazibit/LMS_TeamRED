@@ -52,7 +52,6 @@
     <Compile Include="BookAuthor.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
     <Compile Include="Data\LMSDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
