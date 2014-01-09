@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class student_book_loan
+    public partial class StudentBookLoan
     {
         #region Primitive Properties
     
@@ -25,79 +25,79 @@ namespace LibraryManagementSystemDAL
             set;
         }
     
-        public virtual System.DateTime issue_date
+        public virtual System.DateTime IssueDate
         {
             get;
             set;
         }
     
-        public virtual System.DateTime due_date
+        public virtual System.DateTime DueDate
         {
             get;
             set;
         }
     
-        public virtual System.DateTime return_date
+        public virtual System.DateTime ReturnDate
         {
             get;
             set;
         }
     
-        public virtual int issuer
+        public virtual int IssuerID
         {
-            get { return _issuer; }
+            get { return _issuerID; }
             set
             {
-                if (_issuer != value)
+                if (_issuerID != value)
                 {
-                    if (system_users != null && system_users.id != value)
+                    if (systemuser != null && systemuser.Id != value)
                     {
-                        system_users = null;
+                        systemuser = null;
                     }
-                    _issuer = value;
+                    _issuerID = value;
                 }
             }
         }
-        private int _issuer;
+        private int _issuerID;
     
-        public virtual int books_id
+        public virtual int BookID
         {
-            get { return _books_id; }
+            get { return _bookID; }
             set
             {
-                if (_books_id != value)
+                if (_bookID != value)
                 {
-                    if (book != null && book.id != value)
+                    if (book != null && book.Id != value)
                     {
                         book = null;
                     }
-                    _books_id = value;
+                    _bookID = value;
                 }
             }
         }
-        private int _books_id;
+        private int _bookID;
     
-        public virtual int students_reg_no
+        public virtual int StudentID
         {
-            get { return _students_reg_no; }
+            get { return _studentID; }
             set
             {
-                if (_students_reg_no != value)
+                if (_studentID != value)
                 {
-                    if (student != null && student.reg_no != value)
+                    if (student != null && student.Id != value)
                     {
                         student = null;
                     }
-                    _students_reg_no = value;
+                    _studentID = value;
                 }
             }
         }
-        private int _students_reg_no;
+        private int _studentID;
 
         #endregion
         #region Navigation Properties
     
-        public virtual book book
+        public virtual Book book
         {
             get { return _book; }
             set
@@ -110,9 +110,9 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private book _book;
+        private Book _book;
     
-        public virtual student student
+        public virtual Student student
         {
             get { return _student; }
             set
@@ -125,82 +125,82 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private student _student;
+        private Student _student;
     
-        public virtual system_users system_users
+        public virtual SystemUser systemuser
         {
-            get { return _system_users; }
+            get { return _systemuser; }
             set
             {
-                if (!ReferenceEquals(_system_users, value))
+                if (!ReferenceEquals(_systemuser, value))
                 {
-                    var previousValue = _system_users;
-                    _system_users = value;
-                    Fixupsystem_users(previousValue);
+                    var previousValue = _systemuser;
+                    _systemuser = value;
+                    Fixupsystemuser(previousValue);
                 }
             }
         }
-        private system_users _system_users;
+        private SystemUser _systemuser;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupbook(book previousValue)
+        private void Fixupbook(Book previousValue)
         {
-            if (previousValue != null && previousValue.student_book_loan.Contains(this))
+            if (previousValue != null && previousValue.studentbookloans.Contains(this))
             {
-                previousValue.student_book_loan.Remove(this);
+                previousValue.studentbookloans.Remove(this);
             }
     
             if (book != null)
             {
-                if (!book.student_book_loan.Contains(this))
+                if (!book.studentbookloans.Contains(this))
                 {
-                    book.student_book_loan.Add(this);
+                    book.studentbookloans.Add(this);
                 }
-                if (books_id != book.id)
+                if (BookID != book.Id)
                 {
-                    books_id = book.id;
+                    BookID = book.Id;
                 }
             }
         }
     
-        private void Fixupstudent(student previousValue)
+        private void Fixupstudent(Student previousValue)
         {
-            if (previousValue != null && previousValue.student_book_loan.Contains(this))
+            if (previousValue != null && previousValue.studentbookloans.Contains(this))
             {
-                previousValue.student_book_loan.Remove(this);
+                previousValue.studentbookloans.Remove(this);
             }
     
             if (student != null)
             {
-                if (!student.student_book_loan.Contains(this))
+                if (!student.studentbookloans.Contains(this))
                 {
-                    student.student_book_loan.Add(this);
+                    student.studentbookloans.Add(this);
                 }
-                if (students_reg_no != student.reg_no)
+                if (StudentID != student.Id)
                 {
-                    students_reg_no = student.reg_no;
+                    StudentID = student.Id;
                 }
             }
         }
     
-        private void Fixupsystem_users(system_users previousValue)
+        private void Fixupsystemuser(SystemUser previousValue)
         {
-            if (previousValue != null && previousValue.student_book_loan.Contains(this))
+            if (previousValue != null && previousValue.studentbookloans.Contains(this))
             {
-                previousValue.student_book_loan.Remove(this);
+                previousValue.studentbookloans.Remove(this);
             }
     
-            if (system_users != null)
+            if (systemuser != null)
             {
-                if (!system_users.student_book_loan.Contains(this))
+                if (!systemuser.studentbookloans.Contains(this))
                 {
-                    system_users.student_book_loan.Add(this);
+                    systemuser.studentbookloans.Add(this);
                 }
-                if (issuer != system_users.id)
+                if (IssuerID != systemuser.Id)
                 {
-                    issuer = system_users.id;
+                    IssuerID = systemuser.Id;
                 }
             }
         }

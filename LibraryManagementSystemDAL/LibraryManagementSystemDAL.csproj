@@ -43,17 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="author.cs">
+    <Compile Include="Author.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="book.cs">
+    <Compile Include="Book.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="book_author.cs">
+    <Compile Include="BookAuthor.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="department.cs">
+    <Compile Include="Data\LMSDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LMSDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LMSDataModel.Context.cs">
@@ -66,33 +71,36 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\LMSDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LMSDataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="publisher.cs">
+    <Compile Include="Publisher.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sex.cs">
+    <Compile Include="Session.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="student.cs">
+    <Compile Include="Sex.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="student_book_loan.cs">
+    <Compile Include="Student.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="system_users.cs">
+    <Compile Include="StudentBookLoan.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="user_role.cs">
+    <Compile Include="SystemUser.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserRole.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Data\LMSDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LMSDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="App.Config" />
+    <None Include="Data\lms_database_model.mwb" />
     <None Include="LMSDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LMSDataModel.Context.cs</LastGenOutput>
@@ -101,14 +109,11 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>LMSDataModel.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="Data\LMSDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LMSDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -15,35 +15,35 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class author
+    public partial class Author
     {
         #region Primitive Properties
     
-        public virtual int id
+        public virtual int Id
         {
             get;
             set;
         }
     
-        public virtual string salutation
+        public virtual string Salutation
         {
             get;
             set;
         }
     
-        public virtual string first_name
+        public virtual string FirstName
         {
             get;
             set;
         }
     
-        public virtual string last_name
+        public virtual string LastName
         {
             get;
             set;
         }
     
-        public virtual string middle_name
+        public virtual string MiddleName
         {
             get;
             set;
@@ -52,46 +52,46 @@ namespace LibraryManagementSystemDAL
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<book_author> book_author
+        public virtual ICollection<BookAuthor> bookauthors
         {
             get
             {
-                if (_book_author == null)
+                if (_bookauthors == null)
                 {
-                    var newCollection = new FixupCollection<book_author>();
-                    newCollection.CollectionChanged += Fixupbook_author;
-                    _book_author = newCollection;
+                    var newCollection = new FixupCollection<BookAuthor>();
+                    newCollection.CollectionChanged += Fixupbookauthors;
+                    _bookauthors = newCollection;
                 }
-                return _book_author;
+                return _bookauthors;
             }
             set
             {
-                if (!ReferenceEquals(_book_author, value))
+                if (!ReferenceEquals(_bookauthors, value))
                 {
-                    var previousValue = _book_author as FixupCollection<book_author>;
+                    var previousValue = _bookauthors as FixupCollection<BookAuthor>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= Fixupbook_author;
+                        previousValue.CollectionChanged -= Fixupbookauthors;
                     }
-                    _book_author = value;
-                    var newValue = value as FixupCollection<book_author>;
+                    _bookauthors = value;
+                    var newValue = value as FixupCollection<BookAuthor>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += Fixupbook_author;
+                        newValue.CollectionChanged += Fixupbookauthors;
                     }
                 }
             }
         }
-        private ICollection<book_author> _book_author;
+        private ICollection<BookAuthor> _bookauthors;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupbook_author(object sender, NotifyCollectionChangedEventArgs e)
+        private void Fixupbookauthors(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
-                foreach (book_author item in e.NewItems)
+                foreach (BookAuthor item in e.NewItems)
                 {
                     item.author = this;
                 }
@@ -99,7 +99,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (book_author item in e.OldItems)
+                foreach (BookAuthor item in e.OldItems)
                 {
                     if (ReferenceEquals(item.author, this))
                     {

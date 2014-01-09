@@ -15,133 +15,133 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class book
+    public partial class Book
     {
         #region Primitive Properties
     
-        public virtual int id
+        public virtual int Id
         {
             get;
             set;
         }
     
-        public virtual string isbn
+        public virtual string Isbn
         {
             get;
             set;
         }
     
-        public virtual string title
+        public virtual string Title
         {
             get;
             set;
         }
     
-        public virtual System.DateTime publication_year
+        public virtual System.DateTime PublicationYear
         {
             get;
             set;
         }
     
-        public virtual System.DateTime insertion_date
+        public virtual System.DateTime InsertionDate
         {
             get;
             set;
         }
     
-        public virtual bool available
+        public virtual bool Available
         {
             get;
             set;
         }
     
-        public virtual int publisher_id
+        public virtual int PublisherID
         {
-            get { return _publisher_id; }
+            get { return _publisherID; }
             set
             {
-                if (_publisher_id != value)
+                if (_publisherID != value)
                 {
-                    if (publisher != null && publisher.id != value)
+                    if (publisher != null && publisher.Id != value)
                     {
                         publisher = null;
                     }
-                    _publisher_id = value;
+                    _publisherID = value;
                 }
             }
         }
-        private int _publisher_id;
+        private int _publisherID;
     
-        public virtual int department_id
+        public virtual int DepartmentID
         {
-            get { return _department_id; }
+            get { return _departmentID; }
             set
             {
-                if (_department_id != value)
+                if (_departmentID != value)
                 {
-                    if (department != null && department.id != value)
+                    if (department != null && department.Id != value)
                     {
                         department = null;
                     }
-                    _department_id = value;
+                    _departmentID = value;
                 }
             }
         }
-        private int _department_id;
+        private int _departmentID;
     
-        public virtual int added_by
+        public virtual int AddedBy
         {
-            get { return _added_by; }
+            get { return _addedBy; }
             set
             {
-                if (_added_by != value)
+                if (_addedBy != value)
                 {
-                    if (system_users != null && system_users.id != value)
+                    if (systemuser != null && systemuser.Id != value)
                     {
-                        system_users = null;
+                        systemuser = null;
                     }
-                    _added_by = value;
+                    _addedBy = value;
                 }
             }
         }
-        private int _added_by;
+        private int _addedBy;
 
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<book_author> book_author
+        public virtual ICollection<BookAuthor> bookauthors
         {
             get
             {
-                if (_book_author == null)
+                if (_bookauthors == null)
                 {
-                    var newCollection = new FixupCollection<book_author>();
-                    newCollection.CollectionChanged += Fixupbook_author;
-                    _book_author = newCollection;
+                    var newCollection = new FixupCollection<BookAuthor>();
+                    newCollection.CollectionChanged += Fixupbookauthors;
+                    _bookauthors = newCollection;
                 }
-                return _book_author;
+                return _bookauthors;
             }
             set
             {
-                if (!ReferenceEquals(_book_author, value))
+                if (!ReferenceEquals(_bookauthors, value))
                 {
-                    var previousValue = _book_author as FixupCollection<book_author>;
+                    var previousValue = _bookauthors as FixupCollection<BookAuthor>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= Fixupbook_author;
+                        previousValue.CollectionChanged -= Fixupbookauthors;
                     }
-                    _book_author = value;
-                    var newValue = value as FixupCollection<book_author>;
+                    _bookauthors = value;
+                    var newValue = value as FixupCollection<BookAuthor>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += Fixupbook_author;
+                        newValue.CollectionChanged += Fixupbookauthors;
                     }
                 }
             }
         }
-        private ICollection<book_author> _book_author;
+        private ICollection<BookAuthor> _bookauthors;
     
-        public virtual department department
+        public virtual Department department
         {
             get { return _department; }
             set
@@ -154,9 +154,9 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private department _department;
+        private Department _department;
     
-        public virtual publisher publisher
+        public virtual Publisher publisher
         {
             get { return _publisher; }
             set
@@ -169,59 +169,59 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private publisher _publisher;
+        private Publisher _publisher;
     
-        public virtual system_users system_users
+        public virtual SystemUser systemuser
         {
-            get { return _system_users; }
+            get { return _systemuser; }
             set
             {
-                if (!ReferenceEquals(_system_users, value))
+                if (!ReferenceEquals(_systemuser, value))
                 {
-                    var previousValue = _system_users;
-                    _system_users = value;
-                    Fixupsystem_users(previousValue);
+                    var previousValue = _systemuser;
+                    _systemuser = value;
+                    Fixupsystemuser(previousValue);
                 }
             }
         }
-        private system_users _system_users;
+        private SystemUser _systemuser;
     
-        public virtual ICollection<student_book_loan> student_book_loan
+        public virtual ICollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                if (_student_book_loan == null)
+                if (_studentbookloans == null)
                 {
-                    var newCollection = new FixupCollection<student_book_loan>();
-                    newCollection.CollectionChanged += Fixupstudent_book_loan;
-                    _student_book_loan = newCollection;
+                    var newCollection = new FixupCollection<StudentBookLoan>();
+                    newCollection.CollectionChanged += Fixupstudentbookloans;
+                    _studentbookloans = newCollection;
                 }
-                return _student_book_loan;
+                return _studentbookloans;
             }
             set
             {
-                if (!ReferenceEquals(_student_book_loan, value))
+                if (!ReferenceEquals(_studentbookloans, value))
                 {
-                    var previousValue = _student_book_loan as FixupCollection<student_book_loan>;
+                    var previousValue = _studentbookloans as FixupCollection<StudentBookLoan>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= Fixupstudent_book_loan;
+                        previousValue.CollectionChanged -= Fixupstudentbookloans;
                     }
-                    _student_book_loan = value;
-                    var newValue = value as FixupCollection<student_book_loan>;
+                    _studentbookloans = value;
+                    var newValue = value as FixupCollection<StudentBookLoan>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += Fixupstudent_book_loan;
+                        newValue.CollectionChanged += Fixupstudentbookloans;
                     }
                 }
             }
         }
-        private ICollection<student_book_loan> _student_book_loan;
+        private ICollection<StudentBookLoan> _studentbookloans;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupdepartment(department previousValue)
+        private void Fixupdepartment(Department previousValue)
         {
             if (previousValue != null && previousValue.books.Contains(this))
             {
@@ -234,14 +234,14 @@ namespace LibraryManagementSystemDAL
                 {
                     department.books.Add(this);
                 }
-                if (department_id != department.id)
+                if (DepartmentID != department.Id)
                 {
-                    department_id = department.id;
+                    DepartmentID = department.Id;
                 }
             }
         }
     
-        private void Fixuppublisher(publisher previousValue)
+        private void Fixuppublisher(Publisher previousValue)
         {
             if (previousValue != null && previousValue.books.Contains(this))
             {
@@ -254,38 +254,38 @@ namespace LibraryManagementSystemDAL
                 {
                     publisher.books.Add(this);
                 }
-                if (publisher_id != publisher.id)
+                if (PublisherID != publisher.Id)
                 {
-                    publisher_id = publisher.id;
+                    PublisherID = publisher.Id;
                 }
             }
         }
     
-        private void Fixupsystem_users(system_users previousValue)
+        private void Fixupsystemuser(SystemUser previousValue)
         {
             if (previousValue != null && previousValue.books.Contains(this))
             {
                 previousValue.books.Remove(this);
             }
     
-            if (system_users != null)
+            if (systemuser != null)
             {
-                if (!system_users.books.Contains(this))
+                if (!systemuser.books.Contains(this))
                 {
-                    system_users.books.Add(this);
+                    systemuser.books.Add(this);
                 }
-                if (added_by != system_users.id)
+                if (AddedBy != systemuser.Id)
                 {
-                    added_by = system_users.id;
+                    AddedBy = systemuser.Id;
                 }
             }
         }
     
-        private void Fixupbook_author(object sender, NotifyCollectionChangedEventArgs e)
+        private void Fixupbookauthors(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
-                foreach (book_author item in e.NewItems)
+                foreach (BookAuthor item in e.NewItems)
                 {
                     item.book = this;
                 }
@@ -293,7 +293,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (book_author item in e.OldItems)
+                foreach (BookAuthor item in e.OldItems)
                 {
                     if (ReferenceEquals(item.book, this))
                     {
@@ -303,11 +303,11 @@ namespace LibraryManagementSystemDAL
             }
         }
     
-        private void Fixupstudent_book_loan(object sender, NotifyCollectionChangedEventArgs e)
+        private void Fixupstudentbookloans(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
-                foreach (student_book_loan item in e.NewItems)
+                foreach (StudentBookLoan item in e.NewItems)
                 {
                     item.book = this;
                 }
@@ -315,7 +315,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (student_book_loan item in e.OldItems)
+                foreach (StudentBookLoan item in e.OldItems)
                 {
                     if (ReferenceEquals(item.book, this))
                     {

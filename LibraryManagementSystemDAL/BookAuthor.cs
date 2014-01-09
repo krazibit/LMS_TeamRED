@@ -15,54 +15,54 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class book_author
+    public partial class BookAuthor
     {
         #region Primitive Properties
     
-        public virtual int id
+        public virtual int Id
         {
             get;
             set;
         }
     
-        public virtual int authors_id
+        public virtual int AuthorId
         {
-            get { return _authors_id; }
+            get { return _authorId; }
             set
             {
-                if (_authors_id != value)
+                if (_authorId != value)
                 {
-                    if (author != null && author.id != value)
+                    if (author != null && author.Id != value)
                     {
                         author = null;
                     }
-                    _authors_id = value;
+                    _authorId = value;
                 }
             }
         }
-        private int _authors_id;
+        private int _authorId;
     
-        public virtual int books_id
+        public virtual int BookId
         {
-            get { return _books_id; }
+            get { return _bookId; }
             set
             {
-                if (_books_id != value)
+                if (_bookId != value)
                 {
-                    if (book != null && book.id != value)
+                    if (book != null && book.Id != value)
                     {
                         book = null;
                     }
-                    _books_id = value;
+                    _bookId = value;
                 }
             }
         }
-        private int _books_id;
+        private int _bookId;
 
         #endregion
         #region Navigation Properties
     
-        public virtual author author
+        public virtual Author author
         {
             get { return _author; }
             set
@@ -75,9 +75,9 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private author _author;
+        private Author _author;
     
-        public virtual book book
+        public virtual Book book
         {
             get { return _book; }
             set
@@ -90,47 +90,47 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private book _book;
+        private Book _book;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupauthor(author previousValue)
+        private void Fixupauthor(Author previousValue)
         {
-            if (previousValue != null && previousValue.book_author.Contains(this))
+            if (previousValue != null && previousValue.bookauthors.Contains(this))
             {
-                previousValue.book_author.Remove(this);
+                previousValue.bookauthors.Remove(this);
             }
     
             if (author != null)
             {
-                if (!author.book_author.Contains(this))
+                if (!author.bookauthors.Contains(this))
                 {
-                    author.book_author.Add(this);
+                    author.bookauthors.Add(this);
                 }
-                if (authors_id != author.id)
+                if (AuthorId != author.Id)
                 {
-                    authors_id = author.id;
+                    AuthorId = author.Id;
                 }
             }
         }
     
-        private void Fixupbook(book previousValue)
+        private void Fixupbook(Book previousValue)
         {
-            if (previousValue != null && previousValue.book_author.Contains(this))
+            if (previousValue != null && previousValue.bookauthors.Contains(this))
             {
-                previousValue.book_author.Remove(this);
+                previousValue.bookauthors.Remove(this);
             }
     
             if (book != null)
             {
-                if (!book.book_author.Contains(this))
+                if (!book.bookauthors.Contains(this))
                 {
-                    book.book_author.Add(this);
+                    book.bookauthors.Add(this);
                 }
-                if (books_id != book.id)
+                if (BookId != book.Id)
                 {
-                    books_id = book.id;
+                    BookId = book.Id;
                 }
             }
         }

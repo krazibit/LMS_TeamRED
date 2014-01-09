@@ -15,17 +15,17 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class user_role
+    public partial class UserRole
     {
         #region Primitive Properties
     
-        public virtual int id
+        public virtual int Id
         {
             get;
             set;
         }
     
-        public virtual string description
+        public virtual string Description
         {
             get;
             set;
@@ -34,58 +34,58 @@ namespace LibraryManagementSystemDAL
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<system_users> system_users
+        public virtual ICollection<SystemUser> systemusers
         {
             get
             {
-                if (_system_users == null)
+                if (_systemusers == null)
                 {
-                    var newCollection = new FixupCollection<system_users>();
-                    newCollection.CollectionChanged += Fixupsystem_users;
-                    _system_users = newCollection;
+                    var newCollection = new FixupCollection<SystemUser>();
+                    newCollection.CollectionChanged += Fixupsystemusers;
+                    _systemusers = newCollection;
                 }
-                return _system_users;
+                return _systemusers;
             }
             set
             {
-                if (!ReferenceEquals(_system_users, value))
+                if (!ReferenceEquals(_systemusers, value))
                 {
-                    var previousValue = _system_users as FixupCollection<system_users>;
+                    var previousValue = _systemusers as FixupCollection<SystemUser>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= Fixupsystem_users;
+                        previousValue.CollectionChanged -= Fixupsystemusers;
                     }
-                    _system_users = value;
-                    var newValue = value as FixupCollection<system_users>;
+                    _systemusers = value;
+                    var newValue = value as FixupCollection<SystemUser>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += Fixupsystem_users;
+                        newValue.CollectionChanged += Fixupsystemusers;
                     }
                 }
             }
         }
-        private ICollection<system_users> _system_users;
+        private ICollection<SystemUser> _systemusers;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupsystem_users(object sender, NotifyCollectionChangedEventArgs e)
+        private void Fixupsystemusers(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
-                foreach (system_users item in e.NewItems)
+                foreach (SystemUser item in e.NewItems)
                 {
-                    item.user_role = this;
+                    item.userrole = this;
                 }
             }
     
             if (e.OldItems != null)
             {
-                foreach (system_users item in e.OldItems)
+                foreach (SystemUser item in e.OldItems)
                 {
-                    if (ReferenceEquals(item.user_role, this))
+                    if (ReferenceEquals(item.userrole, this))
                     {
-                        item.user_role = null;
+                        item.userrole = null;
                     }
                 }
             }

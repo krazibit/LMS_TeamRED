@@ -15,17 +15,17 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class department
+    public partial class Department
     {
         #region Primitive Properties
     
-        public virtual int id
+        public virtual int Id
         {
             get;
             set;
         }
     
-        public virtual string name
+        public virtual string Name
         {
             get;
             set;
@@ -34,13 +34,13 @@ namespace LibraryManagementSystemDAL
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<book> books
+        public virtual ICollection<Book> books
         {
             get
             {
                 if (_books == null)
                 {
-                    var newCollection = new FixupCollection<book>();
+                    var newCollection = new FixupCollection<Book>();
                     newCollection.CollectionChanged += Fixupbooks;
                     _books = newCollection;
                 }
@@ -50,13 +50,13 @@ namespace LibraryManagementSystemDAL
             {
                 if (!ReferenceEquals(_books, value))
                 {
-                    var previousValue = _books as FixupCollection<book>;
+                    var previousValue = _books as FixupCollection<Book>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupbooks;
                     }
                     _books = value;
-                    var newValue = value as FixupCollection<book>;
+                    var newValue = value as FixupCollection<Book>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupbooks;
@@ -64,15 +64,15 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private ICollection<book> _books;
+        private ICollection<Book> _books;
     
-        public virtual ICollection<student> students
+        public virtual ICollection<Student> students
         {
             get
             {
                 if (_students == null)
                 {
-                    var newCollection = new FixupCollection<student>();
+                    var newCollection = new FixupCollection<Student>();
                     newCollection.CollectionChanged += Fixupstudents;
                     _students = newCollection;
                 }
@@ -82,13 +82,13 @@ namespace LibraryManagementSystemDAL
             {
                 if (!ReferenceEquals(_students, value))
                 {
-                    var previousValue = _students as FixupCollection<student>;
+                    var previousValue = _students as FixupCollection<Student>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupstudents;
                     }
                     _students = value;
-                    var newValue = value as FixupCollection<student>;
+                    var newValue = value as FixupCollection<Student>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupstudents;
@@ -96,7 +96,7 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private ICollection<student> _students;
+        private ICollection<Student> _students;
 
         #endregion
         #region Association Fixup
@@ -105,7 +105,7 @@ namespace LibraryManagementSystemDAL
         {
             if (e.NewItems != null)
             {
-                foreach (book item in e.NewItems)
+                foreach (Book item in e.NewItems)
                 {
                     item.department = this;
                 }
@@ -113,7 +113,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (book item in e.OldItems)
+                foreach (Book item in e.OldItems)
                 {
                     if (ReferenceEquals(item.department, this))
                     {
@@ -127,7 +127,7 @@ namespace LibraryManagementSystemDAL
         {
             if (e.NewItems != null)
             {
-                foreach (student item in e.NewItems)
+                foreach (Student item in e.NewItems)
                 {
                     item.department = this;
                 }
@@ -135,7 +135,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (student item in e.OldItems)
+                foreach (Student item in e.OldItems)
                 {
                     if (ReferenceEquals(item.department, this))
                     {

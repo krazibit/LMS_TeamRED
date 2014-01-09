@@ -15,17 +15,17 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class sex
+    public partial class Sex
     {
         #region Primitive Properties
     
-        public virtual int id
+        public virtual int Id
         {
             get;
             set;
         }
     
-        public virtual string description
+        public virtual string Description
         {
             get;
             set;
@@ -34,13 +34,13 @@ namespace LibraryManagementSystemDAL
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<student> students
+        public virtual ICollection<Student> students
         {
             get
             {
                 if (_students == null)
                 {
-                    var newCollection = new FixupCollection<student>();
+                    var newCollection = new FixupCollection<Student>();
                     newCollection.CollectionChanged += Fixupstudents;
                     _students = newCollection;
                 }
@@ -50,13 +50,13 @@ namespace LibraryManagementSystemDAL
             {
                 if (!ReferenceEquals(_students, value))
                 {
-                    var previousValue = _students as FixupCollection<student>;
+                    var previousValue = _students as FixupCollection<Student>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupstudents;
                     }
                     _students = value;
-                    var newValue = value as FixupCollection<student>;
+                    var newValue = value as FixupCollection<Student>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupstudents;
@@ -64,39 +64,39 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private ICollection<student> _students;
+        private ICollection<Student> _students;
     
-        public virtual ICollection<system_users> system_users
+        public virtual ICollection<SystemUser> systemusers
         {
             get
             {
-                if (_system_users == null)
+                if (_systemusers == null)
                 {
-                    var newCollection = new FixupCollection<system_users>();
-                    newCollection.CollectionChanged += Fixupsystem_users;
-                    _system_users = newCollection;
+                    var newCollection = new FixupCollection<SystemUser>();
+                    newCollection.CollectionChanged += Fixupsystemusers;
+                    _systemusers = newCollection;
                 }
-                return _system_users;
+                return _systemusers;
             }
             set
             {
-                if (!ReferenceEquals(_system_users, value))
+                if (!ReferenceEquals(_systemusers, value))
                 {
-                    var previousValue = _system_users as FixupCollection<system_users>;
+                    var previousValue = _systemusers as FixupCollection<SystemUser>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= Fixupsystem_users;
+                        previousValue.CollectionChanged -= Fixupsystemusers;
                     }
-                    _system_users = value;
-                    var newValue = value as FixupCollection<system_users>;
+                    _systemusers = value;
+                    var newValue = value as FixupCollection<SystemUser>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += Fixupsystem_users;
+                        newValue.CollectionChanged += Fixupsystemusers;
                     }
                 }
             }
         }
-        private ICollection<system_users> _system_users;
+        private ICollection<SystemUser> _systemusers;
 
         #endregion
         #region Association Fixup
@@ -105,7 +105,7 @@ namespace LibraryManagementSystemDAL
         {
             if (e.NewItems != null)
             {
-                foreach (student item in e.NewItems)
+                foreach (Student item in e.NewItems)
                 {
                     item.sex = this;
                 }
@@ -113,7 +113,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (student item in e.OldItems)
+                foreach (Student item in e.OldItems)
                 {
                     if (ReferenceEquals(item.sex, this))
                     {
@@ -123,11 +123,11 @@ namespace LibraryManagementSystemDAL
             }
         }
     
-        private void Fixupsystem_users(object sender, NotifyCollectionChangedEventArgs e)
+        private void Fixupsystemusers(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
-                foreach (system_users item in e.NewItems)
+                foreach (SystemUser item in e.NewItems)
                 {
                     item.sex = this;
                 }
@@ -135,7 +135,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (system_users item in e.OldItems)
+                foreach (SystemUser item in e.OldItems)
                 {
                     if (ReferenceEquals(item.sex, this))
                     {

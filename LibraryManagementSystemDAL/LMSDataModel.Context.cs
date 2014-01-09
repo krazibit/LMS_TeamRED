@@ -45,65 +45,71 @@ namespace LibraryManagementSystemDAL
     
         #region ObjectSet Properties
     
-        public ObjectSet<author> authors
+        public ObjectSet<Author> Authors
         {
-            get { return _authors  ?? (_authors = CreateObjectSet<author>("authors")); }
+            get { return _authors  ?? (_authors = CreateObjectSet<Author>("Authors")); }
         }
-        private ObjectSet<author> _authors;
+        private ObjectSet<Author> _authors;
     
-        public ObjectSet<book_author> book_author
+        public ObjectSet<Book> Books
         {
-            get { return _book_author  ?? (_book_author = CreateObjectSet<book_author>("book_author")); }
+            get { return _books  ?? (_books = CreateObjectSet<Book>("Books")); }
         }
-        private ObjectSet<book_author> _book_author;
+        private ObjectSet<Book> _books;
     
-        public ObjectSet<book> books
+        public ObjectSet<BookAuthor> BookAuthors
         {
-            get { return _books  ?? (_books = CreateObjectSet<book>("books")); }
+            get { return _bookAuthors  ?? (_bookAuthors = CreateObjectSet<BookAuthor>("BookAuthors")); }
         }
-        private ObjectSet<book> _books;
+        private ObjectSet<BookAuthor> _bookAuthors;
     
-        public ObjectSet<department> departments
+        public ObjectSet<Department> Departments
         {
-            get { return _departments  ?? (_departments = CreateObjectSet<department>("departments")); }
+            get { return _departments  ?? (_departments = CreateObjectSet<Department>("Departments")); }
         }
-        private ObjectSet<department> _departments;
+        private ObjectSet<Department> _departments;
     
-        public ObjectSet<publisher> publishers
+        public ObjectSet<Publisher> Publishers
         {
-            get { return _publishers  ?? (_publishers = CreateObjectSet<publisher>("publishers")); }
+            get { return _publishers  ?? (_publishers = CreateObjectSet<Publisher>("Publishers")); }
         }
-        private ObjectSet<publisher> _publishers;
+        private ObjectSet<Publisher> _publishers;
     
-        public ObjectSet<sex> sexes
+        public ObjectSet<Session> Sessions
         {
-            get { return _sexes  ?? (_sexes = CreateObjectSet<sex>("sexes")); }
+            get { return _sessions  ?? (_sessions = CreateObjectSet<Session>("Sessions")); }
         }
-        private ObjectSet<sex> _sexes;
+        private ObjectSet<Session> _sessions;
     
-        public ObjectSet<student_book_loan> student_book_loan
+        public ObjectSet<Sex> Sexes
         {
-            get { return _student_book_loan  ?? (_student_book_loan = CreateObjectSet<student_book_loan>("student_book_loan")); }
+            get { return _sexes  ?? (_sexes = CreateObjectSet<Sex>("Sexes")); }
         }
-        private ObjectSet<student_book_loan> _student_book_loan;
+        private ObjectSet<Sex> _sexes;
     
-        public ObjectSet<student> students
+        public ObjectSet<Student> Students
         {
-            get { return _students  ?? (_students = CreateObjectSet<student>("students")); }
+            get { return _students  ?? (_students = CreateObjectSet<Student>("Students")); }
         }
-        private ObjectSet<student> _students;
+        private ObjectSet<Student> _students;
     
-        public ObjectSet<system_users> system_users
+        public ObjectSet<StudentBookLoan> StudentBookLoans
         {
-            get { return _system_users  ?? (_system_users = CreateObjectSet<system_users>("system_users")); }
+            get { return _studentBookLoans  ?? (_studentBookLoans = CreateObjectSet<StudentBookLoan>("StudentBookLoans")); }
         }
-        private ObjectSet<system_users> _system_users;
+        private ObjectSet<StudentBookLoan> _studentBookLoans;
     
-        public ObjectSet<user_role> user_role
+        public ObjectSet<SystemUser> SystemUsers
         {
-            get { return _user_role  ?? (_user_role = CreateObjectSet<user_role>("user_role")); }
+            get { return _systemUsers  ?? (_systemUsers = CreateObjectSet<SystemUser>("SystemUsers")); }
         }
-        private ObjectSet<user_role> _user_role;
+        private ObjectSet<SystemUser> _systemUsers;
+    
+        public ObjectSet<UserRole> UserRoles
+        {
+            get { return _userRoles  ?? (_userRoles = CreateObjectSet<UserRole>("UserRoles")); }
+        }
+        private ObjectSet<UserRole> _userRoles;
 
         #endregion
     }

@@ -15,102 +15,108 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL
 {
-    public partial class student
+    public partial class Student
     {
         #region Primitive Properties
     
-        public virtual int reg_no
+        public virtual string RegistrationID
         {
             get;
             set;
         }
     
-        public virtual string first_name
+        public virtual string FirstName
         {
             get;
             set;
         }
     
-        public virtual string last_name
+        public virtual string LastName
         {
             get;
             set;
         }
     
-        public virtual string email
+        public virtual string Email
         {
             get;
             set;
         }
     
-        public virtual string telephone
+        public virtual string Telephone
         {
             get;
             set;
         }
     
-        public virtual string address
+        public virtual string Address
         {
             get;
             set;
         }
     
-        public virtual System.DateTime date_of_birth
+        public virtual System.DateTime DateOfBirth
         {
             get;
             set;
         }
     
-        public virtual System.DateTime enrolment_date
+        public virtual System.DateTime EnrolmentDate
         {
             get;
             set;
         }
     
-        public virtual Nullable<bool> currently_registered
+        public virtual Nullable<bool> CurrentlyRegistered
         {
             get;
             set;
         }
     
-        public virtual int sex_id
+        public virtual int SexId
         {
-            get { return _sex_id; }
+            get { return _sexId; }
             set
             {
-                if (_sex_id != value)
+                if (_sexId != value)
                 {
-                    if (sex != null && sex.id != value)
+                    if (sex != null && sex.Id != value)
                     {
                         sex = null;
                     }
-                    _sex_id = value;
+                    _sexId = value;
                 }
             }
         }
-        private int _sex_id;
+        private int _sexId;
     
-        public virtual int department_id
+        public virtual int DepartmentId
         {
-            get { return _department_id; }
+            get { return _departmentId; }
             set
             {
-                if (_department_id != value)
+                if (_departmentId != value)
                 {
-                    if (department != null && department.id != value)
+                    if (department != null && department.Id != value)
                     {
                         department = null;
                     }
-                    _department_id = value;
+                    _departmentId = value;
                 }
             }
         }
-        private int _department_id;
+        private int _departmentId;
+    
+        public virtual int Id
+        {
+            get;
+            set;
+        }
 
         #endregion
         #region Navigation Properties
     
-        public virtual department department
+        public virtual Department department
         {
             get { return _department; }
             set
@@ -123,9 +129,9 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private department _department;
+        private Department _department;
     
-        public virtual sex sex
+        public virtual Sex sex
         {
             get { return _sex; }
             set
@@ -138,44 +144,44 @@ namespace LibraryManagementSystemDAL
                 }
             }
         }
-        private sex _sex;
+        private Sex _sex;
     
-        public virtual ICollection<student_book_loan> student_book_loan
+        public virtual ICollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                if (_student_book_loan == null)
+                if (_studentbookloans == null)
                 {
-                    var newCollection = new FixupCollection<student_book_loan>();
-                    newCollection.CollectionChanged += Fixupstudent_book_loan;
-                    _student_book_loan = newCollection;
+                    var newCollection = new FixupCollection<StudentBookLoan>();
+                    newCollection.CollectionChanged += Fixupstudentbookloans;
+                    _studentbookloans = newCollection;
                 }
-                return _student_book_loan;
+                return _studentbookloans;
             }
             set
             {
-                if (!ReferenceEquals(_student_book_loan, value))
+                if (!ReferenceEquals(_studentbookloans, value))
                 {
-                    var previousValue = _student_book_loan as FixupCollection<student_book_loan>;
+                    var previousValue = _studentbookloans as FixupCollection<StudentBookLoan>;
                     if (previousValue != null)
                     {
-                        previousValue.CollectionChanged -= Fixupstudent_book_loan;
+                        previousValue.CollectionChanged -= Fixupstudentbookloans;
                     }
-                    _student_book_loan = value;
-                    var newValue = value as FixupCollection<student_book_loan>;
+                    _studentbookloans = value;
+                    var newValue = value as FixupCollection<StudentBookLoan>;
                     if (newValue != null)
                     {
-                        newValue.CollectionChanged += Fixupstudent_book_loan;
+                        newValue.CollectionChanged += Fixupstudentbookloans;
                     }
                 }
             }
         }
-        private ICollection<student_book_loan> _student_book_loan;
+        private ICollection<StudentBookLoan> _studentbookloans;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupdepartment(department previousValue)
+        private void Fixupdepartment(Department previousValue)
         {
             if (previousValue != null && previousValue.students.Contains(this))
             {
@@ -188,14 +194,14 @@ namespace LibraryManagementSystemDAL
                 {
                     department.students.Add(this);
                 }
-                if (department_id != department.id)
+                if (DepartmentId != department.Id)
                 {
-                    department_id = department.id;
+                    DepartmentId = department.Id;
                 }
             }
         }
     
-        private void Fixupsex(sex previousValue)
+        private void Fixupsex(Sex previousValue)
         {
             if (previousValue != null && previousValue.students.Contains(this))
             {
@@ -208,18 +214,18 @@ namespace LibraryManagementSystemDAL
                 {
                     sex.students.Add(this);
                 }
-                if (sex_id != sex.id)
+                if (SexId != sex.Id)
                 {
-                    sex_id = sex.id;
+                    SexId = sex.Id;
                 }
             }
         }
     
-        private void Fixupstudent_book_loan(object sender, NotifyCollectionChangedEventArgs e)
+        private void Fixupstudentbookloans(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
-                foreach (student_book_loan item in e.NewItems)
+                foreach (StudentBookLoan item in e.NewItems)
                 {
                     item.student = this;
                 }
@@ -227,7 +233,7 @@ namespace LibraryManagementSystemDAL
     
             if (e.OldItems != null)
             {
-                foreach (student_book_loan item in e.OldItems)
+                foreach (StudentBookLoan item in e.OldItems)
                 {
                     if (ReferenceEquals(item.student, this))
                     {

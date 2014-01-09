@@ -19,18 +19,19 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_author1", "authors", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.author), "book_author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book_author), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_books1", "books", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.book), "book_author", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book_author), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.department), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_publisher1", "publisher", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.publisher), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_system_users1", "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.system_users), "books", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.book), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_books1", "books", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.book), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student_book_loan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.department), "students", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.sex), "students", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.sex), "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.system_users), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_students1", "students", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.student), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student_book_loan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.system_users), "student_book_loan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.student_book_loan), true)]
-[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_user_role", "user_role", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.user_role), "system_users", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.system_users), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_author1", "author", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Author), "bookauthor", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.BookAuthor), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_book_author_books1", "book", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Book), "bookauthor", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.BookAuthor), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Department), "book", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Book), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_publisher1", "publisher", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Publisher), "book", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Book), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_books_system_users1", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "book", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Book), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_books1", "book", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Book), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_department1", "department", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Department), "student", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Student), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_Session_SystemUser", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "session", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Session), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_students_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Sex), "student", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.Student), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_sex1", "sex", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Sex), "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.SystemUser), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_students1", "student", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.Student), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.SystemUser), "studentbookloan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.StudentBookLoan), true)]
+[assembly: EdmRelationshipAttribute("LMSDataModel", "fk_system_users_user_role", "userrole", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(LibraryManagementSystemDAL.Data.UserRole), "systemuser", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(LibraryManagementSystemDAL.Data.SystemUser), true)]
 
 #endregion
 
@@ -85,245 +86,269 @@ namespace LibraryManagementSystemDAL.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<author> authors
+        public ObjectSet<Author> Authors
         {
             get
             {
-                if ((_authors == null))
+                if ((_Authors == null))
                 {
-                    _authors = base.CreateObjectSet<author>("authors");
+                    _Authors = base.CreateObjectSet<Author>("Authors");
                 }
-                return _authors;
+                return _Authors;
             }
         }
-        private ObjectSet<author> _authors;
+        private ObjectSet<Author> _Authors;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<book_author> book_author
+        public ObjectSet<Book> Books
         {
             get
             {
-                if ((_book_author == null))
+                if ((_Books == null))
                 {
-                    _book_author = base.CreateObjectSet<book_author>("book_author");
+                    _Books = base.CreateObjectSet<Book>("Books");
                 }
-                return _book_author;
+                return _Books;
             }
         }
-        private ObjectSet<book_author> _book_author;
+        private ObjectSet<Book> _Books;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<book> books
+        public ObjectSet<BookAuthor> BookAuthors
         {
             get
             {
-                if ((_books == null))
+                if ((_BookAuthors == null))
                 {
-                    _books = base.CreateObjectSet<book>("books");
+                    _BookAuthors = base.CreateObjectSet<BookAuthor>("BookAuthors");
                 }
-                return _books;
+                return _BookAuthors;
             }
         }
-        private ObjectSet<book> _books;
+        private ObjectSet<BookAuthor> _BookAuthors;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<department> departments
+        public ObjectSet<Department> Departments
         {
             get
             {
-                if ((_departments == null))
+                if ((_Departments == null))
                 {
-                    _departments = base.CreateObjectSet<department>("departments");
+                    _Departments = base.CreateObjectSet<Department>("Departments");
                 }
-                return _departments;
+                return _Departments;
             }
         }
-        private ObjectSet<department> _departments;
+        private ObjectSet<Department> _Departments;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<publisher> publishers
+        public ObjectSet<Publisher> Publishers
         {
             get
             {
-                if ((_publishers == null))
+                if ((_Publishers == null))
                 {
-                    _publishers = base.CreateObjectSet<publisher>("publishers");
+                    _Publishers = base.CreateObjectSet<Publisher>("Publishers");
                 }
-                return _publishers;
+                return _Publishers;
             }
         }
-        private ObjectSet<publisher> _publishers;
+        private ObjectSet<Publisher> _Publishers;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<sex> sexes
+        public ObjectSet<Session> Sessions
         {
             get
             {
-                if ((_sexes == null))
+                if ((_Sessions == null))
                 {
-                    _sexes = base.CreateObjectSet<sex>("sexes");
+                    _Sessions = base.CreateObjectSet<Session>("Sessions");
                 }
-                return _sexes;
+                return _Sessions;
             }
         }
-        private ObjectSet<sex> _sexes;
+        private ObjectSet<Session> _Sessions;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<student_book_loan> student_book_loan
+        public ObjectSet<Sex> Sexes
         {
             get
             {
-                if ((_student_book_loan == null))
+                if ((_Sexes == null))
                 {
-                    _student_book_loan = base.CreateObjectSet<student_book_loan>("student_book_loan");
+                    _Sexes = base.CreateObjectSet<Sex>("Sexes");
                 }
-                return _student_book_loan;
+                return _Sexes;
             }
         }
-        private ObjectSet<student_book_loan> _student_book_loan;
+        private ObjectSet<Sex> _Sexes;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<student> students
+        public ObjectSet<Student> Students
         {
             get
             {
-                if ((_students == null))
+                if ((_Students == null))
                 {
-                    _students = base.CreateObjectSet<student>("students");
+                    _Students = base.CreateObjectSet<Student>("Students");
                 }
-                return _students;
+                return _Students;
             }
         }
-        private ObjectSet<student> _students;
+        private ObjectSet<Student> _Students;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<system_users> system_users
+        public ObjectSet<StudentBookLoan> StudentBookLoans
         {
             get
             {
-                if ((_system_users == null))
+                if ((_StudentBookLoans == null))
                 {
-                    _system_users = base.CreateObjectSet<system_users>("system_users");
+                    _StudentBookLoans = base.CreateObjectSet<StudentBookLoan>("StudentBookLoans");
                 }
-                return _system_users;
+                return _StudentBookLoans;
             }
         }
-        private ObjectSet<system_users> _system_users;
+        private ObjectSet<StudentBookLoan> _StudentBookLoans;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<user_role> user_role
+        public ObjectSet<SystemUser> SystemUsers
         {
             get
             {
-                if ((_user_role == null))
+                if ((_SystemUsers == null))
                 {
-                    _user_role = base.CreateObjectSet<user_role>("user_role");
+                    _SystemUsers = base.CreateObjectSet<SystemUser>("SystemUsers");
                 }
-                return _user_role;
+                return _SystemUsers;
             }
         }
-        private ObjectSet<user_role> _user_role;
+        private ObjectSet<SystemUser> _SystemUsers;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<UserRole> UserRoles
+        {
+            get
+            {
+                if ((_UserRoles == null))
+                {
+                    _UserRoles = base.CreateObjectSet<UserRole>("UserRoles");
+                }
+                return _UserRoles;
+            }
+        }
+        private ObjectSet<UserRole> _UserRoles;
 
         #endregion
 
         #region AddTo Methods
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the authors EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Authors EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddToauthors(author author)
+        public void AddToAuthors(Author author)
         {
-            base.AddObject("authors", author);
+            base.AddObject("Authors", author);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the book_author EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Books EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTobook_author(book_author book_author)
+        public void AddToBooks(Book book)
         {
-            base.AddObject("book_author", book_author);
+            base.AddObject("Books", book);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the books EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the BookAuthors EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTobooks(book book)
+        public void AddToBookAuthors(BookAuthor bookAuthor)
         {
-            base.AddObject("books", book);
+            base.AddObject("BookAuthors", bookAuthor);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the departments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Departments EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTodepartments(department department)
+        public void AddToDepartments(Department department)
         {
-            base.AddObject("departments", department);
+            base.AddObject("Departments", department);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the publishers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Publishers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTopublishers(publisher publisher)
+        public void AddToPublishers(Publisher publisher)
         {
-            base.AddObject("publishers", publisher);
+            base.AddObject("Publishers", publisher);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the sexes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Sessions EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTosexes(sex sex)
+        public void AddToSessions(Session session)
         {
-            base.AddObject("sexes", sex);
+            base.AddObject("Sessions", session);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the student_book_loan EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Sexes EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTostudent_book_loan(student_book_loan student_book_loan)
+        public void AddToSexes(Sex sex)
         {
-            base.AddObject("student_book_loan", student_book_loan);
+            base.AddObject("Sexes", sex);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the students EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Students EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTostudents(student student)
+        public void AddToStudents(Student student)
         {
-            base.AddObject("students", student);
+            base.AddObject("Students", student);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the system_users EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the StudentBookLoans EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTosystem_users(system_users system_users)
+        public void AddToStudentBookLoans(StudentBookLoan studentBookLoan)
         {
-            base.AddObject("system_users", system_users);
+            base.AddObject("StudentBookLoans", studentBookLoan);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the user_role EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the SystemUsers EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTouser_role(user_role user_role)
+        public void AddToSystemUsers(SystemUser systemUser)
         {
-            base.AddObject("user_role", user_role);
+            base.AddObject("SystemUsers", systemUser);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the UserRoles EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToUserRoles(UserRole userRole)
+        {
+            base.AddObject("UserRoles", userRole);
         }
 
         #endregion
@@ -337,25 +362,25 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="author")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Author")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class author : EntityObject
+    public partial class Author : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new author object.
+        /// Create a new Author object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="first_name">Initial value of the first_name property.</param>
-        /// <param name="last_name">Initial value of the last_name property.</param>
-        public static author Createauthor(global::System.Int32 id, global::System.String first_name, global::System.String last_name)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="firstName">Initial value of the FirstName property.</param>
+        /// <param name="lastName">Initial value of the LastName property.</param>
+        public static Author CreateAuthor(global::System.Int32 id, global::System.String firstName, global::System.String lastName)
         {
-            author author = new author();
-            author.id = id;
-            author.first_name = first_name;
-            author.last_name = last_name;
+            Author author = new Author();
+            author.Id = id;
+            author.FirstName = firstName;
+            author.LastName = lastName;
             return author;
         }
 
@@ -368,123 +393,123 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String salutation
+        public global::System.String Salutation
         {
             get
             {
-                return _salutation;
+                return _Salutation;
             }
             set
             {
-                OnsalutationChanging(value);
-                ReportPropertyChanging("salutation");
-                _salutation = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("salutation");
-                OnsalutationChanged();
+                OnSalutationChanging(value);
+                ReportPropertyChanging("Salutation");
+                _Salutation = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Salutation");
+                OnSalutationChanged();
             }
         }
-        private global::System.String _salutation;
-        partial void OnsalutationChanging(global::System.String value);
-        partial void OnsalutationChanged();
+        private global::System.String _Salutation;
+        partial void OnSalutationChanging(global::System.String value);
+        partial void OnSalutationChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String first_name
+        public global::System.String FirstName
         {
             get
             {
-                return _first_name;
+                return _FirstName;
             }
             set
             {
-                Onfirst_nameChanging(value);
-                ReportPropertyChanging("first_name");
-                _first_name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("first_name");
-                Onfirst_nameChanged();
+                OnFirstNameChanging(value);
+                ReportPropertyChanging("FirstName");
+                _FirstName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FirstName");
+                OnFirstNameChanged();
             }
         }
-        private global::System.String _first_name;
-        partial void Onfirst_nameChanging(global::System.String value);
-        partial void Onfirst_nameChanged();
+        private global::System.String _FirstName;
+        partial void OnFirstNameChanging(global::System.String value);
+        partial void OnFirstNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String last_name
+        public global::System.String LastName
         {
             get
             {
-                return _last_name;
+                return _LastName;
             }
             set
             {
-                Onlast_nameChanging(value);
-                ReportPropertyChanging("last_name");
-                _last_name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("last_name");
-                Onlast_nameChanged();
+                OnLastNameChanging(value);
+                ReportPropertyChanging("LastName");
+                _LastName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("LastName");
+                OnLastNameChanged();
             }
         }
-        private global::System.String _last_name;
-        partial void Onlast_nameChanging(global::System.String value);
-        partial void Onlast_nameChanged();
+        private global::System.String _LastName;
+        partial void OnLastNameChanging(global::System.String value);
+        partial void OnLastNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String middle_name
+        public global::System.String MiddleName
         {
             get
             {
-                return _middle_name;
+                return _MiddleName;
             }
             set
             {
-                Onmiddle_nameChanging(value);
-                ReportPropertyChanging("middle_name");
-                _middle_name = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("middle_name");
-                Onmiddle_nameChanged();
+                OnMiddleNameChanging(value);
+                ReportPropertyChanging("MiddleName");
+                _MiddleName = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MiddleName");
+                OnMiddleNameChanged();
             }
         }
-        private global::System.String _middle_name;
-        partial void Onmiddle_nameChanging(global::System.String value);
-        partial void Onmiddle_nameChanged();
+        private global::System.String _MiddleName;
+        partial void OnMiddleNameChanging(global::System.String value);
+        partial void OnMiddleNameChanged();
 
         #endregion
 
@@ -497,18 +522,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_author1", "book_author")]
-        public EntityCollection<book_author> book_author
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_author1", "bookauthor")]
+        public EntityCollection<BookAuthor> bookauthors
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<book_author>("LMSDataModel.fk_book_author_author1", "book_author");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BookAuthor>("LMSDataModel.fk_book_author_author1", "bookauthor");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<book_author>("LMSDataModel.fk_book_author_author1", "book_author", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BookAuthor>("LMSDataModel.fk_book_author_author1", "bookauthor", value);
                 }
             }
         }
@@ -520,37 +545,37 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="book")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Book")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class book : EntityObject
+    public partial class Book : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new book object.
+        /// Create a new Book object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="isbn">Initial value of the isbn property.</param>
-        /// <param name="title">Initial value of the title property.</param>
-        /// <param name="publication_year">Initial value of the publication_year property.</param>
-        /// <param name="insertion_date">Initial value of the insertion_date property.</param>
-        /// <param name="available">Initial value of the available property.</param>
-        /// <param name="publisher_id">Initial value of the publisher_id property.</param>
-        /// <param name="department_id">Initial value of the department_id property.</param>
-        /// <param name="added_by">Initial value of the added_by property.</param>
-        public static book Createbook(global::System.Int32 id, global::System.String isbn, global::System.String title, global::System.DateTime publication_year, global::System.DateTime insertion_date, global::System.Boolean available, global::System.Int32 publisher_id, global::System.Int32 department_id, global::System.Int32 added_by)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="isbn">Initial value of the Isbn property.</param>
+        /// <param name="title">Initial value of the Title property.</param>
+        /// <param name="publicationYear">Initial value of the PublicationYear property.</param>
+        /// <param name="insertionDate">Initial value of the InsertionDate property.</param>
+        /// <param name="available">Initial value of the Available property.</param>
+        /// <param name="publisherID">Initial value of the PublisherID property.</param>
+        /// <param name="departmentID">Initial value of the DepartmentID property.</param>
+        /// <param name="addedBy">Initial value of the AddedBy property.</param>
+        public static Book CreateBook(global::System.Int32 id, global::System.String isbn, global::System.String title, global::System.DateTime publicationYear, global::System.DateTime insertionDate, global::System.Boolean available, global::System.Int32 publisherID, global::System.Int32 departmentID, global::System.Int32 addedBy)
         {
-            book book = new book();
-            book.id = id;
-            book.isbn = isbn;
-            book.title = title;
-            book.publication_year = publication_year;
-            book.insertion_date = insertion_date;
-            book.available = available;
-            book.publisher_id = publisher_id;
-            book.department_id = department_id;
-            book.added_by = added_by;
+            Book book = new Book();
+            book.Id = id;
+            book.Isbn = isbn;
+            book.Title = title;
+            book.PublicationYear = publicationYear;
+            book.InsertionDate = insertionDate;
+            book.Available = available;
+            book.PublisherID = publisherID;
+            book.DepartmentID = departmentID;
+            book.AddedBy = addedBy;
             return book;
         }
 
@@ -563,219 +588,219 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String isbn
+        public global::System.String Isbn
         {
             get
             {
-                return _isbn;
+                return _Isbn;
             }
             set
             {
-                OnisbnChanging(value);
-                ReportPropertyChanging("isbn");
-                _isbn = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("isbn");
-                OnisbnChanged();
+                OnIsbnChanging(value);
+                ReportPropertyChanging("Isbn");
+                _Isbn = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Isbn");
+                OnIsbnChanged();
             }
         }
-        private global::System.String _isbn;
-        partial void OnisbnChanging(global::System.String value);
-        partial void OnisbnChanged();
+        private global::System.String _Isbn;
+        partial void OnIsbnChanging(global::System.String value);
+        partial void OnIsbnChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String title
+        public global::System.String Title
         {
             get
             {
-                return _title;
+                return _Title;
             }
             set
             {
-                OntitleChanging(value);
-                ReportPropertyChanging("title");
-                _title = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("title");
-                OntitleChanged();
+                OnTitleChanging(value);
+                ReportPropertyChanging("Title");
+                _Title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Title");
+                OnTitleChanged();
             }
         }
-        private global::System.String _title;
-        partial void OntitleChanging(global::System.String value);
-        partial void OntitleChanged();
+        private global::System.String _Title;
+        partial void OnTitleChanging(global::System.String value);
+        partial void OnTitleChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime publication_year
+        public global::System.DateTime PublicationYear
         {
             get
             {
-                return _publication_year;
+                return _PublicationYear;
             }
             set
             {
-                Onpublication_yearChanging(value);
-                ReportPropertyChanging("publication_year");
-                _publication_year = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("publication_year");
-                Onpublication_yearChanged();
+                OnPublicationYearChanging(value);
+                ReportPropertyChanging("PublicationYear");
+                _PublicationYear = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PublicationYear");
+                OnPublicationYearChanged();
             }
         }
-        private global::System.DateTime _publication_year;
-        partial void Onpublication_yearChanging(global::System.DateTime value);
-        partial void Onpublication_yearChanged();
+        private global::System.DateTime _PublicationYear;
+        partial void OnPublicationYearChanging(global::System.DateTime value);
+        partial void OnPublicationYearChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime insertion_date
+        public global::System.DateTime InsertionDate
         {
             get
             {
-                return _insertion_date;
+                return _InsertionDate;
             }
             set
             {
-                Oninsertion_dateChanging(value);
-                ReportPropertyChanging("insertion_date");
-                _insertion_date = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("insertion_date");
-                Oninsertion_dateChanged();
+                OnInsertionDateChanging(value);
+                ReportPropertyChanging("InsertionDate");
+                _InsertionDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("InsertionDate");
+                OnInsertionDateChanged();
             }
         }
-        private global::System.DateTime _insertion_date;
-        partial void Oninsertion_dateChanging(global::System.DateTime value);
-        partial void Oninsertion_dateChanged();
+        private global::System.DateTime _InsertionDate;
+        partial void OnInsertionDateChanging(global::System.DateTime value);
+        partial void OnInsertionDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Boolean available
+        public global::System.Boolean Available
         {
             get
             {
-                return _available;
+                return _Available;
             }
             set
             {
-                OnavailableChanging(value);
-                ReportPropertyChanging("available");
-                _available = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("available");
-                OnavailableChanged();
+                OnAvailableChanging(value);
+                ReportPropertyChanging("Available");
+                _Available = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("Available");
+                OnAvailableChanged();
             }
         }
-        private global::System.Boolean _available;
-        partial void OnavailableChanging(global::System.Boolean value);
-        partial void OnavailableChanged();
+        private global::System.Boolean _Available;
+        partial void OnAvailableChanging(global::System.Boolean value);
+        partial void OnAvailableChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 publisher_id
+        public global::System.Int32 PublisherID
         {
             get
             {
-                return _publisher_id;
+                return _PublisherID;
             }
             set
             {
-                Onpublisher_idChanging(value);
-                ReportPropertyChanging("publisher_id");
-                _publisher_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("publisher_id");
-                Onpublisher_idChanged();
+                OnPublisherIDChanging(value);
+                ReportPropertyChanging("PublisherID");
+                _PublisherID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PublisherID");
+                OnPublisherIDChanged();
             }
         }
-        private global::System.Int32 _publisher_id;
-        partial void Onpublisher_idChanging(global::System.Int32 value);
-        partial void Onpublisher_idChanged();
+        private global::System.Int32 _PublisherID;
+        partial void OnPublisherIDChanging(global::System.Int32 value);
+        partial void OnPublisherIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 department_id
+        public global::System.Int32 DepartmentID
         {
             get
             {
-                return _department_id;
+                return _DepartmentID;
             }
             set
             {
-                Ondepartment_idChanging(value);
-                ReportPropertyChanging("department_id");
-                _department_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("department_id");
-                Ondepartment_idChanged();
+                OnDepartmentIDChanging(value);
+                ReportPropertyChanging("DepartmentID");
+                _DepartmentID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DepartmentID");
+                OnDepartmentIDChanged();
             }
         }
-        private global::System.Int32 _department_id;
-        partial void Ondepartment_idChanging(global::System.Int32 value);
-        partial void Ondepartment_idChanged();
+        private global::System.Int32 _DepartmentID;
+        partial void OnDepartmentIDChanging(global::System.Int32 value);
+        partial void OnDepartmentIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 added_by
+        public global::System.Int32 AddedBy
         {
             get
             {
-                return _added_by;
+                return _AddedBy;
             }
             set
             {
-                Onadded_byChanging(value);
-                ReportPropertyChanging("added_by");
-                _added_by = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("added_by");
-                Onadded_byChanged();
+                OnAddedByChanging(value);
+                ReportPropertyChanging("AddedBy");
+                _AddedBy = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AddedBy");
+                OnAddedByChanged();
             }
         }
-        private global::System.Int32 _added_by;
-        partial void Onadded_byChanging(global::System.Int32 value);
-        partial void Onadded_byChanged();
+        private global::System.Int32 _AddedBy;
+        partial void OnAddedByChanging(global::System.Int32 value);
+        partial void OnAddedByChanged();
 
         #endregion
 
@@ -788,18 +813,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_books1", "book_author")]
-        public EntityCollection<book_author> book_author
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_books1", "bookauthor")]
+        public EntityCollection<BookAuthor> bookauthors
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<book_author>("LMSDataModel.fk_book_author_books1", "book_author");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<BookAuthor>("LMSDataModel.fk_book_author_books1", "bookauthor");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<book_author>("LMSDataModel.fk_book_author_books1", "book_author", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<BookAuthor>("LMSDataModel.fk_book_author_books1", "bookauthor", value);
                 }
             }
         }
@@ -811,15 +836,15 @@ namespace LibraryManagementSystemDAL.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_department1", "department")]
-        public department department
+        public Department department
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("LMSDataModel.fk_books_department1", "department").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Department>("LMSDataModel.fk_books_department1", "department").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("LMSDataModel.fk_books_department1", "department").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Department>("LMSDataModel.fk_books_department1", "department").Value = value;
             }
         }
         /// <summary>
@@ -827,17 +852,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<department> departmentReference
+        public EntityReference<Department> departmentReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("LMSDataModel.fk_books_department1", "department");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Department>("LMSDataModel.fk_books_department1", "department");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<department>("LMSDataModel.fk_books_department1", "department", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Department>("LMSDataModel.fk_books_department1", "department", value);
                 }
             }
         }
@@ -849,15 +874,15 @@ namespace LibraryManagementSystemDAL.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_publisher1", "publisher")]
-        public publisher publisher
+        public Publisher publisher
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<publisher>("LMSDataModel.fk_books_publisher1", "publisher").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Publisher>("LMSDataModel.fk_books_publisher1", "publisher").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<publisher>("LMSDataModel.fk_books_publisher1", "publisher").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Publisher>("LMSDataModel.fk_books_publisher1", "publisher").Value = value;
             }
         }
         /// <summary>
@@ -865,17 +890,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<publisher> publisherReference
+        public EntityReference<Publisher> publisherReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<publisher>("LMSDataModel.fk_books_publisher1", "publisher");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Publisher>("LMSDataModel.fk_books_publisher1", "publisher");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<publisher>("LMSDataModel.fk_books_publisher1", "publisher", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Publisher>("LMSDataModel.fk_books_publisher1", "publisher", value);
                 }
             }
         }
@@ -886,16 +911,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_system_users1", "system_users")]
-        public system_users system_users
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_system_users1", "systemuser")]
+        public SystemUser systemuser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<system_users>("LMSDataModel.fk_books_system_users1", "system_users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_books_system_users1", "systemuser").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<system_users>("LMSDataModel.fk_books_system_users1", "system_users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_books_system_users1", "systemuser").Value = value;
             }
         }
         /// <summary>
@@ -903,17 +928,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<system_users> system_usersReference
+        public EntityReference<SystemUser> systemuserReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<system_users>("LMSDataModel.fk_books_system_users1", "system_users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_books_system_users1", "systemuser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<system_users>("LMSDataModel.fk_books_system_users1", "system_users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SystemUser>("LMSDataModel.fk_books_system_users1", "systemuser", value);
                 }
             }
         }
@@ -924,18 +949,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_books1", "student_book_loan")]
-        public EntityCollection<student_book_loan> student_book_loan
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_books1", "studentbookloan")]
+        public EntityCollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<student_book_loan>("LMSDataModel.fk_student_book_loan_books1", "student_book_loan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_books1", "studentbookloan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<student_book_loan>("LMSDataModel.fk_student_book_loan_books1", "student_book_loan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_books1", "studentbookloan", value);
                 }
             }
         }
@@ -947,26 +972,26 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="book_author")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="BookAuthor")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class book_author : EntityObject
+    public partial class BookAuthor : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new book_author object.
+        /// Create a new BookAuthor object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="authors_id">Initial value of the authors_id property.</param>
-        /// <param name="books_id">Initial value of the books_id property.</param>
-        public static book_author Createbook_author(global::System.Int32 id, global::System.Int32 authors_id, global::System.Int32 books_id)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="authorId">Initial value of the AuthorId property.</param>
+        /// <param name="bookId">Initial value of the BookId property.</param>
+        public static BookAuthor CreateBookAuthor(global::System.Int32 id, global::System.Int32 authorId, global::System.Int32 bookId)
         {
-            book_author book_author = new book_author();
-            book_author.id = id;
-            book_author.authors_id = authors_id;
-            book_author.books_id = books_id;
-            return book_author;
+            BookAuthor bookAuthor = new BookAuthor();
+            bookAuthor.Id = id;
+            bookAuthor.AuthorId = authorId;
+            bookAuthor.BookId = bookId;
+            return bookAuthor;
         }
 
         #endregion
@@ -978,75 +1003,75 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 authors_id
+        public global::System.Int32 AuthorId
         {
             get
             {
-                return _authors_id;
+                return _AuthorId;
             }
             set
             {
-                Onauthors_idChanging(value);
-                ReportPropertyChanging("authors_id");
-                _authors_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("authors_id");
-                Onauthors_idChanged();
+                OnAuthorIdChanging(value);
+                ReportPropertyChanging("AuthorId");
+                _AuthorId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("AuthorId");
+                OnAuthorIdChanged();
             }
         }
-        private global::System.Int32 _authors_id;
-        partial void Onauthors_idChanging(global::System.Int32 value);
-        partial void Onauthors_idChanged();
+        private global::System.Int32 _AuthorId;
+        partial void OnAuthorIdChanging(global::System.Int32 value);
+        partial void OnAuthorIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 books_id
+        public global::System.Int32 BookId
         {
             get
             {
-                return _books_id;
+                return _BookId;
             }
             set
             {
-                Onbooks_idChanging(value);
-                ReportPropertyChanging("books_id");
-                _books_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("books_id");
-                Onbooks_idChanged();
+                OnBookIdChanging(value);
+                ReportPropertyChanging("BookId");
+                _BookId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BookId");
+                OnBookIdChanged();
             }
         }
-        private global::System.Int32 _books_id;
-        partial void Onbooks_idChanging(global::System.Int32 value);
-        partial void Onbooks_idChanged();
+        private global::System.Int32 _BookId;
+        partial void OnBookIdChanging(global::System.Int32 value);
+        partial void OnBookIdChanged();
 
         #endregion
 
@@ -1059,16 +1084,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_author1", "authors")]
-        public author author
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_author1", "author")]
+        public Author author
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<author>("LMSDataModel.fk_book_author_author1", "authors").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Author>("LMSDataModel.fk_book_author_author1", "author").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<author>("LMSDataModel.fk_book_author_author1", "authors").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Author>("LMSDataModel.fk_book_author_author1", "author").Value = value;
             }
         }
         /// <summary>
@@ -1076,17 +1101,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<author> authorReference
+        public EntityReference<Author> authorReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<author>("LMSDataModel.fk_book_author_author1", "authors");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Author>("LMSDataModel.fk_book_author_author1", "author");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<author>("LMSDataModel.fk_book_author_author1", "authors", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Author>("LMSDataModel.fk_book_author_author1", "author", value);
                 }
             }
         }
@@ -1097,16 +1122,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_books1", "books")]
-        public book book
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_book_author_books1", "book")]
+        public Book book
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<book>("LMSDataModel.fk_book_author_books1", "books").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_book_author_books1", "book").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<book>("LMSDataModel.fk_book_author_books1", "books").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_book_author_books1", "book").Value = value;
             }
         }
         /// <summary>
@@ -1114,17 +1139,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<book> bookReference
+        public EntityReference<Book> bookReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<book>("LMSDataModel.fk_book_author_books1", "books");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_book_author_books1", "book");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<book>("LMSDataModel.fk_book_author_books1", "books", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Book>("LMSDataModel.fk_book_author_books1", "book", value);
                 }
             }
         }
@@ -1136,23 +1161,23 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="department")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Department")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class department : EntityObject
+    public partial class Department : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new department object.
+        /// Create a new Department object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="name">Initial value of the name property.</param>
-        public static department Createdepartment(global::System.Int32 id, global::System.String name)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        public static Department CreateDepartment(global::System.Int32 id, global::System.String name)
         {
-            department department = new department();
-            department.id = id;
-            department.name = name;
+            Department department = new Department();
+            department.Id = id;
+            department.Name = name;
             return department;
         }
 
@@ -1165,51 +1190,51 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String name
+        public global::System.String Name
         {
             get
             {
-                return _name;
+                return _Name;
             }
             set
             {
-                OnnameChanging(value);
-                ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("name");
-                OnnameChanged();
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
-        private global::System.String _name;
-        partial void OnnameChanging(global::System.String value);
-        partial void OnnameChanged();
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
 
         #endregion
 
@@ -1222,18 +1247,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_department1", "books")]
-        public EntityCollection<book> books
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_department1", "book")]
+        public EntityCollection<Book> books
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<book>("LMSDataModel.fk_books_department1", "books");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Book>("LMSDataModel.fk_books_department1", "book");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<book>("LMSDataModel.fk_books_department1", "books", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Book>("LMSDataModel.fk_books_department1", "book", value);
                 }
             }
         }
@@ -1244,18 +1269,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_students_department1", "students")]
-        public EntityCollection<student> students
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_students_department1", "student")]
+        public EntityCollection<Student> students
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<student>("LMSDataModel.fk_students_department1", "students");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Student>("LMSDataModel.fk_students_department1", "student");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<student>("LMSDataModel.fk_students_department1", "students", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Student>("LMSDataModel.fk_students_department1", "student", value);
                 }
             }
         }
@@ -1267,23 +1292,23 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="publisher")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Publisher")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class publisher : EntityObject
+    public partial class Publisher : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new publisher object.
+        /// Create a new Publisher object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="name">Initial value of the name property.</param>
-        public static publisher Createpublisher(global::System.Int32 id, global::System.String name)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="name">Initial value of the Name property.</param>
+        public static Publisher CreatePublisher(global::System.Int32 id, global::System.String name)
         {
-            publisher publisher = new publisher();
-            publisher.id = id;
-            publisher.name = name;
+            Publisher publisher = new Publisher();
+            publisher.Id = id;
+            publisher.Name = name;
             return publisher;
         }
 
@@ -1296,123 +1321,123 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String name
+        public global::System.String Name
         {
             get
             {
-                return _name;
+                return _Name;
             }
             set
             {
-                OnnameChanging(value);
-                ReportPropertyChanging("name");
-                _name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("name");
-                OnnameChanged();
+                OnNameChanging(value);
+                ReportPropertyChanging("Name");
+                _Name = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Name");
+                OnNameChanged();
             }
         }
-        private global::System.String _name;
-        partial void OnnameChanging(global::System.String value);
-        partial void OnnameChanged();
+        private global::System.String _Name;
+        partial void OnNameChanging(global::System.String value);
+        partial void OnNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String telephone
+        public global::System.String Telephone
         {
             get
             {
-                return _telephone;
+                return _Telephone;
             }
             set
             {
-                OntelephoneChanging(value);
-                ReportPropertyChanging("telephone");
-                _telephone = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("telephone");
-                OntelephoneChanged();
+                OnTelephoneChanging(value);
+                ReportPropertyChanging("Telephone");
+                _Telephone = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Telephone");
+                OnTelephoneChanged();
             }
         }
-        private global::System.String _telephone;
-        partial void OntelephoneChanging(global::System.String value);
-        partial void OntelephoneChanged();
+        private global::System.String _Telephone;
+        partial void OnTelephoneChanging(global::System.String value);
+        partial void OnTelephoneChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String email
+        public global::System.String Email
         {
             get
             {
-                return _email;
+                return _Email;
             }
             set
             {
-                OnemailChanging(value);
-                ReportPropertyChanging("email");
-                _email = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("email");
-                OnemailChanged();
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
             }
         }
-        private global::System.String _email;
-        partial void OnemailChanging(global::System.String value);
-        partial void OnemailChanged();
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String address
+        public global::System.String Address
         {
             get
             {
-                return _address;
+                return _Address;
             }
             set
             {
-                OnaddressChanging(value);
-                ReportPropertyChanging("address");
-                _address = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("address");
-                OnaddressChanged();
+                OnAddressChanging(value);
+                ReportPropertyChanging("Address");
+                _Address = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Address");
+                OnAddressChanged();
             }
         }
-        private global::System.String _address;
-        partial void OnaddressChanging(global::System.String value);
-        partial void OnaddressChanged();
+        private global::System.String _Address;
+        partial void OnAddressChanging(global::System.String value);
+        partial void OnAddressChanged();
 
         #endregion
 
@@ -1425,18 +1450,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_publisher1", "books")]
-        public EntityCollection<book> books
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_publisher1", "book")]
+        public EntityCollection<Book> books
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<book>("LMSDataModel.fk_books_publisher1", "books");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Book>("LMSDataModel.fk_books_publisher1", "book");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<book>("LMSDataModel.fk_books_publisher1", "books", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Book>("LMSDataModel.fk_books_publisher1", "book", value);
                 }
             }
         }
@@ -1448,23 +1473,224 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="sex")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Session")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class sex : EntityObject
+    public partial class Session : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new sex object.
+        /// Create a new Session object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="description">Initial value of the description property.</param>
-        public static sex Createsex(global::System.Int32 id, global::System.String description)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="creationDate">Initial value of the CreationDate property.</param>
+        /// <param name="expirationDate">Initial value of the ExpirationDate property.</param>
+        /// <param name="systemUser_id">Initial value of the SystemUser_id property.</param>
+        public static Session CreateSession(global::System.Int32 id, global::System.DateTime creationDate, global::System.DateTime expirationDate, global::System.Int32 systemUser_id)
         {
-            sex sex = new sex();
-            sex.id = id;
-            sex.description = description;
+            Session session = new Session();
+            session.Id = id;
+            session.CreationDate = creationDate;
+            session.ExpirationDate = expirationDate;
+            session.SystemUser_id = systemUser_id;
+            return session;
+        }
+
+        #endregion
+
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime CreationDate
+        {
+            get
+            {
+                return _CreationDate;
+            }
+            set
+            {
+                OnCreationDateChanging(value);
+                ReportPropertyChanging("CreationDate");
+                _CreationDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreationDate");
+                OnCreationDateChanged();
+            }
+        }
+        private global::System.DateTime _CreationDate;
+        partial void OnCreationDateChanging(global::System.DateTime value);
+        partial void OnCreationDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime ExpirationDate
+        {
+            get
+            {
+                return _ExpirationDate;
+            }
+            set
+            {
+                OnExpirationDateChanging(value);
+                ReportPropertyChanging("ExpirationDate");
+                _ExpirationDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ExpirationDate");
+                OnExpirationDateChanged();
+            }
+        }
+        private global::System.DateTime _ExpirationDate;
+        partial void OnExpirationDateChanging(global::System.DateTime value);
+        partial void OnExpirationDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> LastAccessDate
+        {
+            get
+            {
+                return _LastAccessDate;
+            }
+            set
+            {
+                OnLastAccessDateChanging(value);
+                ReportPropertyChanging("LastAccessDate");
+                _LastAccessDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastAccessDate");
+                OnLastAccessDateChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _LastAccessDate;
+        partial void OnLastAccessDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnLastAccessDateChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 SystemUser_id
+        {
+            get
+            {
+                return _SystemUser_id;
+            }
+            set
+            {
+                OnSystemUser_idChanging(value);
+                ReportPropertyChanging("SystemUser_id");
+                _SystemUser_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SystemUser_id");
+                OnSystemUser_idChanged();
+            }
+        }
+        private global::System.Int32 _SystemUser_id;
+        partial void OnSystemUser_idChanging(global::System.Int32 value);
+        partial void OnSystemUser_idChanged();
+
+        #endregion
+
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_Session_SystemUser", "systemuser")]
+        public SystemUser systemuser
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_Session_SystemUser", "systemuser").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_Session_SystemUser", "systemuser").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<SystemUser> systemuserReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_Session_SystemUser", "systemuser");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SystemUser>("LMSDataModel.fk_Session_SystemUser", "systemuser", value);
+                }
+            }
+        }
+
+        #endregion
+
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Sex")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class Sex : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new Sex object.
+        /// </summary>
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="description">Initial value of the Description property.</param>
+        public static Sex CreateSex(global::System.Int32 id, global::System.String description)
+        {
+            Sex sex = new Sex();
+            sex.Id = id;
+            sex.Description = description;
             return sex;
         }
 
@@ -1477,51 +1703,51 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String description
+        public global::System.String Description
         {
             get
             {
-                return _description;
+                return _Description;
             }
             set
             {
-                OndescriptionChanging(value);
-                ReportPropertyChanging("description");
-                _description = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("description");
-                OndescriptionChanged();
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
             }
         }
-        private global::System.String _description;
-        partial void OndescriptionChanging(global::System.String value);
-        partial void OndescriptionChanged();
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
 
         #endregion
 
@@ -1534,18 +1760,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_students_sex1", "students")]
-        public EntityCollection<student> students
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_students_sex1", "student")]
+        public EntityCollection<Student> students
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<student>("LMSDataModel.fk_students_sex1", "students");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Student>("LMSDataModel.fk_students_sex1", "student");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<student>("LMSDataModel.fk_students_sex1", "students", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Student>("LMSDataModel.fk_students_sex1", "student", value);
                 }
             }
         }
@@ -1556,18 +1782,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_sex1", "system_users")]
-        public EntityCollection<system_users> system_users
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_sex1", "systemuser")]
+        public EntityCollection<SystemUser> systemusers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<system_users>("LMSDataModel.fk_system_users_sex1", "system_users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<SystemUser>("LMSDataModel.fk_system_users_sex1", "systemuser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<system_users>("LMSDataModel.fk_system_users_sex1", "system_users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<SystemUser>("LMSDataModel.fk_system_users_sex1", "systemuser", value);
                 }
             }
         }
@@ -1579,39 +1805,41 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="student")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="Student")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class student : EntityObject
+    public partial class Student : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new student object.
+        /// Create a new Student object.
         /// </summary>
-        /// <param name="reg_no">Initial value of the reg_no property.</param>
-        /// <param name="first_name">Initial value of the first_name property.</param>
-        /// <param name="last_name">Initial value of the last_name property.</param>
-        /// <param name="email">Initial value of the email property.</param>
-        /// <param name="telephone">Initial value of the telephone property.</param>
-        /// <param name="address">Initial value of the address property.</param>
-        /// <param name="date_of_birth">Initial value of the date_of_birth property.</param>
-        /// <param name="enrolment_date">Initial value of the enrolment_date property.</param>
-        /// <param name="sex_id">Initial value of the sex_id property.</param>
-        /// <param name="department_id">Initial value of the department_id property.</param>
-        public static student Createstudent(global::System.Int32 reg_no, global::System.String first_name, global::System.String last_name, global::System.String email, global::System.String telephone, global::System.String address, global::System.DateTime date_of_birth, global::System.DateTime enrolment_date, global::System.Int32 sex_id, global::System.Int32 department_id)
+        /// <param name="registrationID">Initial value of the RegistrationID property.</param>
+        /// <param name="firstName">Initial value of the FirstName property.</param>
+        /// <param name="lastName">Initial value of the LastName property.</param>
+        /// <param name="email">Initial value of the Email property.</param>
+        /// <param name="telephone">Initial value of the Telephone property.</param>
+        /// <param name="address">Initial value of the Address property.</param>
+        /// <param name="dateOfBirth">Initial value of the DateOfBirth property.</param>
+        /// <param name="enrolmentDate">Initial value of the EnrolmentDate property.</param>
+        /// <param name="sexId">Initial value of the SexId property.</param>
+        /// <param name="departmentId">Initial value of the DepartmentId property.</param>
+        /// <param name="id">Initial value of the Id property.</param>
+        public static Student CreateStudent(global::System.String registrationID, global::System.String firstName, global::System.String lastName, global::System.String email, global::System.String telephone, global::System.String address, global::System.DateTime dateOfBirth, global::System.DateTime enrolmentDate, global::System.Int32 sexId, global::System.Int32 departmentId, global::System.Int32 id)
         {
-            student student = new student();
-            student.reg_no = reg_no;
-            student.first_name = first_name;
-            student.last_name = last_name;
-            student.email = email;
-            student.telephone = telephone;
-            student.address = address;
-            student.date_of_birth = date_of_birth;
-            student.enrolment_date = enrolment_date;
-            student.sex_id = sex_id;
-            student.department_id = department_id;
+            Student student = new Student();
+            student.RegistrationID = registrationID;
+            student.FirstName = firstName;
+            student.LastName = lastName;
+            student.Email = email;
+            student.Telephone = telephone;
+            student.Address = address;
+            student.DateOfBirth = dateOfBirth;
+            student.EnrolmentDate = enrolmentDate;
+            student.SexId = sexId;
+            student.DepartmentId = departmentId;
+            student.Id = id;
             return student;
         }
 
@@ -1622,269 +1850,293 @@ namespace LibraryManagementSystemDAL.Data
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 reg_no
+        public global::System.String RegistrationID
         {
             get
             {
-                return _reg_no;
+                return _RegistrationID;
             }
             set
             {
-                if (_reg_no != value)
-                {
-                    Onreg_noChanging(value);
-                    ReportPropertyChanging("reg_no");
-                    _reg_no = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("reg_no");
-                    Onreg_noChanged();
-                }
+                OnRegistrationIDChanging(value);
+                ReportPropertyChanging("RegistrationID");
+                _RegistrationID = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("RegistrationID");
+                OnRegistrationIDChanged();
             }
         }
-        private global::System.Int32 _reg_no;
-        partial void Onreg_noChanging(global::System.Int32 value);
-        partial void Onreg_noChanged();
+        private global::System.String _RegistrationID;
+        partial void OnRegistrationIDChanging(global::System.String value);
+        partial void OnRegistrationIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String first_name
+        public global::System.String FirstName
         {
             get
             {
-                return _first_name;
+                return _FirstName;
             }
             set
             {
-                Onfirst_nameChanging(value);
-                ReportPropertyChanging("first_name");
-                _first_name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("first_name");
-                Onfirst_nameChanged();
+                OnFirstNameChanging(value);
+                ReportPropertyChanging("FirstName");
+                _FirstName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FirstName");
+                OnFirstNameChanged();
             }
         }
-        private global::System.String _first_name;
-        partial void Onfirst_nameChanging(global::System.String value);
-        partial void Onfirst_nameChanged();
+        private global::System.String _FirstName;
+        partial void OnFirstNameChanging(global::System.String value);
+        partial void OnFirstNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String last_name
+        public global::System.String LastName
         {
             get
             {
-                return _last_name;
+                return _LastName;
             }
             set
             {
-                Onlast_nameChanging(value);
-                ReportPropertyChanging("last_name");
-                _last_name = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("last_name");
-                Onlast_nameChanged();
+                OnLastNameChanging(value);
+                ReportPropertyChanging("LastName");
+                _LastName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("LastName");
+                OnLastNameChanged();
             }
         }
-        private global::System.String _last_name;
-        partial void Onlast_nameChanging(global::System.String value);
-        partial void Onlast_nameChanged();
+        private global::System.String _LastName;
+        partial void OnLastNameChanging(global::System.String value);
+        partial void OnLastNameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String email
+        public global::System.String Email
         {
             get
             {
-                return _email;
+                return _Email;
             }
             set
             {
-                OnemailChanging(value);
-                ReportPropertyChanging("email");
-                _email = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("email");
-                OnemailChanged();
+                OnEmailChanging(value);
+                ReportPropertyChanging("Email");
+                _Email = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Email");
+                OnEmailChanged();
             }
         }
-        private global::System.String _email;
-        partial void OnemailChanging(global::System.String value);
-        partial void OnemailChanged();
+        private global::System.String _Email;
+        partial void OnEmailChanging(global::System.String value);
+        partial void OnEmailChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String telephone
+        public global::System.String Telephone
         {
             get
             {
-                return _telephone;
+                return _Telephone;
             }
             set
             {
-                OntelephoneChanging(value);
-                ReportPropertyChanging("telephone");
-                _telephone = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("telephone");
-                OntelephoneChanged();
+                OnTelephoneChanging(value);
+                ReportPropertyChanging("Telephone");
+                _Telephone = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Telephone");
+                OnTelephoneChanged();
             }
         }
-        private global::System.String _telephone;
-        partial void OntelephoneChanging(global::System.String value);
-        partial void OntelephoneChanged();
+        private global::System.String _Telephone;
+        partial void OnTelephoneChanging(global::System.String value);
+        partial void OnTelephoneChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String address
+        public global::System.String Address
         {
             get
             {
-                return _address;
+                return _Address;
             }
             set
             {
-                OnaddressChanging(value);
-                ReportPropertyChanging("address");
-                _address = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("address");
-                OnaddressChanged();
+                OnAddressChanging(value);
+                ReportPropertyChanging("Address");
+                _Address = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Address");
+                OnAddressChanged();
             }
         }
-        private global::System.String _address;
-        partial void OnaddressChanging(global::System.String value);
-        partial void OnaddressChanged();
+        private global::System.String _Address;
+        partial void OnAddressChanging(global::System.String value);
+        partial void OnAddressChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime date_of_birth
+        public global::System.DateTime DateOfBirth
         {
             get
             {
-                return _date_of_birth;
+                return _DateOfBirth;
             }
             set
             {
-                Ondate_of_birthChanging(value);
-                ReportPropertyChanging("date_of_birth");
-                _date_of_birth = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("date_of_birth");
-                Ondate_of_birthChanged();
+                OnDateOfBirthChanging(value);
+                ReportPropertyChanging("DateOfBirth");
+                _DateOfBirth = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DateOfBirth");
+                OnDateOfBirthChanged();
             }
         }
-        private global::System.DateTime _date_of_birth;
-        partial void Ondate_of_birthChanging(global::System.DateTime value);
-        partial void Ondate_of_birthChanged();
+        private global::System.DateTime _DateOfBirth;
+        partial void OnDateOfBirthChanging(global::System.DateTime value);
+        partial void OnDateOfBirthChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime enrolment_date
+        public global::System.DateTime EnrolmentDate
         {
             get
             {
-                return _enrolment_date;
+                return _EnrolmentDate;
             }
             set
             {
-                Onenrolment_dateChanging(value);
-                ReportPropertyChanging("enrolment_date");
-                _enrolment_date = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("enrolment_date");
-                Onenrolment_dateChanged();
+                OnEnrolmentDateChanging(value);
+                ReportPropertyChanging("EnrolmentDate");
+                _EnrolmentDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("EnrolmentDate");
+                OnEnrolmentDateChanged();
             }
         }
-        private global::System.DateTime _enrolment_date;
-        partial void Onenrolment_dateChanging(global::System.DateTime value);
-        partial void Onenrolment_dateChanged();
+        private global::System.DateTime _EnrolmentDate;
+        partial void OnEnrolmentDateChanging(global::System.DateTime value);
+        partial void OnEnrolmentDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Boolean> currently_registered
+        public Nullable<global::System.Boolean> CurrentlyRegistered
         {
             get
             {
-                return _currently_registered;
+                return _CurrentlyRegistered;
             }
             set
             {
-                Oncurrently_registeredChanging(value);
-                ReportPropertyChanging("currently_registered");
-                _currently_registered = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("currently_registered");
-                Oncurrently_registeredChanged();
+                OnCurrentlyRegisteredChanging(value);
+                ReportPropertyChanging("CurrentlyRegistered");
+                _CurrentlyRegistered = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CurrentlyRegistered");
+                OnCurrentlyRegisteredChanged();
             }
         }
-        private Nullable<global::System.Boolean> _currently_registered;
-        partial void Oncurrently_registeredChanging(Nullable<global::System.Boolean> value);
-        partial void Oncurrently_registeredChanged();
+        private Nullable<global::System.Boolean> _CurrentlyRegistered;
+        partial void OnCurrentlyRegisteredChanging(Nullable<global::System.Boolean> value);
+        partial void OnCurrentlyRegisteredChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 sex_id
+        public global::System.Int32 SexId
         {
             get
             {
-                return _sex_id;
+                return _SexId;
             }
             set
             {
-                Onsex_idChanging(value);
-                ReportPropertyChanging("sex_id");
-                _sex_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("sex_id");
-                Onsex_idChanged();
+                OnSexIdChanging(value);
+                ReportPropertyChanging("SexId");
+                _SexId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SexId");
+                OnSexIdChanged();
             }
         }
-        private global::System.Int32 _sex_id;
-        partial void Onsex_idChanging(global::System.Int32 value);
-        partial void Onsex_idChanged();
+        private global::System.Int32 _SexId;
+        partial void OnSexIdChanging(global::System.Int32 value);
+        partial void OnSexIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 department_id
+        public global::System.Int32 DepartmentId
         {
             get
             {
-                return _department_id;
+                return _DepartmentId;
             }
             set
             {
-                Ondepartment_idChanging(value);
-                ReportPropertyChanging("department_id");
-                _department_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("department_id");
-                Ondepartment_idChanged();
+                OnDepartmentIdChanging(value);
+                ReportPropertyChanging("DepartmentId");
+                _DepartmentId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DepartmentId");
+                OnDepartmentIdChanged();
             }
         }
-        private global::System.Int32 _department_id;
-        partial void Ondepartment_idChanging(global::System.Int32 value);
-        partial void Ondepartment_idChanged();
+        private global::System.Int32 _DepartmentId;
+        partial void OnDepartmentIdChanging(global::System.Int32 value);
+        partial void OnDepartmentIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if (_Id != value)
+                {
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
+                }
+            }
+        }
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
 
         #endregion
 
@@ -1898,15 +2150,15 @@ namespace LibraryManagementSystemDAL.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_students_department1", "department")]
-        public department department
+        public Department department
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("LMSDataModel.fk_students_department1", "department").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Department>("LMSDataModel.fk_students_department1", "department").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("LMSDataModel.fk_students_department1", "department").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Department>("LMSDataModel.fk_students_department1", "department").Value = value;
             }
         }
         /// <summary>
@@ -1914,17 +2166,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<department> departmentReference
+        public EntityReference<Department> departmentReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<department>("LMSDataModel.fk_students_department1", "department");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Department>("LMSDataModel.fk_students_department1", "department");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<department>("LMSDataModel.fk_students_department1", "department", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Department>("LMSDataModel.fk_students_department1", "department", value);
                 }
             }
         }
@@ -1936,15 +2188,15 @@ namespace LibraryManagementSystemDAL.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_students_sex1", "sex")]
-        public sex sex
+        public Sex sex
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<sex>("LMSDataModel.fk_students_sex1", "sex").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Sex>("LMSDataModel.fk_students_sex1", "sex").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<sex>("LMSDataModel.fk_students_sex1", "sex").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Sex>("LMSDataModel.fk_students_sex1", "sex").Value = value;
             }
         }
         /// <summary>
@@ -1952,17 +2204,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<sex> sexReference
+        public EntityReference<Sex> sexReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<sex>("LMSDataModel.fk_students_sex1", "sex");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Sex>("LMSDataModel.fk_students_sex1", "sex");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<sex>("LMSDataModel.fk_students_sex1", "sex", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Sex>("LMSDataModel.fk_students_sex1", "sex", value);
                 }
             }
         }
@@ -1973,18 +2225,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_students1", "student_book_loan")]
-        public EntityCollection<student_book_loan> student_book_loan
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_students1", "studentbookloan")]
+        public EntityCollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<student_book_loan>("LMSDataModel.fk_student_book_loan_students1", "student_book_loan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_students1", "studentbookloan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<student_book_loan>("LMSDataModel.fk_student_book_loan_students1", "student_book_loan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_students1", "studentbookloan", value);
                 }
             }
         }
@@ -1996,34 +2248,34 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="student_book_loan")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="StudentBookLoan")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class student_book_loan : EntityObject
+    public partial class StudentBookLoan : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new student_book_loan object.
+        /// Create a new StudentBookLoan object.
         /// </summary>
         /// <param name="id">Initial value of the id property.</param>
-        /// <param name="issue_date">Initial value of the issue_date property.</param>
-        /// <param name="due_date">Initial value of the due_date property.</param>
-        /// <param name="return_date">Initial value of the return_date property.</param>
-        /// <param name="issuer">Initial value of the issuer property.</param>
-        /// <param name="books_id">Initial value of the books_id property.</param>
-        /// <param name="students_reg_no">Initial value of the students_reg_no property.</param>
-        public static student_book_loan Createstudent_book_loan(global::System.Int32 id, global::System.DateTime issue_date, global::System.DateTime due_date, global::System.DateTime return_date, global::System.Int32 issuer, global::System.Int32 books_id, global::System.Int32 students_reg_no)
+        /// <param name="issueDate">Initial value of the IssueDate property.</param>
+        /// <param name="dueDate">Initial value of the DueDate property.</param>
+        /// <param name="returnDate">Initial value of the ReturnDate property.</param>
+        /// <param name="issuerID">Initial value of the IssuerID property.</param>
+        /// <param name="bookID">Initial value of the BookID property.</param>
+        /// <param name="studentID">Initial value of the StudentID property.</param>
+        public static StudentBookLoan CreateStudentBookLoan(global::System.Int32 id, global::System.DateTime issueDate, global::System.DateTime dueDate, global::System.DateTime returnDate, global::System.Int32 issuerID, global::System.Int32 bookID, global::System.Int32 studentID)
         {
-            student_book_loan student_book_loan = new student_book_loan();
-            student_book_loan.id = id;
-            student_book_loan.issue_date = issue_date;
-            student_book_loan.due_date = due_date;
-            student_book_loan.return_date = return_date;
-            student_book_loan.issuer = issuer;
-            student_book_loan.books_id = books_id;
-            student_book_loan.students_reg_no = students_reg_no;
-            return student_book_loan;
+            StudentBookLoan studentBookLoan = new StudentBookLoan();
+            studentBookLoan.id = id;
+            studentBookLoan.IssueDate = issueDate;
+            studentBookLoan.DueDate = dueDate;
+            studentBookLoan.ReturnDate = returnDate;
+            studentBookLoan.IssuerID = issuerID;
+            studentBookLoan.BookID = bookID;
+            studentBookLoan.StudentID = studentID;
+            return studentBookLoan;
         }
 
         #endregion
@@ -2062,144 +2314,144 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime issue_date
+        public global::System.DateTime IssueDate
         {
             get
             {
-                return _issue_date;
+                return _IssueDate;
             }
             set
             {
-                Onissue_dateChanging(value);
-                ReportPropertyChanging("issue_date");
-                _issue_date = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("issue_date");
-                Onissue_dateChanged();
+                OnIssueDateChanging(value);
+                ReportPropertyChanging("IssueDate");
+                _IssueDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IssueDate");
+                OnIssueDateChanged();
             }
         }
-        private global::System.DateTime _issue_date;
-        partial void Onissue_dateChanging(global::System.DateTime value);
-        partial void Onissue_dateChanged();
+        private global::System.DateTime _IssueDate;
+        partial void OnIssueDateChanging(global::System.DateTime value);
+        partial void OnIssueDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime due_date
+        public global::System.DateTime DueDate
         {
             get
             {
-                return _due_date;
+                return _DueDate;
             }
             set
             {
-                Ondue_dateChanging(value);
-                ReportPropertyChanging("due_date");
-                _due_date = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("due_date");
-                Ondue_dateChanged();
+                OnDueDateChanging(value);
+                ReportPropertyChanging("DueDate");
+                _DueDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DueDate");
+                OnDueDateChanged();
             }
         }
-        private global::System.DateTime _due_date;
-        partial void Ondue_dateChanging(global::System.DateTime value);
-        partial void Ondue_dateChanged();
+        private global::System.DateTime _DueDate;
+        partial void OnDueDateChanging(global::System.DateTime value);
+        partial void OnDueDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime return_date
+        public global::System.DateTime ReturnDate
         {
             get
             {
-                return _return_date;
+                return _ReturnDate;
             }
             set
             {
-                Onreturn_dateChanging(value);
-                ReportPropertyChanging("return_date");
-                _return_date = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("return_date");
-                Onreturn_dateChanged();
+                OnReturnDateChanging(value);
+                ReportPropertyChanging("ReturnDate");
+                _ReturnDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ReturnDate");
+                OnReturnDateChanged();
             }
         }
-        private global::System.DateTime _return_date;
-        partial void Onreturn_dateChanging(global::System.DateTime value);
-        partial void Onreturn_dateChanged();
+        private global::System.DateTime _ReturnDate;
+        partial void OnReturnDateChanging(global::System.DateTime value);
+        partial void OnReturnDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 issuer
+        public global::System.Int32 IssuerID
         {
             get
             {
-                return _issuer;
+                return _IssuerID;
             }
             set
             {
-                OnissuerChanging(value);
-                ReportPropertyChanging("issuer");
-                _issuer = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("issuer");
-                OnissuerChanged();
+                OnIssuerIDChanging(value);
+                ReportPropertyChanging("IssuerID");
+                _IssuerID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("IssuerID");
+                OnIssuerIDChanged();
             }
         }
-        private global::System.Int32 _issuer;
-        partial void OnissuerChanging(global::System.Int32 value);
-        partial void OnissuerChanged();
+        private global::System.Int32 _IssuerID;
+        partial void OnIssuerIDChanging(global::System.Int32 value);
+        partial void OnIssuerIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 books_id
+        public global::System.Int32 BookID
         {
             get
             {
-                return _books_id;
+                return _BookID;
             }
             set
             {
-                Onbooks_idChanging(value);
-                ReportPropertyChanging("books_id");
-                _books_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("books_id");
-                Onbooks_idChanged();
+                OnBookIDChanging(value);
+                ReportPropertyChanging("BookID");
+                _BookID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("BookID");
+                OnBookIDChanged();
             }
         }
-        private global::System.Int32 _books_id;
-        partial void Onbooks_idChanging(global::System.Int32 value);
-        partial void Onbooks_idChanged();
+        private global::System.Int32 _BookID;
+        partial void OnBookIDChanging(global::System.Int32 value);
+        partial void OnBookIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 students_reg_no
+        public global::System.Int32 StudentID
         {
             get
             {
-                return _students_reg_no;
+                return _StudentID;
             }
             set
             {
-                Onstudents_reg_noChanging(value);
-                ReportPropertyChanging("students_reg_no");
-                _students_reg_no = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("students_reg_no");
-                Onstudents_reg_noChanged();
+                OnStudentIDChanging(value);
+                ReportPropertyChanging("StudentID");
+                _StudentID = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("StudentID");
+                OnStudentIDChanged();
             }
         }
-        private global::System.Int32 _students_reg_no;
-        partial void Onstudents_reg_noChanging(global::System.Int32 value);
-        partial void Onstudents_reg_noChanged();
+        private global::System.Int32 _StudentID;
+        partial void OnStudentIDChanging(global::System.Int32 value);
+        partial void OnStudentIDChanged();
 
         #endregion
 
@@ -2212,16 +2464,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_books1", "books")]
-        public book book
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_books1", "book")]
+        public Book book
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<book>("LMSDataModel.fk_student_book_loan_books1", "books").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<book>("LMSDataModel.fk_student_book_loan_books1", "books").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book").Value = value;
             }
         }
         /// <summary>
@@ -2229,17 +2481,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<book> bookReference
+        public EntityReference<Book> bookReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<book>("LMSDataModel.fk_student_book_loan_books1", "books");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<book>("LMSDataModel.fk_student_book_loan_books1", "books", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Book>("LMSDataModel.fk_student_book_loan_books1", "book", value);
                 }
             }
         }
@@ -2250,16 +2502,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_students1", "students")]
-        public student student
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_students1", "student")]
+        public Student student
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<student>("LMSDataModel.fk_student_book_loan_students1", "students").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<student>("LMSDataModel.fk_student_book_loan_students1", "students").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student").Value = value;
             }
         }
         /// <summary>
@@ -2267,17 +2519,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<student> studentReference
+        public EntityReference<Student> studentReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<student>("LMSDataModel.fk_student_book_loan_students1", "students");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<student>("LMSDataModel.fk_student_book_loan_students1", "students", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Student>("LMSDataModel.fk_student_book_loan_students1", "student", value);
                 }
             }
         }
@@ -2288,16 +2540,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "system_users")]
-        public system_users system_users
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "systemuser")]
+        public SystemUser systemuser
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<system_users>("LMSDataModel.fk_student_book_loan_system_users1", "system_users").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<system_users>("LMSDataModel.fk_student_book_loan_system_users1", "system_users").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser").Value = value;
             }
         }
         /// <summary>
@@ -2305,17 +2557,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<system_users> system_usersReference
+        public EntityReference<SystemUser> systemuserReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<system_users>("LMSDataModel.fk_student_book_loan_system_users1", "system_users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<system_users>("LMSDataModel.fk_student_book_loan_system_users1", "system_users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<SystemUser>("LMSDataModel.fk_student_book_loan_system_users1", "systemuser", value);
                 }
             }
         }
@@ -2327,28 +2579,32 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="system_users")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="SystemUser")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class system_users : EntityObject
+    public partial class SystemUser : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new system_users object.
+        /// Create a new SystemUser object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="username">Initial value of the username property.</param>
-        /// <param name="user_role_id">Initial value of the user_role_id property.</param>
-        /// <param name="sex_id">Initial value of the sex_id property.</param>
-        public static system_users Createsystem_users(global::System.Int32 id, global::System.String username, global::System.Int32 user_role_id, global::System.Int32 sex_id)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="username">Initial value of the Username property.</param>
+        /// <param name="userRoleId">Initial value of the UserRoleId property.</param>
+        /// <param name="sexId">Initial value of the SexId property.</param>
+        /// <param name="firstName">Initial value of the FirstName property.</param>
+        /// <param name="lastName">Initial value of the LastName property.</param>
+        public static SystemUser CreateSystemUser(global::System.Int32 id, global::System.String username, global::System.Int32 userRoleId, global::System.Int32 sexId, global::System.String firstName, global::System.String lastName)
         {
-            system_users system_users = new system_users();
-            system_users.id = id;
-            system_users.username = username;
-            system_users.user_role_id = user_role_id;
-            system_users.sex_id = sex_id;
-            return system_users;
+            SystemUser systemUser = new SystemUser();
+            systemUser.Id = id;
+            systemUser.Username = username;
+            systemUser.UserRoleId = userRoleId;
+            systemUser.SexId = sexId;
+            systemUser.FirstName = firstName;
+            systemUser.LastName = lastName;
+            return systemUser;
         }
 
         #endregion
@@ -2360,171 +2616,219 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String username
+        public global::System.String Username
         {
             get
             {
-                return _username;
+                return _Username;
             }
             set
             {
-                OnusernameChanging(value);
-                ReportPropertyChanging("username");
-                _username = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("username");
-                OnusernameChanged();
+                OnUsernameChanging(value);
+                ReportPropertyChanging("Username");
+                _Username = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Username");
+                OnUsernameChanged();
             }
         }
-        private global::System.String _username;
-        partial void OnusernameChanging(global::System.String value);
-        partial void OnusernameChanged();
+        private global::System.String _Username;
+        partial void OnUsernameChanging(global::System.String value);
+        partial void OnUsernameChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String password
+        public global::System.String Password
         {
             get
             {
-                return _password;
+                return _Password;
             }
             set
             {
-                OnpasswordChanging(value);
-                ReportPropertyChanging("password");
-                _password = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("password");
-                OnpasswordChanged();
+                OnPasswordChanging(value);
+                ReportPropertyChanging("Password");
+                _Password = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("Password");
+                OnPasswordChanged();
             }
         }
-        private global::System.String _password;
-        partial void OnpasswordChanging(global::System.String value);
-        partial void OnpasswordChanged();
+        private global::System.String _Password;
+        partial void OnPasswordChanging(global::System.String value);
+        partial void OnPasswordChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> create_date
+        public Nullable<global::System.DateTime> CreateDate
         {
             get
             {
-                return _create_date;
+                return _CreateDate;
             }
             set
             {
-                Oncreate_dateChanging(value);
-                ReportPropertyChanging("create_date");
-                _create_date = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("create_date");
-                Oncreate_dateChanged();
+                OnCreateDateChanging(value);
+                ReportPropertyChanging("CreateDate");
+                _CreateDate = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("CreateDate");
+                OnCreateDateChanged();
             }
         }
-        private Nullable<global::System.DateTime> _create_date;
-        partial void Oncreate_dateChanging(Nullable<global::System.DateTime> value);
-        partial void Oncreate_dateChanged();
+        private Nullable<global::System.DateTime> _CreateDate;
+        partial void OnCreateDateChanging(Nullable<global::System.DateTime> value);
+        partial void OnCreateDateChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> last_login
+        public Nullable<global::System.DateTime> LastLogin
         {
             get
             {
-                return _last_login;
+                return _LastLogin;
             }
             set
             {
-                Onlast_loginChanging(value);
-                ReportPropertyChanging("last_login");
-                _last_login = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("last_login");
-                Onlast_loginChanged();
+                OnLastLoginChanging(value);
+                ReportPropertyChanging("LastLogin");
+                _LastLogin = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("LastLogin");
+                OnLastLoginChanged();
             }
         }
-        private Nullable<global::System.DateTime> _last_login;
-        partial void Onlast_loginChanging(Nullable<global::System.DateTime> value);
-        partial void Onlast_loginChanged();
+        private Nullable<global::System.DateTime> _LastLogin;
+        partial void OnLastLoginChanging(Nullable<global::System.DateTime> value);
+        partial void OnLastLoginChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 user_role_id
+        public global::System.Int32 UserRoleId
         {
             get
             {
-                return _user_role_id;
+                return _UserRoleId;
             }
             set
             {
-                Onuser_role_idChanging(value);
-                ReportPropertyChanging("user_role_id");
-                _user_role_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("user_role_id");
-                Onuser_role_idChanged();
+                OnUserRoleIdChanging(value);
+                ReportPropertyChanging("UserRoleId");
+                _UserRoleId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("UserRoleId");
+                OnUserRoleIdChanged();
             }
         }
-        private global::System.Int32 _user_role_id;
-        partial void Onuser_role_idChanging(global::System.Int32 value);
-        partial void Onuser_role_idChanged();
+        private global::System.Int32 _UserRoleId;
+        partial void OnUserRoleIdChanging(global::System.Int32 value);
+        partial void OnUserRoleIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 sex_id
+        public global::System.Int32 SexId
         {
             get
             {
-                return _sex_id;
+                return _SexId;
             }
             set
             {
-                Onsex_idChanging(value);
-                ReportPropertyChanging("sex_id");
-                _sex_id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("sex_id");
-                Onsex_idChanged();
+                OnSexIdChanging(value);
+                ReportPropertyChanging("SexId");
+                _SexId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SexId");
+                OnSexIdChanged();
             }
         }
-        private global::System.Int32 _sex_id;
-        partial void Onsex_idChanging(global::System.Int32 value);
-        partial void Onsex_idChanged();
+        private global::System.Int32 _SexId;
+        partial void OnSexIdChanging(global::System.Int32 value);
+        partial void OnSexIdChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String FirstName
+        {
+            get
+            {
+                return _FirstName;
+            }
+            set
+            {
+                OnFirstNameChanging(value);
+                ReportPropertyChanging("FirstName");
+                _FirstName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("FirstName");
+                OnFirstNameChanged();
+            }
+        }
+        private global::System.String _FirstName;
+        partial void OnFirstNameChanging(global::System.String value);
+        partial void OnFirstNameChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String LastName
+        {
+            get
+            {
+                return _LastName;
+            }
+            set
+            {
+                OnLastNameChanging(value);
+                ReportPropertyChanging("LastName");
+                _LastName = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("LastName");
+                OnLastNameChanged();
+            }
+        }
+        private global::System.String _LastName;
+        partial void OnLastNameChanging(global::System.String value);
+        partial void OnLastNameChanged();
 
         #endregion
 
@@ -2537,18 +2841,40 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_system_users1", "books")]
-        public EntityCollection<book> books
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_books_system_users1", "book")]
+        public EntityCollection<Book> books
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<book>("LMSDataModel.fk_books_system_users1", "books");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Book>("LMSDataModel.fk_books_system_users1", "book");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<book>("LMSDataModel.fk_books_system_users1", "books", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Book>("LMSDataModel.fk_books_system_users1", "book", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_Session_SystemUser", "session")]
+        public EntityCollection<Session> sessions
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Session>("LMSDataModel.fk_Session_SystemUser", "session");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Session>("LMSDataModel.fk_Session_SystemUser", "session", value);
                 }
             }
         }
@@ -2560,15 +2886,15 @@ namespace LibraryManagementSystemDAL.Data
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_sex1", "sex")]
-        public sex sex
+        public Sex sex
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<sex>("LMSDataModel.fk_system_users_sex1", "sex").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Sex>("LMSDataModel.fk_system_users_sex1", "sex").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<sex>("LMSDataModel.fk_system_users_sex1", "sex").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Sex>("LMSDataModel.fk_system_users_sex1", "sex").Value = value;
             }
         }
         /// <summary>
@@ -2576,17 +2902,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<sex> sexReference
+        public EntityReference<Sex> sexReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<sex>("LMSDataModel.fk_system_users_sex1", "sex");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Sex>("LMSDataModel.fk_system_users_sex1", "sex");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<sex>("LMSDataModel.fk_system_users_sex1", "sex", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Sex>("LMSDataModel.fk_system_users_sex1", "sex", value);
                 }
             }
         }
@@ -2597,18 +2923,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "student_book_loan")]
-        public EntityCollection<student_book_loan> student_book_loan
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_student_book_loan_system_users1", "studentbookloan")]
+        public EntityCollection<StudentBookLoan> studentbookloans
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<student_book_loan>("LMSDataModel.fk_student_book_loan_system_users1", "student_book_loan");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_system_users1", "studentbookloan");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<student_book_loan>("LMSDataModel.fk_student_book_loan_system_users1", "student_book_loan", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<StudentBookLoan>("LMSDataModel.fk_student_book_loan_system_users1", "studentbookloan", value);
                 }
             }
         }
@@ -2619,16 +2945,16 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_user_role", "user_role")]
-        public user_role user_role
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_user_role", "userrole")]
+        public UserRole userrole
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<user_role>("LMSDataModel.fk_system_users_user_role", "user_role").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserRole>("LMSDataModel.fk_system_users_user_role", "userrole").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<user_role>("LMSDataModel.fk_system_users_user_role", "user_role").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserRole>("LMSDataModel.fk_system_users_user_role", "userrole").Value = value;
             }
         }
         /// <summary>
@@ -2636,17 +2962,17 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<user_role> user_roleReference
+        public EntityReference<UserRole> userroleReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<user_role>("LMSDataModel.fk_system_users_user_role", "user_role");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<UserRole>("LMSDataModel.fk_system_users_user_role", "userrole");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<user_role>("LMSDataModel.fk_system_users_user_role", "user_role", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<UserRole>("LMSDataModel.fk_system_users_user_role", "userrole", value);
                 }
             }
         }
@@ -2658,24 +2984,24 @@ namespace LibraryManagementSystemDAL.Data
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="user_role")]
+    [EdmEntityTypeAttribute(NamespaceName="LMSDataModel", Name="UserRole")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class user_role : EntityObject
+    public partial class UserRole : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new user_role object.
+        /// Create a new UserRole object.
         /// </summary>
-        /// <param name="id">Initial value of the id property.</param>
-        /// <param name="description">Initial value of the description property.</param>
-        public static user_role Createuser_role(global::System.Int32 id, global::System.String description)
+        /// <param name="id">Initial value of the Id property.</param>
+        /// <param name="description">Initial value of the Description property.</param>
+        public static UserRole CreateUserRole(global::System.Int32 id, global::System.String description)
         {
-            user_role user_role = new user_role();
-            user_role.id = id;
-            user_role.description = description;
-            return user_role;
+            UserRole userRole = new UserRole();
+            userRole.Id = id;
+            userRole.Description = description;
+            return userRole;
         }
 
         #endregion
@@ -2687,51 +3013,51 @@ namespace LibraryManagementSystemDAL.Data
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 id
+        public global::System.Int32 Id
         {
             get
             {
-                return _id;
+                return _Id;
             }
             set
             {
-                if (_id != value)
+                if (_Id != value)
                 {
-                    OnidChanging(value);
-                    ReportPropertyChanging("id");
-                    _id = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("id");
-                    OnidChanged();
+                    OnIdChanging(value);
+                    ReportPropertyChanging("Id");
+                    _Id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("Id");
+                    OnIdChanged();
                 }
             }
         }
-        private global::System.Int32 _id;
-        partial void OnidChanging(global::System.Int32 value);
-        partial void OnidChanged();
+        private global::System.Int32 _Id;
+        partial void OnIdChanging(global::System.Int32 value);
+        partial void OnIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String description
+        public global::System.String Description
         {
             get
             {
-                return _description;
+                return _Description;
             }
             set
             {
-                OndescriptionChanging(value);
-                ReportPropertyChanging("description");
-                _description = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("description");
-                OndescriptionChanged();
+                OnDescriptionChanging(value);
+                ReportPropertyChanging("Description");
+                _Description = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("Description");
+                OnDescriptionChanged();
             }
         }
-        private global::System.String _description;
-        partial void OndescriptionChanging(global::System.String value);
-        partial void OndescriptionChanged();
+        private global::System.String _Description;
+        partial void OnDescriptionChanging(global::System.String value);
+        partial void OnDescriptionChanged();
 
         #endregion
 
@@ -2744,18 +3070,18 @@ namespace LibraryManagementSystemDAL.Data
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_user_role", "system_users")]
-        public EntityCollection<system_users> system_users
+        [EdmRelationshipNavigationPropertyAttribute("LMSDataModel", "fk_system_users_user_role", "systemuser")]
+        public EntityCollection<SystemUser> systemusers
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<system_users>("LMSDataModel.fk_system_users_user_role", "system_users");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<SystemUser>("LMSDataModel.fk_system_users_user_role", "systemuser");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<system_users>("LMSDataModel.fk_system_users_user_role", "system_users", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<SystemUser>("LMSDataModel.fk_system_users_user_role", "systemuser", value);
                 }
             }
         }

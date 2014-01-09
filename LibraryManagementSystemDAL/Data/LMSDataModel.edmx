@@ -4,311 +4,341 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LMS_DataModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="LMS_DataModelStoreContainer">
-          <EntitySet Name="authors" EntityType="LMS_DataModel.Store.authors" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="book_author" EntityType="LMS_DataModel.Store.book_author" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="books" EntityType="LMS_DataModel.Store.books" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="department" EntityType="LMS_DataModel.Store.department" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="publisher" EntityType="LMS_DataModel.Store.publisher" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="sex" EntityType="LMS_DataModel.Store.sex" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="student_book_loan" EntityType="LMS_DataModel.Store.student_book_loan" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="students" EntityType="LMS_DataModel.Store.students" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="system_users" EntityType="LMS_DataModel.Store.system_users" store:Type="Tables" Schema="lms-dwh" />
-          <EntitySet Name="user_role" EntityType="LMS_DataModel.Store.user_role" store:Type="Tables" Schema="lms-dwh" />
-          <AssociationSet Name="fk_book_author_author1" Association="LMS_DataModel.Store.fk_book_author_author1">
-            <End Role="authors" EntitySet="authors" />
-            <End Role="book_author" EntitySet="book_author" />
+      <Schema Namespace="LMSDataModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="LMSDataModelStoreContainer">
+          <EntitySet Name="author" EntityType="LMSDataModel.Store.author" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="book" EntityType="LMSDataModel.Store.book" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="bookauthor" EntityType="LMSDataModel.Store.bookauthor" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="department" EntityType="LMSDataModel.Store.department" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="publisher" EntityType="LMSDataModel.Store.publisher" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="session" EntityType="LMSDataModel.Store.session" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="sex" EntityType="LMSDataModel.Store.sex" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="student" EntityType="LMSDataModel.Store.student" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="studentbookloan" EntityType="LMSDataModel.Store.studentbookloan" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="systemuser" EntityType="LMSDataModel.Store.systemuser" store:Type="Tables" Schema="lms-dwh" />
+          <EntitySet Name="userrole" EntityType="LMSDataModel.Store.userrole" store:Type="Tables" Schema="lms-dwh" />
+          <AssociationSet Name="fk_book_author_author1" Association="LMSDataModel.Store.fk_book_author_author1">
+            <End Role="author" EntitySet="author" />
+            <End Role="bookauthor" EntitySet="bookauthor" />
           </AssociationSet>
-          <AssociationSet Name="fk_book_author_books1" Association="LMS_DataModel.Store.fk_book_author_books1">
-            <End Role="books" EntitySet="books" />
-            <End Role="book_author" EntitySet="book_author" />
+          <AssociationSet Name="fk_book_author_books1" Association="LMSDataModel.Store.fk_book_author_books1">
+            <End Role="book" EntitySet="book" />
+            <End Role="bookauthor" EntitySet="bookauthor" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_department1" Association="LMS_DataModel.Store.fk_books_department1">
+          <AssociationSet Name="fk_books_department1" Association="LMSDataModel.Store.fk_books_department1">
             <End Role="department" EntitySet="department" />
-            <End Role="books" EntitySet="books" />
+            <End Role="book" EntitySet="book" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_publisher1" Association="LMS_DataModel.Store.fk_books_publisher1">
+          <AssociationSet Name="fk_books_publisher1" Association="LMSDataModel.Store.fk_books_publisher1">
             <End Role="publisher" EntitySet="publisher" />
-            <End Role="books" EntitySet="books" />
+            <End Role="book" EntitySet="book" />
           </AssociationSet>
-          <AssociationSet Name="fk_books_system_users1" Association="LMS_DataModel.Store.fk_books_system_users1">
-            <End Role="system_users" EntitySet="system_users" />
-            <End Role="books" EntitySet="books" />
+          <AssociationSet Name="fk_books_system_users1" Association="LMSDataModel.Store.fk_books_system_users1">
+            <End Role="systemuser" EntitySet="systemuser" />
+            <End Role="book" EntitySet="book" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_books1" Association="LMS_DataModel.Store.fk_student_book_loan_books1">
-            <End Role="books" EntitySet="books" />
-            <End Role="student_book_loan" EntitySet="student_book_loan" />
+          <AssociationSet Name="fk_Session_SystemUser" Association="LMSDataModel.Store.fk_Session_SystemUser">
+            <End Role="systemuser" EntitySet="systemuser" />
+            <End Role="session" EntitySet="session" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_students1" Association="LMS_DataModel.Store.fk_student_book_loan_students1">
-            <End Role="students" EntitySet="students" />
-            <End Role="student_book_loan" EntitySet="student_book_loan" />
+          <AssociationSet Name="fk_student_book_loan_books1" Association="LMSDataModel.Store.fk_student_book_loan_books1">
+            <End Role="book" EntitySet="book" />
+            <End Role="studentbookloan" EntitySet="studentbookloan" />
           </AssociationSet>
-          <AssociationSet Name="fk_student_book_loan_system_users1" Association="LMS_DataModel.Store.fk_student_book_loan_system_users1">
-            <End Role="system_users" EntitySet="system_users" />
-            <End Role="student_book_loan" EntitySet="student_book_loan" />
+          <AssociationSet Name="fk_student_book_loan_students1" Association="LMSDataModel.Store.fk_student_book_loan_students1">
+            <End Role="student" EntitySet="student" />
+            <End Role="studentbookloan" EntitySet="studentbookloan" />
           </AssociationSet>
-          <AssociationSet Name="fk_students_department1" Association="LMS_DataModel.Store.fk_students_department1">
+          <AssociationSet Name="fk_student_book_loan_system_users1" Association="LMSDataModel.Store.fk_student_book_loan_system_users1">
+            <End Role="systemuser" EntitySet="systemuser" />
+            <End Role="studentbookloan" EntitySet="studentbookloan" />
+          </AssociationSet>
+          <AssociationSet Name="fk_students_department1" Association="LMSDataModel.Store.fk_students_department1">
             <End Role="department" EntitySet="department" />
-            <End Role="students" EntitySet="students" />
+            <End Role="student" EntitySet="student" />
           </AssociationSet>
-          <AssociationSet Name="fk_students_sex1" Association="LMS_DataModel.Store.fk_students_sex1">
+          <AssociationSet Name="fk_students_sex1" Association="LMSDataModel.Store.fk_students_sex1">
             <End Role="sex" EntitySet="sex" />
-            <End Role="students" EntitySet="students" />
+            <End Role="student" EntitySet="student" />
           </AssociationSet>
-          <AssociationSet Name="fk_system_users_sex1" Association="LMS_DataModel.Store.fk_system_users_sex1">
+          <AssociationSet Name="fk_system_users_sex1" Association="LMSDataModel.Store.fk_system_users_sex1">
             <End Role="sex" EntitySet="sex" />
-            <End Role="system_users" EntitySet="system_users" />
+            <End Role="systemuser" EntitySet="systemuser" />
           </AssociationSet>
-          <AssociationSet Name="fk_system_users_user_role" Association="LMS_DataModel.Store.fk_system_users_user_role">
-            <End Role="user_role" EntitySet="user_role" />
-            <End Role="system_users" EntitySet="system_users" />
+          <AssociationSet Name="fk_system_users_user_role" Association="LMSDataModel.Store.fk_system_users_user_role">
+            <End Role="userrole" EntitySet="userrole" />
+            <End Role="systemuser" EntitySet="systemuser" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="authors">
+        <EntityType Name="author">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="salutation" Type="varchar" MaxLength="45" />
-          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="middle_name" Type="varchar" MaxLength="250" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Salutation" Type="varchar" MaxLength="45" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="250" />
         </EntityType>
-        <EntityType Name="book_author">
+        <EntityType Name="book">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="authors_id" Type="int" Nullable="false" />
-          <Property Name="books_id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Isbn" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="PublicationYear" Type="datetime" Nullable="false" />
+          <Property Name="InsertionDate" Type="datetime" Nullable="false" />
+          <Property Name="Available" Type="bool" Nullable="false" />
+          <Property Name="PublisherID" Type="int" Nullable="false" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="AddedBy" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="books">
+        <EntityType Name="bookauthor">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="isbn" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="title" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="publication_year" Type="date" Nullable="false" />
-          <Property Name="insertion_date" Type="datetime" Nullable="false" />
-          <Property Name="available" Type="bool" Nullable="false" />
-          <Property Name="publisher_id" Type="int" Nullable="false" />
-          <Property Name="department_id" Type="int" Nullable="false" />
-          <Property Name="added_by" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="int" Nullable="false" />
+          <Property Name="BookId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="department">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
         </EntityType>
         <EntityType Name="publisher">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="telephone" Type="varchar" MaxLength="250" />
-          <Property Name="email" Type="varchar" MaxLength="250" />
-          <Property Name="address" Type="varchar" MaxLength="250" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Telephone" Type="varchar" MaxLength="250" />
+          <Property Name="Email" Type="varchar" MaxLength="250" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="session">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpirationDate" Type="datetime" Nullable="false" />
+          <Property Name="LastAccessDate" Type="datetime" />
+          <Property Name="SystemUser_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sex">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="description" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="45" />
         </EntityType>
-        <EntityType Name="student_book_loan">
+        <EntityType Name="student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="RegistrationID" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Telephone" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="Address" Type="varchar" Nullable="false" MaxLength="250" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="EnrolmentDate" Type="date" Nullable="false" />
+          <Property Name="CurrentlyRegistered" Type="bool" />
+          <Property Name="SexId" Type="int" Nullable="false" />
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="studentbookloan">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="issue_date" Type="datetime" Nullable="false" />
-          <Property Name="due_date" Type="datetime" Nullable="false" />
-          <Property Name="return_date" Type="datetime" Nullable="false" />
-          <Property Name="issuer" Type="int" Nullable="false" />
-          <Property Name="books_id" Type="int" Nullable="false" />
-          <Property Name="students_reg_no" Type="int" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="DueDate" Type="datetime" Nullable="false" />
+          <Property Name="ReturnDate" Type="datetime" Nullable="false" />
+          <Property Name="IssuerID" Type="int" Nullable="false" />
+          <Property Name="BookID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="students">
+        <EntityType Name="systemuser">
           <Key>
-            <PropertyRef Name="reg_no" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="reg_no" Type="int" Nullable="false" />
-          <Property Name="first_name" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="last_name" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="email" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="telephone" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="address" Type="varchar" Nullable="false" MaxLength="250" />
-          <Property Name="date_of_birth" Type="date" Nullable="false" />
-          <Property Name="enrolment_date" Type="date" Nullable="false" />
-          <Property Name="currently_registered" Type="bool" />
-          <Property Name="sex_id" Type="int" Nullable="false" />
-          <Property Name="department_id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="UserRoleId" Type="int" Nullable="false" />
+          <Property Name="SexId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="100" />
         </EntityType>
-        <EntityType Name="system_users">
+        <EntityType Name="userrole">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="varchar" Nullable="false" MaxLength="50" />
-          <Property Name="password" Type="varchar" MaxLength="100" />
-          <Property Name="create_date" Type="datetime" />
-          <Property Name="last_login" Type="datetime" />
-          <Property Name="user_role_id" Type="int" Nullable="false" />
-          <Property Name="sex_id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="user_role">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="description" Type="varchar" Nullable="false" MaxLength="45" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" Nullable="false" MaxLength="45" />
         </EntityType>
         <Association Name="fk_book_author_author1">
-          <End Role="authors" Type="LMS_DataModel.Store.authors" Multiplicity="1" />
-          <End Role="book_author" Type="LMS_DataModel.Store.book_author" Multiplicity="*" />
+          <End Role="author" Type="LMSDataModel.Store.author" Multiplicity="1" />
+          <End Role="bookauthor" Type="LMSDataModel.Store.bookauthor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="authors">
-              <PropertyRef Name="id" />
+            <Principal Role="author">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="book_author">
-              <PropertyRef Name="authors_id" />
+            <Dependent Role="bookauthor">
+              <PropertyRef Name="AuthorId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_book_author_books1">
-          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="1" />
-          <End Role="book_author" Type="LMS_DataModel.Store.book_author" Multiplicity="*" />
+          <End Role="book" Type="LMSDataModel.Store.book" Multiplicity="1" />
+          <End Role="bookauthor" Type="LMSDataModel.Store.bookauthor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="books">
-              <PropertyRef Name="id" />
+            <Principal Role="book">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="book_author">
-              <PropertyRef Name="books_id" />
+            <Dependent Role="bookauthor">
+              <PropertyRef Name="BookId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_department1">
-          <End Role="department" Type="LMS_DataModel.Store.department" Multiplicity="1" />
-          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="*" />
+          <End Role="department" Type="LMSDataModel.Store.department" Multiplicity="1" />
+          <End Role="book" Type="LMSDataModel.Store.book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="books">
-              <PropertyRef Name="department_id" />
+            <Dependent Role="book">
+              <PropertyRef Name="DepartmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_publisher1">
-          <End Role="publisher" Type="LMS_DataModel.Store.publisher" Multiplicity="1" />
-          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="*" />
+          <End Role="publisher" Type="LMSDataModel.Store.publisher" Multiplicity="1" />
+          <End Role="book" Type="LMSDataModel.Store.book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="publisher">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="books">
-              <PropertyRef Name="publisher_id" />
+            <Dependent Role="book">
+              <PropertyRef Name="PublisherID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_system_users1">
-          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="1" />
-          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="*" />
+          <End Role="systemuser" Type="LMSDataModel.Store.systemuser" Multiplicity="1" />
+          <End Role="book" Type="LMSDataModel.Store.book" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="system_users">
-              <PropertyRef Name="id" />
+            <Principal Role="systemuser">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="books">
-              <PropertyRef Name="added_by" />
+            <Dependent Role="book">
+              <PropertyRef Name="AddedBy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Session_SystemUser">
+          <End Role="systemuser" Type="LMSDataModel.Store.systemuser" Multiplicity="1" />
+          <End Role="session" Type="LMSDataModel.Store.session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="systemuser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="session">
+              <PropertyRef Name="SystemUser_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_books1">
-          <End Role="books" Type="LMS_DataModel.Store.books" Multiplicity="1" />
-          <End Role="student_book_loan" Type="LMS_DataModel.Store.student_book_loan" Multiplicity="*" />
+          <End Role="book" Type="LMSDataModel.Store.book" Multiplicity="1" />
+          <End Role="studentbookloan" Type="LMSDataModel.Store.studentbookloan" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="books">
-              <PropertyRef Name="id" />
+            <Principal Role="book">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="student_book_loan">
-              <PropertyRef Name="books_id" />
+            <Dependent Role="studentbookloan">
+              <PropertyRef Name="BookID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_students1">
-          <End Role="students" Type="LMS_DataModel.Store.students" Multiplicity="1" />
-          <End Role="student_book_loan" Type="LMS_DataModel.Store.student_book_loan" Multiplicity="*" />
+          <End Role="student" Type="LMSDataModel.Store.student" Multiplicity="1" />
+          <End Role="studentbookloan" Type="LMSDataModel.Store.studentbookloan" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="students">
-              <PropertyRef Name="reg_no" />
+            <Principal Role="student">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="student_book_loan">
-              <PropertyRef Name="students_reg_no" />
+            <Dependent Role="studentbookloan">
+              <PropertyRef Name="StudentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_system_users1">
-          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="1" />
-          <End Role="student_book_loan" Type="LMS_DataModel.Store.student_book_loan" Multiplicity="*" />
+          <End Role="systemuser" Type="LMSDataModel.Store.systemuser" Multiplicity="1" />
+          <End Role="studentbookloan" Type="LMSDataModel.Store.studentbookloan" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="system_users">
-              <PropertyRef Name="id" />
+            <Principal Role="systemuser">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="student_book_loan">
-              <PropertyRef Name="issuer" />
+            <Dependent Role="studentbookloan">
+              <PropertyRef Name="IssuerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_department1">
-          <End Role="department" Type="LMS_DataModel.Store.department" Multiplicity="1" />
-          <End Role="students" Type="LMS_DataModel.Store.students" Multiplicity="*" />
+          <End Role="department" Type="LMSDataModel.Store.department" Multiplicity="1" />
+          <End Role="student" Type="LMSDataModel.Store.student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="students">
-              <PropertyRef Name="department_id" />
+            <Dependent Role="student">
+              <PropertyRef Name="DepartmentId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_sex1">
-          <End Role="sex" Type="LMS_DataModel.Store.sex" Multiplicity="1" />
-          <End Role="students" Type="LMS_DataModel.Store.students" Multiplicity="*" />
+          <End Role="sex" Type="LMSDataModel.Store.sex" Multiplicity="1" />
+          <End Role="student" Type="LMSDataModel.Store.student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="students">
-              <PropertyRef Name="sex_id" />
+            <Dependent Role="student">
+              <PropertyRef Name="SexId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_sex1">
-          <End Role="sex" Type="LMS_DataModel.Store.sex" Multiplicity="1" />
-          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="*" />
+          <End Role="sex" Type="LMSDataModel.Store.sex" Multiplicity="1" />
+          <End Role="systemuser" Type="LMSDataModel.Store.systemuser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="system_users">
-              <PropertyRef Name="sex_id" />
+            <Dependent Role="systemuser">
+              <PropertyRef Name="SexId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_user_role">
-          <End Role="user_role" Type="LMS_DataModel.Store.user_role" Multiplicity="1" />
-          <End Role="system_users" Type="LMS_DataModel.Store.system_users" Multiplicity="*" />
+          <End Role="userrole" Type="LMSDataModel.Store.userrole" Multiplicity="1" />
+          <End Role="systemuser" Type="LMSDataModel.Store.systemuser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="user_role">
-              <PropertyRef Name="id" />
+            <Principal Role="userrole">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="system_users">
-              <PropertyRef Name="user_role_id" />
+            <Dependent Role="systemuser">
+              <PropertyRef Name="UserRoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -318,333 +348,365 @@
     <edmx:ConceptualModels>
       <Schema Namespace="LMSDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="LMSDataModelEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="authors" EntityType="LMSDataModel.author" />
-          <EntitySet Name="book_author" EntityType="LMSDataModel.book_author" />
-          <EntitySet Name="books" EntityType="LMSDataModel.book" />
-          <EntitySet Name="departments" EntityType="LMSDataModel.department" />
-          <EntitySet Name="publishers" EntityType="LMSDataModel.publisher" />
-          <EntitySet Name="sexes" EntityType="LMSDataModel.sex" />
-          <EntitySet Name="student_book_loan" EntityType="LMSDataModel.student_book_loan" />
-          <EntitySet Name="students" EntityType="LMSDataModel.student" />
-          <EntitySet Name="system_users" EntityType="LMSDataModel.system_users" />
-          <EntitySet Name="user_role" EntityType="LMSDataModel.user_role" />
+          <EntitySet Name="Authors" EntityType="LMSDataModel.Author" />
+          <EntitySet Name="Books" EntityType="LMSDataModel.Book" />
+          <EntitySet Name="BookAuthors" EntityType="LMSDataModel.BookAuthor" />
+          <EntitySet Name="Departments" EntityType="LMSDataModel.Department" />
+          <EntitySet Name="Publishers" EntityType="LMSDataModel.Publisher" />
+          <EntitySet Name="Sessions" EntityType="LMSDataModel.Session" />
+          <EntitySet Name="Sexes" EntityType="LMSDataModel.Sex" />
+          <EntitySet Name="Students" EntityType="LMSDataModel.Student" />
+          <EntitySet Name="StudentBookLoans" EntityType="LMSDataModel.StudentBookLoan" />
+          <EntitySet Name="SystemUsers" EntityType="LMSDataModel.SystemUser" />
+          <EntitySet Name="UserRoles" EntityType="LMSDataModel.UserRole" />
           <AssociationSet Name="fk_book_author_author1" Association="LMSDataModel.fk_book_author_author1">
-            <End Role="authors" EntitySet="authors" />
-            <End Role="book_author" EntitySet="book_author" />
+            <End Role="author" EntitySet="Authors" />
+            <End Role="bookauthor" EntitySet="BookAuthors" />
           </AssociationSet>
           <AssociationSet Name="fk_book_author_books1" Association="LMSDataModel.fk_book_author_books1">
-            <End Role="books" EntitySet="books" />
-            <End Role="book_author" EntitySet="book_author" />
+            <End Role="book" EntitySet="Books" />
+            <End Role="bookauthor" EntitySet="BookAuthors" />
           </AssociationSet>
           <AssociationSet Name="fk_books_department1" Association="LMSDataModel.fk_books_department1">
-            <End Role="department" EntitySet="departments" />
-            <End Role="books" EntitySet="books" />
+            <End Role="department" EntitySet="Departments" />
+            <End Role="book" EntitySet="Books" />
           </AssociationSet>
           <AssociationSet Name="fk_books_publisher1" Association="LMSDataModel.fk_books_publisher1">
-            <End Role="publisher" EntitySet="publishers" />
-            <End Role="books" EntitySet="books" />
+            <End Role="publisher" EntitySet="Publishers" />
+            <End Role="book" EntitySet="Books" />
           </AssociationSet>
           <AssociationSet Name="fk_books_system_users1" Association="LMSDataModel.fk_books_system_users1">
-            <End Role="system_users" EntitySet="system_users" />
-            <End Role="books" EntitySet="books" />
+            <End Role="systemuser" EntitySet="SystemUsers" />
+            <End Role="book" EntitySet="Books" />
           </AssociationSet>
           <AssociationSet Name="fk_student_book_loan_books1" Association="LMSDataModel.fk_student_book_loan_books1">
-            <End Role="books" EntitySet="books" />
-            <End Role="student_book_loan" EntitySet="student_book_loan" />
+            <End Role="book" EntitySet="Books" />
+            <End Role="studentbookloan" EntitySet="StudentBookLoans" />
           </AssociationSet>
           <AssociationSet Name="fk_students_department1" Association="LMSDataModel.fk_students_department1">
-            <End Role="department" EntitySet="departments" />
-            <End Role="students" EntitySet="students" />
+            <End Role="department" EntitySet="Departments" />
+            <End Role="student" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Session_SystemUser" Association="LMSDataModel.fk_Session_SystemUser">
+            <End Role="systemuser" EntitySet="SystemUsers" />
+            <End Role="session" EntitySet="Sessions" />
           </AssociationSet>
           <AssociationSet Name="fk_students_sex1" Association="LMSDataModel.fk_students_sex1">
-            <End Role="sex" EntitySet="sexes" />
-            <End Role="students" EntitySet="students" />
+            <End Role="sex" EntitySet="Sexes" />
+            <End Role="student" EntitySet="Students" />
           </AssociationSet>
           <AssociationSet Name="fk_system_users_sex1" Association="LMSDataModel.fk_system_users_sex1">
-            <End Role="sex" EntitySet="sexes" />
-            <End Role="system_users" EntitySet="system_users" />
+            <End Role="sex" EntitySet="Sexes" />
+            <End Role="systemuser" EntitySet="SystemUsers" />
           </AssociationSet>
           <AssociationSet Name="fk_student_book_loan_students1" Association="LMSDataModel.fk_student_book_loan_students1">
-            <End Role="students" EntitySet="students" />
-            <End Role="student_book_loan" EntitySet="student_book_loan" />
+            <End Role="student" EntitySet="Students" />
+            <End Role="studentbookloan" EntitySet="StudentBookLoans" />
           </AssociationSet>
           <AssociationSet Name="fk_student_book_loan_system_users1" Association="LMSDataModel.fk_student_book_loan_system_users1">
-            <End Role="system_users" EntitySet="system_users" />
-            <End Role="student_book_loan" EntitySet="student_book_loan" />
+            <End Role="systemuser" EntitySet="SystemUsers" />
+            <End Role="studentbookloan" EntitySet="StudentBookLoans" />
           </AssociationSet>
           <AssociationSet Name="fk_system_users_user_role" Association="LMSDataModel.fk_system_users_user_role">
-            <End Role="user_role" EntitySet="user_role" />
-            <End Role="system_users" EntitySet="system_users" />
+            <End Role="userrole" EntitySet="UserRoles" />
+            <End Role="systemuser" EntitySet="SystemUsers" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="author">
+        <EntityType Name="Author">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Salutation" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="bookauthors" Relationship="LMSDataModel.fk_book_author_author1" FromRole="author" ToRole="bookauthor" />
+        </EntityType>
+        <EntityType Name="Book">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Isbn" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="PublicationYear" Type="DateTime" Nullable="false" />
+          <Property Name="InsertionDate" Type="DateTime" Nullable="false" />
+          <Property Name="Available" Type="Boolean" Nullable="false" />
+          <Property Name="PublisherID" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="AddedBy" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="bookauthors" Relationship="LMSDataModel.fk_book_author_books1" FromRole="book" ToRole="bookauthor" />
+          <NavigationProperty Name="department" Relationship="LMSDataModel.fk_books_department1" FromRole="book" ToRole="department" />
+          <NavigationProperty Name="publisher" Relationship="LMSDataModel.fk_books_publisher1" FromRole="book" ToRole="publisher" />
+          <NavigationProperty Name="systemuser" Relationship="LMSDataModel.fk_books_system_users1" FromRole="book" ToRole="systemuser" />
+          <NavigationProperty Name="studentbookloans" Relationship="LMSDataModel.fk_student_book_loan_books1" FromRole="book" ToRole="studentbookloan" />
+        </EntityType>
+        <EntityType Name="BookAuthor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AuthorId" Type="Int32" Nullable="false" />
+          <Property Name="BookId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="author" Relationship="LMSDataModel.fk_book_author_author1" FromRole="bookauthor" ToRole="author" />
+          <NavigationProperty Name="book" Relationship="LMSDataModel.fk_book_author_books1" FromRole="bookauthor" ToRole="book" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_department1" FromRole="department" ToRole="book" />
+          <NavigationProperty Name="students" Relationship="LMSDataModel.fk_students_department1" FromRole="department" ToRole="student" />
+        </EntityType>
+        <EntityType Name="Publisher">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_publisher1" FromRole="publisher" ToRole="book" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" />
+          <Property Name="ExpirationDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastAccessDate" Type="DateTime" />
+          <Property Name="SystemUser_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="systemuser" Relationship="LMSDataModel.fk_Session_SystemUser" FromRole="session" ToRole="systemuser" />
+        </EntityType>
+        <EntityType Name="Sex">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="students" Relationship="LMSDataModel.fk_students_sex1" FromRole="sex" ToRole="student" />
+          <NavigationProperty Name="systemusers" Relationship="LMSDataModel.fk_system_users_sex1" FromRole="sex" ToRole="systemuser" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="RegistrationID" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Telephone" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" />
+          <Property Name="EnrolmentDate" Type="DateTime" Nullable="false" />
+          <Property Name="CurrentlyRegistered" Type="Boolean" />
+          <Property Name="SexId" Type="Int32" Nullable="false" />
+          <Property Name="DepartmentId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="department" Relationship="LMSDataModel.fk_students_department1" FromRole="student" ToRole="department" />
+          <NavigationProperty Name="sex" Relationship="LMSDataModel.fk_students_sex1" FromRole="student" ToRole="sex" />
+          <NavigationProperty Name="studentbookloans" Relationship="LMSDataModel.fk_student_book_loan_students1" FromRole="student" ToRole="studentbookloan" />
+        </EntityType>
+        <EntityType Name="StudentBookLoan">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="salutation" Type="String" MaxLength="45" Unicode="false" FixedLength="false" />
-          <Property Name="first_name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="last_name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="middle_name" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="book_author" Relationship="LMSDataModel.fk_book_author_author1" FromRole="authors" ToRole="book_author" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" />
+          <Property Name="DueDate" Type="DateTime" Nullable="false" />
+          <Property Name="ReturnDate" Type="DateTime" Nullable="false" />
+          <Property Name="IssuerID" Type="Int32" Nullable="false" />
+          <Property Name="BookID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="book" Relationship="LMSDataModel.fk_student_book_loan_books1" FromRole="studentbookloan" ToRole="book" />
+          <NavigationProperty Name="student" Relationship="LMSDataModel.fk_student_book_loan_students1" FromRole="studentbookloan" ToRole="student" />
+          <NavigationProperty Name="systemuser" Relationship="LMSDataModel.fk_student_book_loan_system_users1" FromRole="studentbookloan" ToRole="systemuser" />
         </EntityType>
-        <EntityType Name="book_author">
+        <EntityType Name="SystemUser">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="authors_id" Type="Int32" Nullable="false" />
-          <Property Name="books_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="author" Relationship="LMSDataModel.fk_book_author_author1" FromRole="book_author" ToRole="authors" />
-          <NavigationProperty Name="book" Relationship="LMSDataModel.fk_book_author_books1" FromRole="book_author" ToRole="books" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="LastLogin" Type="DateTime" />
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" />
+          <Property Name="SexId" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_system_users1" FromRole="systemuser" ToRole="book" />
+          <NavigationProperty Name="sessions" Relationship="LMSDataModel.fk_Session_SystemUser" FromRole="systemuser" ToRole="session" />
+          <NavigationProperty Name="sex" Relationship="LMSDataModel.fk_system_users_sex1" FromRole="systemuser" ToRole="sex" />
+          <NavigationProperty Name="studentbookloans" Relationship="LMSDataModel.fk_student_book_loan_system_users1" FromRole="systemuser" ToRole="studentbookloan" />
+          <NavigationProperty Name="userrole" Relationship="LMSDataModel.fk_system_users_user_role" FromRole="systemuser" ToRole="userrole" />
         </EntityType>
-        <EntityType Name="book">
+        <EntityType Name="UserRole">
           <Key>
-            <PropertyRef Name="id" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="isbn" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="title" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="publication_year" Type="DateTime" Nullable="false" />
-          <Property Name="insertion_date" Type="DateTime" Nullable="false" />
-          <Property Name="available" Type="Boolean" Nullable="false" />
-          <Property Name="publisher_id" Type="Int32" Nullable="false" />
-          <Property Name="department_id" Type="Int32" Nullable="false" />
-          <Property Name="added_by" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="book_author" Relationship="LMSDataModel.fk_book_author_books1" FromRole="books" ToRole="book_author" />
-          <NavigationProperty Name="department" Relationship="LMSDataModel.fk_books_department1" FromRole="books" ToRole="department" />
-          <NavigationProperty Name="publisher" Relationship="LMSDataModel.fk_books_publisher1" FromRole="books" ToRole="publisher" />
-          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_books_system_users1" FromRole="books" ToRole="system_users" />
-          <NavigationProperty Name="student_book_loan" Relationship="LMSDataModel.fk_student_book_loan_books1" FromRole="books" ToRole="student_book_loan" />
-        </EntityType>
-        <EntityType Name="department">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_department1" FromRole="department" ToRole="books" />
-          <NavigationProperty Name="students" Relationship="LMSDataModel.fk_students_department1" FromRole="department" ToRole="students" />
-        </EntityType>
-        <EntityType Name="publisher">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="telephone" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_publisher1" FromRole="publisher" ToRole="books" />
-        </EntityType>
-        <EntityType Name="sex">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="students" Relationship="LMSDataModel.fk_students_sex1" FromRole="sex" ToRole="students" />
-          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_system_users_sex1" FromRole="sex" ToRole="system_users" />
-        </EntityType>
-        <EntityType Name="student_book_loan">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="issue_date" Type="DateTime" Nullable="false" />
-          <Property Name="due_date" Type="DateTime" Nullable="false" />
-          <Property Name="return_date" Type="DateTime" Nullable="false" />
-          <Property Name="issuer" Type="Int32" Nullable="false" />
-          <Property Name="books_id" Type="Int32" Nullable="false" />
-          <Property Name="students_reg_no" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="book" Relationship="LMSDataModel.fk_student_book_loan_books1" FromRole="student_book_loan" ToRole="books" />
-          <NavigationProperty Name="student" Relationship="LMSDataModel.fk_student_book_loan_students1" FromRole="student_book_loan" ToRole="students" />
-          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_student_book_loan_system_users1" FromRole="student_book_loan" ToRole="system_users" />
-        </EntityType>
-        <EntityType Name="student">
-          <Key>
-            <PropertyRef Name="reg_no" />
-          </Key>
-          <Property Name="reg_no" Type="Int32" Nullable="false" />
-          <Property Name="first_name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="last_name" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="telephone" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="address" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
-          <Property Name="date_of_birth" Type="DateTime" Nullable="false" />
-          <Property Name="enrolment_date" Type="DateTime" Nullable="false" />
-          <Property Name="currently_registered" Type="Boolean" />
-          <Property Name="sex_id" Type="Int32" Nullable="false" />
-          <Property Name="department_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="department" Relationship="LMSDataModel.fk_students_department1" FromRole="students" ToRole="department" />
-          <NavigationProperty Name="sex" Relationship="LMSDataModel.fk_students_sex1" FromRole="students" ToRole="sex" />
-          <NavigationProperty Name="student_book_loan" Relationship="LMSDataModel.fk_student_book_loan_students1" FromRole="students" ToRole="student_book_loan" />
-        </EntityType>
-        <EntityType Name="system_users">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="username" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
-          <Property Name="password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
-          <Property Name="create_date" Type="DateTime" />
-          <Property Name="last_login" Type="DateTime" />
-          <Property Name="user_role_id" Type="Int32" Nullable="false" />
-          <Property Name="sex_id" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="books" Relationship="LMSDataModel.fk_books_system_users1" FromRole="system_users" ToRole="books" />
-          <NavigationProperty Name="sex" Relationship="LMSDataModel.fk_system_users_sex1" FromRole="system_users" ToRole="sex" />
-          <NavigationProperty Name="student_book_loan" Relationship="LMSDataModel.fk_student_book_loan_system_users1" FromRole="system_users" ToRole="student_book_loan" />
-          <NavigationProperty Name="user_role" Relationship="LMSDataModel.fk_system_users_user_role" FromRole="system_users" ToRole="user_role" />
-        </EntityType>
-        <EntityType Name="user_role">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="description" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="system_users" Relationship="LMSDataModel.fk_system_users_user_role" FromRole="user_role" ToRole="system_users" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="45" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="systemusers" Relationship="LMSDataModel.fk_system_users_user_role" FromRole="userrole" ToRole="systemuser" />
         </EntityType>
         <Association Name="fk_book_author_author1">
-          <End Role="authors" Type="LMSDataModel.author" Multiplicity="1" />
-          <End Role="book_author" Type="LMSDataModel.book_author" Multiplicity="*" />
+          <End Role="author" Type="LMSDataModel.Author" Multiplicity="1" />
+          <End Role="bookauthor" Type="LMSDataModel.BookAuthor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="authors">
-              <PropertyRef Name="id" />
+            <Principal Role="author">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="book_author">
-              <PropertyRef Name="authors_id" />
+            <Dependent Role="bookauthor">
+              <PropertyRef Name="AuthorId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_book_author_books1">
-          <End Role="books" Type="LMSDataModel.book" Multiplicity="1" />
-          <End Role="book_author" Type="LMSDataModel.book_author" Multiplicity="*" />
+          <End Role="book" Type="LMSDataModel.Book" Multiplicity="1" />
+          <End Role="bookauthor" Type="LMSDataModel.BookAuthor" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="books">
-              <PropertyRef Name="id" />
+            <Principal Role="book">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="book_author">
-              <PropertyRef Name="books_id" />
+            <Dependent Role="bookauthor">
+              <PropertyRef Name="BookId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_department1">
-          <End Role="department" Type="LMSDataModel.department" Multiplicity="1" />
-          <End Role="books" Type="LMSDataModel.book" Multiplicity="*" />
+          <End Role="department" Type="LMSDataModel.Department" Multiplicity="1" />
+          <End Role="book" Type="LMSDataModel.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="books">
-              <PropertyRef Name="department_id" />
+            <Dependent Role="book">
+              <PropertyRef Name="DepartmentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_publisher1">
-          <End Role="publisher" Type="LMSDataModel.publisher" Multiplicity="1" />
-          <End Role="books" Type="LMSDataModel.book" Multiplicity="*" />
+          <End Role="publisher" Type="LMSDataModel.Publisher" Multiplicity="1" />
+          <End Role="book" Type="LMSDataModel.Book" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="publisher">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="books">
-              <PropertyRef Name="publisher_id" />
+            <Dependent Role="book">
+              <PropertyRef Name="PublisherID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_books_system_users1">
-          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="1" />
-          <End Role="books" Type="LMSDataModel.book" Multiplicity="*" />
+          <End Role="systemuser" Type="LMSDataModel.SystemUser" Multiplicity="1" />
+          <End Role="book" Type="LMSDataModel.Book" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="system_users">
-              <PropertyRef Name="id" />
+            <Principal Role="systemuser">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="books">
-              <PropertyRef Name="added_by" />
+            <Dependent Role="book">
+              <PropertyRef Name="AddedBy" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_books1">
-          <End Role="books" Type="LMSDataModel.book" Multiplicity="1" />
-          <End Role="student_book_loan" Type="LMSDataModel.student_book_loan" Multiplicity="*" />
+          <End Role="book" Type="LMSDataModel.Book" Multiplicity="1" />
+          <End Role="studentbookloan" Type="LMSDataModel.StudentBookLoan" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="books">
-              <PropertyRef Name="id" />
+            <Principal Role="book">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="student_book_loan">
-              <PropertyRef Name="books_id" />
+            <Dependent Role="studentbookloan">
+              <PropertyRef Name="BookID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_department1">
-          <End Role="department" Type="LMSDataModel.department" Multiplicity="1" />
-          <End Role="students" Type="LMSDataModel.student" Multiplicity="*" />
+          <End Role="department" Type="LMSDataModel.Department" Multiplicity="1" />
+          <End Role="student" Type="LMSDataModel.Student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="department">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="students">
-              <PropertyRef Name="department_id" />
+            <Dependent Role="student">
+              <PropertyRef Name="DepartmentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_Session_SystemUser">
+          <End Role="systemuser" Type="LMSDataModel.SystemUser" Multiplicity="1" />
+          <End Role="session" Type="LMSDataModel.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="systemuser">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="session">
+              <PropertyRef Name="SystemUser_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_students_sex1">
-          <End Role="sex" Type="LMSDataModel.sex" Multiplicity="1" />
-          <End Role="students" Type="LMSDataModel.student" Multiplicity="*" />
+          <End Role="sex" Type="LMSDataModel.Sex" Multiplicity="1" />
+          <End Role="student" Type="LMSDataModel.Student" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="students">
-              <PropertyRef Name="sex_id" />
+            <Dependent Role="student">
+              <PropertyRef Name="SexId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_sex1">
-          <End Role="sex" Type="LMSDataModel.sex" Multiplicity="1" />
-          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="*" />
+          <End Role="sex" Type="LMSDataModel.Sex" Multiplicity="1" />
+          <End Role="systemuser" Type="LMSDataModel.SystemUser" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="sex">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="system_users">
-              <PropertyRef Name="sex_id" />
+            <Dependent Role="systemuser">
+              <PropertyRef Name="SexId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_students1">
-          <End Role="students" Type="LMSDataModel.student" Multiplicity="1" />
-          <End Role="student_book_loan" Type="LMSDataModel.student_book_loan" Multiplicity="*" />
+          <End Role="student" Type="LMSDataModel.Student" Multiplicity="1" />
+          <End Role="studentbookloan" Type="LMSDataModel.StudentBookLoan" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="students">
-              <PropertyRef Name="reg_no" />
+            <Principal Role="student">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="student_book_loan">
-              <PropertyRef Name="students_reg_no" />
+            <Dependent Role="studentbookloan">
+              <PropertyRef Name="StudentID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_student_book_loan_system_users1">
-          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="1" />
-          <End Role="student_book_loan" Type="LMSDataModel.student_book_loan" Multiplicity="*" />
+          <End Role="systemuser" Type="LMSDataModel.SystemUser" Multiplicity="1" />
+          <End Role="studentbookloan" Type="LMSDataModel.StudentBookLoan" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="system_users">
-              <PropertyRef Name="id" />
+            <Principal Role="systemuser">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="student_book_loan">
-              <PropertyRef Name="issuer" />
+            <Dependent Role="studentbookloan">
+              <PropertyRef Name="IssuerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_system_users_user_role">
-          <End Role="user_role" Type="LMSDataModel.user_role" Multiplicity="1" />
-          <End Role="system_users" Type="LMSDataModel.system_users" Multiplicity="*" />
+          <End Role="userrole" Type="LMSDataModel.UserRole" Multiplicity="1" />
+          <End Role="systemuser" Type="LMSDataModel.SystemUser" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="user_role">
-              <PropertyRef Name="id" />
+            <Principal Role="userrole">
+              <PropertyRef Name="Id" />
             </Principal>
-            <Dependent Role="system_users">
-              <PropertyRef Name="user_role_id" />
+            <Dependent Role="systemuser">
+              <PropertyRef Name="UserRoleId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -653,80 +715,134 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="LMS_DataModelStoreContainer" CdmEntityContainer="LMSDataModelEntities">
-          <EntitySetMapping Name="authors"><EntityTypeMapping TypeName="LMSDataModel.author"><MappingFragment StoreEntitySet="authors">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="salutation" ColumnName="salutation" />
-            <ScalarProperty Name="first_name" ColumnName="first_name" />
-            <ScalarProperty Name="last_name" ColumnName="last_name" />
-            <ScalarProperty Name="middle_name" ColumnName="middle_name" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="book_author"><EntityTypeMapping TypeName="LMSDataModel.book_author"><MappingFragment StoreEntitySet="book_author">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="authors_id" ColumnName="authors_id" />
-            <ScalarProperty Name="books_id" ColumnName="books_id" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="books"><EntityTypeMapping TypeName="LMSDataModel.book"><MappingFragment StoreEntitySet="books">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="isbn" ColumnName="isbn" />
-            <ScalarProperty Name="title" ColumnName="title" />
-            <ScalarProperty Name="publication_year" ColumnName="publication_year" />
-            <ScalarProperty Name="insertion_date" ColumnName="insertion_date" />
-            <ScalarProperty Name="available" ColumnName="available" />
-            <ScalarProperty Name="publisher_id" ColumnName="publisher_id" />
-            <ScalarProperty Name="department_id" ColumnName="department_id" />
-            <ScalarProperty Name="added_by" ColumnName="added_by" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="departments"><EntityTypeMapping TypeName="LMSDataModel.department"><MappingFragment StoreEntitySet="department">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="name" ColumnName="name" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="publishers"><EntityTypeMapping TypeName="LMSDataModel.publisher"><MappingFragment StoreEntitySet="publisher">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="name" ColumnName="name" />
-            <ScalarProperty Name="telephone" ColumnName="telephone" />
-            <ScalarProperty Name="email" ColumnName="email" />
-            <ScalarProperty Name="address" ColumnName="address" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="sexes"><EntityTypeMapping TypeName="LMSDataModel.sex"><MappingFragment StoreEntitySet="sex">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="description" ColumnName="description" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="student_book_loan"><EntityTypeMapping TypeName="LMSDataModel.student_book_loan"><MappingFragment StoreEntitySet="student_book_loan">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="issue_date" ColumnName="issue_date" />
-            <ScalarProperty Name="due_date" ColumnName="due_date" />
-            <ScalarProperty Name="return_date" ColumnName="return_date" />
-            <ScalarProperty Name="issuer" ColumnName="issuer" />
-            <ScalarProperty Name="books_id" ColumnName="books_id" />
-            <ScalarProperty Name="students_reg_no" ColumnName="students_reg_no" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="students"><EntityTypeMapping TypeName="LMSDataModel.student"><MappingFragment StoreEntitySet="students">
-            <ScalarProperty Name="reg_no" ColumnName="reg_no" />
-            <ScalarProperty Name="first_name" ColumnName="first_name" />
-            <ScalarProperty Name="last_name" ColumnName="last_name" />
-            <ScalarProperty Name="email" ColumnName="email" />
-            <ScalarProperty Name="telephone" ColumnName="telephone" />
-            <ScalarProperty Name="address" ColumnName="address" />
-            <ScalarProperty Name="date_of_birth" ColumnName="date_of_birth" />
-            <ScalarProperty Name="enrolment_date" ColumnName="enrolment_date" />
-            <ScalarProperty Name="currently_registered" ColumnName="currently_registered" />
-            <ScalarProperty Name="sex_id" ColumnName="sex_id" />
-            <ScalarProperty Name="department_id" ColumnName="department_id" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="system_users"><EntityTypeMapping TypeName="LMSDataModel.system_users"><MappingFragment StoreEntitySet="system_users">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="username" ColumnName="username" />
-            <ScalarProperty Name="password" ColumnName="password" />
-            <ScalarProperty Name="create_date" ColumnName="create_date" />
-            <ScalarProperty Name="last_login" ColumnName="last_login" />
-            <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
-            <ScalarProperty Name="sex_id" ColumnName="sex_id" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="user_role"><EntityTypeMapping TypeName="LMSDataModel.user_role"><MappingFragment StoreEntitySet="user_role">
-            <ScalarProperty Name="id" ColumnName="id" />
-            <ScalarProperty Name="description" ColumnName="description" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        <EntityContainerMapping StorageEntityContainer="LMSDataModelStoreContainer" CdmEntityContainer="LMSDataModelEntities">
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="LMSDataModel.Author">
+              <MappingFragment StoreEntitySet="author">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Salutation" ColumnName="Salutation" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Books">
+            <EntityTypeMapping TypeName="LMSDataModel.Book">
+              <MappingFragment StoreEntitySet="book">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Isbn" ColumnName="Isbn" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="PublicationYear" ColumnName="PublicationYear" />
+                <ScalarProperty Name="InsertionDate" ColumnName="InsertionDate" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="PublisherID" ColumnName="PublisherID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BookAuthors">
+            <EntityTypeMapping TypeName="LMSDataModel.BookAuthor">
+              <MappingFragment StoreEntitySet="bookauthor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="AuthorId" ColumnName="AuthorId" />
+                <ScalarProperty Name="BookId" ColumnName="BookId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="LMSDataModel.Department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publishers">
+            <EntityTypeMapping TypeName="LMSDataModel.Publisher">
+              <MappingFragment StoreEntitySet="publisher">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="LMSDataModel.Session">
+              <MappingFragment StoreEntitySet="session">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="LastAccessDate" ColumnName="LastAccessDate" />
+                <ScalarProperty Name="SystemUser_id" ColumnName="SystemUser_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sexes">
+            <EntityTypeMapping TypeName="LMSDataModel.Sex">
+              <MappingFragment StoreEntitySet="sex">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="LMSDataModel.Student">
+              <MappingFragment StoreEntitySet="student">
+                <ScalarProperty Name="RegistrationID" ColumnName="RegistrationID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="EnrolmentDate" ColumnName="EnrolmentDate" />
+                <ScalarProperty Name="CurrentlyRegistered" ColumnName="CurrentlyRegistered" />
+                <ScalarProperty Name="SexId" ColumnName="SexId" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentBookLoans">
+            <EntityTypeMapping TypeName="LMSDataModel.StudentBookLoan">
+              <MappingFragment StoreEntitySet="studentbookloan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="IssuerID" ColumnName="IssuerID" />
+                <ScalarProperty Name="BookID" ColumnName="BookID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemUsers">
+            <EntityTypeMapping TypeName="LMSDataModel.SystemUser">
+              <MappingFragment StoreEntitySet="systemuser">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+                <ScalarProperty Name="SexId" ColumnName="SexId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="LMSDataModel.UserRole">
+              <MappingFragment StoreEntitySet="userrole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -747,91 +863,95 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="Model1">
-        <EntityTypeShape EntityType="LMSDataModel.author" Width="1.5" PointX="11.25" PointY="0.875" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.book_author" Width="1.5" PointX="13.5" PointY="5" Height="1.9802864583333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.book" Width="1.5" PointX="11.25" PointY="4.125" Height="3.7109993489583335" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.department" Width="1.5" PointX="0.75" PointY="2.125" Height="1.7879850260416657" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.publisher" Width="1.5" PointX="9" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.sex" Width="1.5" PointX="0.75" PointY="5.125" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.student_book_loan" Width="1.5" PointX="8.25" PointY="4.5" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.student" Width="1.5" PointX="3" PointY="4.125" Height="3.7109993489583317" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.system_users" Width="1.5" PointX="6" PointY="4.5" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="LMSDataModel.user_role" Width="1.5" PointX="3.75" PointY="1.25" Height="1.5956835937499996" IsExpanded="true" />
+      <Diagram Name="LMSDataModel">
+        <EntityTypeShape EntityType="LMSDataModel.Author" Width="1.5" PointX="11.25" PointY="2" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.Book" Width="1.5" PointX="11.25" PointY="5.125" Height="3.7109993489583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.BookAuthor" Width="1.5" PointX="13.5" PointY="6" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.Department" Width="1.5" PointX="0.75" PointY="3.125" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.Publisher" Width="1.5" PointX="9" PointY="1.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.Session" Width="1.5" PointX="8.25" PointY="10.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.Sex" Width="1.5" PointX="0.75" PointY="6.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.Student" Width="1.5" PointX="3" PointY="5.125" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.StudentBookLoan" Width="1.5" PointX="8.25" PointY="5.5" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.SystemUser" Width="1.5" PointX="6" PointY="5.125" Height="3.7109993489583353" IsExpanded="true" />
+        <EntityTypeShape EntityType="LMSDataModel.UserRole" Width="1.5" PointX="3.75" PointY="2.25" Height="1.5956835937500031" IsExpanded="true" />
         <AssociationConnector Association="LMSDataModel.fk_book_author_author1" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.75" PointY="1.9612939453124998" />
-          <ConnectorPoint PointX="14.25" PointY="1.9612939453124998" />
-          <ConnectorPoint PointX="14.25" PointY="5" />
+          <ConnectorPoint PointX="12.75" PointY="3.0862939453125" />
+          <ConnectorPoint PointX="14.25" PointY="3.0862939453125" />
+          <ConnectorPoint PointX="14.25" PointY="6" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_book_author_books1" ManuallyRouted="false">
-          <ConnectorPoint PointX="12.75" PointY="5.9901432291666667" />
-          <ConnectorPoint PointX="13.5" PointY="5.9901432291666667" />
+          <ConnectorPoint PointX="12.75" PointY="6.9901432291666659" />
+          <ConnectorPoint PointX="13.5" PointY="6.9901432291666659" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_books_department1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="3.9129850260416656" />
-          <ConnectorPoint PointX="2.625" PointY="4.2879850260416656" />
-          <ConnectorPoint PointX="2.625" PointY="3.75" />
-          <ConnectorPoint PointX="3.2604166666666665" PointY="3.7499999999999996" />
-          <ConnectorPoint PointX="3.4270833333333335" PointY="3.75" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="3.7499999999999996" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="3.75" />
-          <ConnectorPoint PointX="10.072916666666666" PointY="3.7499999999999996" />
-          <ConnectorPoint PointX="10.239583333333334" PointY="3.75" />
-          <ConnectorPoint PointX="10.875" PointY="3.75" />
-          <ConnectorPoint PointX="11.25" PointY="4.125" />
+          <ConnectorPoint PointX="2.25" PointY="4.9129850260416656" />
+          <ConnectorPoint PointX="2.625" PointY="5.2879850260416656" />
+          <ConnectorPoint PointX="2.625" PointY="4.75" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="4.7499999999999991" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="4.75" />
+          <ConnectorPoint PointX="6.6979191666666669" PointY="4.7499999999999991" />
+          <ConnectorPoint PointX="6.8645858333333329" PointY="4.75" />
+          <ConnectorPoint PointX="10.072916666666666" PointY="4.7499999999999991" />
+          <ConnectorPoint PointX="10.239583333333334" PointY="4.75" />
+          <ConnectorPoint PointX="10.875" PointY="4.75" />
+          <ConnectorPoint PointX="11.25" PointY="5.125" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_books_publisher1" ManuallyRouted="false">
-          <ConnectorPoint PointX="10.15625" PointY="2.9225878906249996" />
-          <ConnectorPoint PointX="10.15625" PointY="7.6701464843750005" />
-          <ConnectorPoint PointX="11.25" PointY="7.6701464843750005" />
+          <ConnectorPoint PointX="10.15625" PointY="3.9225878906249996" />
+          <ConnectorPoint PointX="10.15625" PointY="8.670146484375" />
+          <ConnectorPoint PointX="11.25" PointY="8.670146484375" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_books_system_users1" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="7.5691943359375" />
-          <ConnectorPoint PointX="8.9166666666666661" PointY="7.5691943359374987" />
-          <ConnectorPoint PointX="9.0833333333333339" PointY="7.5691943359375" />
-          <ConnectorPoint PointX="10.072916666666666" PointY="7.5691943359374987" />
-          <ConnectorPoint PointX="10.239583333333334" PointY="7.5691943359375" />
-          <ConnectorPoint PointX="11.25" PointY="7.5691943359375" />
+          <ConnectorPoint PointX="7.5" PointY="5.3125025000000008" />
+          <ConnectorPoint PointX="10.072916666666666" PointY="5.3125025" />
+          <ConnectorPoint PointX="10.239583333333334" PointY="5.3125025000000008" />
+          <ConnectorPoint PointX="11.25" PointY="5.3125025000000008" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_student_book_loan_books1" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="5.9708968098958337" />
-          <ConnectorPoint PointX="10.239583333333334" PointY="5.9708968098958328" />
-          <ConnectorPoint PointX="10.072916666666666" PointY="5.9708968098958337" />
-          <ConnectorPoint PointX="9.75" PointY="5.9708968098958337" />
+          <ConnectorPoint PointX="11.25" PointY="6.9708968098958337" />
+          <ConnectorPoint PointX="10.239583333333334" PointY="6.9708968098958328" />
+          <ConnectorPoint PointX="10.072916666666666" PointY="6.9708968098958337" />
+          <ConnectorPoint PointX="9.75" PointY="6.9708968098958337" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_students_department1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="3.329091796875" />
-          <ConnectorPoint PointX="3.34375" PointY="3.329091796875" />
-          <ConnectorPoint PointX="3.34375" PointY="4.125" />
+          <ConnectorPoint PointX="2.25" PointY="4.3290917968750016" />
+          <ConnectorPoint PointX="3.34375" PointY="4.3290917968750016" />
+          <ConnectorPoint PointX="3.34375" PointY="5.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="LMSDataModel.fk_Session_SystemUser" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.8359993489583353" />
+          <ConnectorPoint PointX="6.75" PointY="11.4612939453125" />
+          <ConnectorPoint PointX="8.25" PointY="11.4612939453125" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_students_sex1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="6.0189925130208337" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="6.0189925130208328" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="6.0189925130208337" />
-          <ConnectorPoint PointX="3" PointY="6.0189925130208337" />
+          <ConnectorPoint PointX="2.25" PointY="7.0189925130208337" />
+          <ConnectorPoint PointX="3" PointY="7.0189925130208337" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_system_users_sex1" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="5.5407442565104166" />
-          <ConnectorPoint PointX="2.75" PointY="5.5407442565104166" />
-          <ConnectorPoint PointX="2.75" PointY="8.0859993489583317" />
-          <ConnectorPoint PointX="6.75" PointY="8.0859993489583317" />
-          <ConnectorPoint PointX="6.75" PointY="7.6340950520833317" />
+          <ConnectorPoint PointX="2.25" PointY="6.1873066923076925" />
+          <ConnectorPoint PointX="2.8125" PointY="5.6248066923076934" />
+          <ConnectorPoint PointX="2.8125" PointY="4.875" />
+          <ConnectorPoint PointX="3.2604166666666665" PointY="4.8749999999999991" />
+          <ConnectorPoint PointX="3.4270833333333335" PointY="4.875" />
+          <ConnectorPoint PointX="5.75" PointY="4.875" />
+          <ConnectorPoint PointX="6" PointY="5.125" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_student_book_loan_students1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="7.7662972005208317" />
-          <ConnectorPoint PointX="6.666666666666667" PointY="7.7662972005208308" />
-          <ConnectorPoint PointX="6.833333333333333" PointY="7.7662972005208317" />
-          <ConnectorPoint PointX="9" PointY="7.7662972005208317" />
-          <ConnectorPoint PointX="9" PointY="7.4417936197916674" />
+          <ConnectorPoint PointX="4.5" PointY="8.9634000651041674" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="8.9634000651041674" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="8.9634000651041674" />
+          <ConnectorPoint PointX="9" PointY="8.9634000651041674" />
+          <ConnectorPoint PointX="9" PointY="8.4417936197916674" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_student_book_loan_system_users1" ManuallyRouted="false">
-          <ConnectorPoint PointX="7.5" PointY="5.9708968098958337" />
-          <ConnectorPoint PointX="8.25" PointY="5.9708968098958337" />
+          <ConnectorPoint PointX="7.5" PointY="6.9708968098958337" />
+          <ConnectorPoint PointX="8.25" PointY="6.9708968098958337" />
         </AssociationConnector>
         <AssociationConnector Association="LMSDataModel.fk_system_users_user_role" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.25" PointY="2.047841796875" />
-          <ConnectorPoint PointX="6.75" PointY="2.047841796875" />
-          <ConnectorPoint PointX="6.75" PointY="4.5" />
+          <ConnectorPoint PointX="5.25" PointY="3.0478417968750016" />
+          <ConnectorPoint PointX="6.7812525" PointY="3.0478417968750016" />
+          <ConnectorPoint PointX="6.7812525" PointY="5.125" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>
