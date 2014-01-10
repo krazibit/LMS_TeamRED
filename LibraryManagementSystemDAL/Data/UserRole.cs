@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace LibraryManagementSystemDAL
+namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Sex
+    public partial class UserRole
     {
         #region Primitive Properties
     
@@ -33,38 +33,6 @@ namespace LibraryManagementSystemDAL
 
         #endregion
         #region Navigation Properties
-    
-        public virtual ICollection<Student> students
-        {
-            get
-            {
-                if (_students == null)
-                {
-                    var newCollection = new FixupCollection<Student>();
-                    newCollection.CollectionChanged += Fixupstudents;
-                    _students = newCollection;
-                }
-                return _students;
-            }
-            set
-            {
-                if (!ReferenceEquals(_students, value))
-                {
-                    var previousValue = _students as FixupCollection<Student>;
-                    if (previousValue != null)
-                    {
-                        previousValue.CollectionChanged -= Fixupstudents;
-                    }
-                    _students = value;
-                    var newValue = value as FixupCollection<Student>;
-                    if (newValue != null)
-                    {
-                        newValue.CollectionChanged += Fixupstudents;
-                    }
-                }
-            }
-        }
-        private ICollection<Student> _students;
     
         public virtual ICollection<SystemUser> systemusers
         {
@@ -101,35 +69,13 @@ namespace LibraryManagementSystemDAL
         #endregion
         #region Association Fixup
     
-        private void Fixupstudents(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            if (e.NewItems != null)
-            {
-                foreach (Student item in e.NewItems)
-                {
-                    item.sex = this;
-                }
-            }
-    
-            if (e.OldItems != null)
-            {
-                foreach (Student item in e.OldItems)
-                {
-                    if (ReferenceEquals(item.sex, this))
-                    {
-                        item.sex = null;
-                    }
-                }
-            }
-        }
-    
         private void Fixupsystemusers(object sender, NotifyCollectionChangedEventArgs e)
         {
             if (e.NewItems != null)
             {
                 foreach (SystemUser item in e.NewItems)
                 {
-                    item.sex = this;
+                    item.userrole = this;
                 }
             }
     
@@ -137,9 +83,9 @@ namespace LibraryManagementSystemDAL
             {
                 foreach (SystemUser item in e.OldItems)
                 {
-                    if (ReferenceEquals(item.sex, this))
+                    if (ReferenceEquals(item.userrole, this))
                     {
-                        item.sex = null;
+                        item.userrole = null;
                     }
                 }
             }

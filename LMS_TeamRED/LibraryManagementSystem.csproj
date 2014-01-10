@@ -35,6 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -141,6 +144,10 @@
     <None Include="Assets\Fonts\nevis.woff" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LibraryManagementSystem.Data\LibraryManagementSystem.Data.csproj">
+      <Project>{0B40715D-77B6-4F37-A45F-1DA61F40119B}</Project>
+      <Name>LibraryManagementSystem.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LibraryManagementSystemDAL\LibraryManagementSystemDAL.csproj">
       <Project>{7E8715F0-B7C6-46A3-A1ED-A56BA5966832}</Project>
       <Name>LibraryManagementSystemDAL</Name>

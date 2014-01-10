@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace LibraryManagementSystemDAL
+namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Publisher
+    public partial class Department
     {
         #region Primitive Properties
     
@@ -26,24 +26,6 @@ namespace LibraryManagementSystemDAL
         }
     
         public virtual string Name
-        {
-            get;
-            set;
-        }
-    
-        public virtual string Telephone
-        {
-            get;
-            set;
-        }
-    
-        public virtual string Email
-        {
-            get;
-            set;
-        }
-    
-        public virtual string Address
         {
             get;
             set;
@@ -83,6 +65,38 @@ namespace LibraryManagementSystemDAL
             }
         }
         private ICollection<Book> _books;
+    
+        public virtual ICollection<Student> students
+        {
+            get
+            {
+                if (_students == null)
+                {
+                    var newCollection = new FixupCollection<Student>();
+                    newCollection.CollectionChanged += Fixupstudents;
+                    _students = newCollection;
+                }
+                return _students;
+            }
+            set
+            {
+                if (!ReferenceEquals(_students, value))
+                {
+                    var previousValue = _students as FixupCollection<Student>;
+                    if (previousValue != null)
+                    {
+                        previousValue.CollectionChanged -= Fixupstudents;
+                    }
+                    _students = value;
+                    var newValue = value as FixupCollection<Student>;
+                    if (newValue != null)
+                    {
+                        newValue.CollectionChanged += Fixupstudents;
+                    }
+                }
+            }
+        }
+        private ICollection<Student> _students;
 
         #endregion
         #region Association Fixup
@@ -93,7 +107,7 @@ namespace LibraryManagementSystemDAL
             {
                 foreach (Book item in e.NewItems)
                 {
-                    item.publisher = this;
+                    item.department = this;
                 }
             }
     
@@ -101,9 +115,31 @@ namespace LibraryManagementSystemDAL
             {
                 foreach (Book item in e.OldItems)
                 {
-                    if (ReferenceEquals(item.publisher, this))
+                    if (ReferenceEquals(item.department, this))
                     {
-                        item.publisher = null;
+                        item.department = null;
+                    }
+                }
+            }
+        }
+    
+        private void Fixupstudents(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            if (e.NewItems != null)
+            {
+                foreach (Student item in e.NewItems)
+                {
+                    item.department = this;
+                }
+            }
+    
+            if (e.OldItems != null)
+            {
+                foreach (Student item in e.OldItems)
+                {
+                    if (ReferenceEquals(item.department, this))
+                    {
+                        item.department = null;
                     }
                 }
             }

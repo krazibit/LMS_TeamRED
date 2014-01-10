@@ -19,7 +19,7 @@
             
             <div id="contentHeader">
               <asp:ContentPlaceHolder ID="ContentHeaderText" runat="server"/>
-              <span id="hotdogMenu"></span> 
+             <span id="hotdogMenu"> <a href="<% =Url.Action("Index", "Home")%>" style="display: block;width: 50px; height: 50px;"></a></span>
             </div>
 
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
@@ -29,6 +29,7 @@
              <p>Software Engineering II Project.</p>
              <p>Copyright &copy; 2013 Team R.E.D. All Rights Reserved. </p>
          </div>
+        </div>
     </div>
 </body>
 </html>

@@ -43,76 +43,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Author.cs">
+    <Compile Include="Data\Author.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Book.cs">
+    <Compile Include="Data\Book.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="BookAuthor.cs">
+    <Compile Include="Data\BookAuthor.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\LMSDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LMSDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Department.cs">
+    <Compile Include="Data\Department.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LMSDataModel.Context.cs">
+    <Compile Include="Data\LMSDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LMSDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="LMSDataModel.cs">
+    <Compile Include="Data\LMSDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Data\Publisher.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Session.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Sex.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Student.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\StudentBookLoan.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SystemUser.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\UserRole.cs">
+      <DependentUpon>LMSDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Publisher.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Session.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sex.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Student.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="StudentBookLoan.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="SystemUser.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserRole.cs">
-      <DependentUpon>LMSDataModel.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="Data\LMSDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LMSDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="App.Config" />
-    <None Include="Data\lms_database_model.mwb" />
-    <None Include="LMSDataModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LMSDataModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="LMSDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LMSDataModel.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Data\LMSDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LMSDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\LMSDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>LMSDataModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

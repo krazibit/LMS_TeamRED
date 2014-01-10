@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace LibraryManagementSystemDAL
+namespace LibraryManagementSystemDAL.Data
 {
     public partial class StudentBookLoan
     {

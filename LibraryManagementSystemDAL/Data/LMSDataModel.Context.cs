@@ -11,7 +11,7 @@ using System;
 using System.Data.Objects;
 using System.Data.EntityClient;
 
-namespace LibraryManagementSystemDAL
+namespace LibraryManagementSystemDAL.Data
 {
     public partial class LMSDataModelEntities : ObjectContext
     {

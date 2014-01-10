@@ -21,6 +21,9 @@ body
     font-smoothing: antialiased;
 }
 
+
+
+
 #mainContainer {
     height: auto;
     width:960px;
@@ -143,6 +146,59 @@ table#dashBoardTable td a{
     color: #004158;    
 }
 
+
+input,select {
+    padding: 2px;
+    margin: 5px 10px;
+    font-size: 20px;
+    vertical-align: text-bottom;
+}
+#searchBoxContainer,#searchContent 
+{
+    font-family: Georgia, Arial, Sans-Serif;
+    font-size: 24px;
+    width: 90%;
+    margin: 10px auto;
+    vertical-align: text-bottom;
+}
+
+#searchContent {
+
+    min-height: 150px;
+}
+
+.searchDivider {
+    width: 98%;
+    margin: 10px auto;
+}
+
+.submitBtn 
+{
+    padding: 5px 8px;
+    margin: 0;
+    font-size: 20px;
+    color: #FFFFFF;
+    background-color:#004158;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    vertical-align: super;
+}
+
+button.submitBtn:hover {
+    background-color: rgba(0, 95, 129, 0.68);
+}
+.noResult,#searchBoxContainer,#searchContent  {
+  color:  #004158;
+    letter-spacing: 2px;
+}
+p.noResult {
+    font-size: 40px;
+    text-align: center;
+}
+q.noResult {
+    font-style: italic;
+}
 
 
 /*

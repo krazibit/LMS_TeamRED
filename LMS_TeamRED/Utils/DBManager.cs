@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using LibraryManagementSystemDAL;
+using LibraryManagementSystemDAL.Data;
 
 namespace LibraryManagementSystem.Utils
 {
@@ -10,17 +11,32 @@ namespace LibraryManagementSystem.Utils
     {
         private static DBManager _instance = null;
 
+        private Dictionary<Book, int> AggregateBooksByIsbnAvailability(List<Book> bookList )
+        {
+            var aggregatedBookMap = new Dictionary<Book, int>();
+            
+            var booksGroupByAvailability = bookList.GroupBy(b => new { b.Isbn });
+            var isbnAvailability = new Dictionary<string, int>();
+            foreach (var grp in booksGroupByAvailability)
+            {
+                isbnAvailability[grp.Key.Isbn] = grp.Select(g => g.Available == true).Count();
+            }
+
+            foreach (var key in isbnAvailability)
+            {
+                Book book = bookList.FirstOrDefault(b => b.Isbn == key.Key);
+                if (book != null)
+                    aggregatedBookMap[book] = key.Value;
+            }
+
+            return aggregatedBookMap;
+        }
+
+
+
         public static DBManager Instance
         {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new DBManager();
-                }
-                return _instance;
-            }
-        
+            get { return _instance ?? (_instance = new DBManager()); }
         }
 
         public void AddBook(Book newBook)
@@ -37,57 +53,101 @@ namespace LibraryManagementSystem.Utils
             }
         }
 
-        public List<Book> GetBooksByISBN(string isbn)
+        public Dictionary<Book, int> GetBooksByISBN(string isbn)
         {
-            List<Book> books = null;
+ 
+          
             using (var dbModel = new LMSDataModelEntities())
             {
-               books = dbModel.Books.Where(b => b.Isbn.Equals(isbn, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-
-            return books;
-        }
-        
-        public List<Book> GetBooksByTitle(string title)
-        {
-            List<Book> books = null;
-            using (var dbModel = new LMSDataModelEntities())
-            {
-                books = dbModel.Books.Where(b => b.Title.Contains(title)).ToList();
-            }
-            return books;
-        }
-        
-        public List<Book> GetBooksByPublisher(string publisher)
-        {
-            List<Book> books = null;
-            using (var dbModel = new LMSDataModelEntities())
-            {
-                books = dbModel.Books.Where(b => b.publisher.Name.Contains(publisher)).ToList();
-            }
-            return books;
-        }
-
-        public List<Book> GetBooksByAuthor(string authorName)
-        {
-            List<Book> books = null;
-            using (var dbModel = new LMSDataModelEntities())
-            {
-                List<Author> authors = dbModel.Authors.Where(a => a.LastName.Contains(authorName) || a.FirstName.Contains(authorName)).ToList();
-
-                if (authors != null)
+                try
                 {
-                    books = new List<Book>();
+                    var books = dbModel.Books.Where(b => b.Isbn.Equals(isbn, StringComparison.OrdinalIgnoreCase)).ToList();
+                    return AggregateBooksByIsbnAvailability(books);
+                }
+                catch(Exception)
+                {
+                    return null;
+                }
+               
+            }
+            
+           
+        }
+
+
+        public Dictionary<Book, int> GetBooksByTitle(string title)
+        {   
+            using (var dbModel = new LMSDataModelEntities())
+            {
+                try
+                {
+                    var books = dbModel.Books.Where(b => b.Title.Contains(title)).ToList();
+                    return AggregateBooksByIsbnAvailability(books);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+
+            
+           
+        }
+
+        public Dictionary<Book, int> GetBooksByPublisher(string publisher)
+        {
+            using (var dbModel = new LMSDataModelEntities())
+            {
+                try
+                {
+                    var books = dbModel.Books.Where(b => b.publisher.Name.Contains(publisher)).ToList();
+                    return AggregateBooksByIsbnAvailability(books);
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
+            }
+           
+        }
+
+        public Dictionary<Book, int> GetBooksByAuthor(string authorName)
+        {
+         
+            using (var dbModel = new LMSDataModelEntities())
+            {
+                try
+                {
+                    var authors =
+                        dbModel.Authors.Where(a => a.LastName.Contains(authorName) || a.FirstName.Contains(authorName)).
+                            ToList();
+
+                    var books = new List<Book>();
                     foreach (var author in authors)
                     {
-                        foreach(var bookAuthor in dbModel.BookAuthors.Where(ba => (ba.AuthorId == author.Id)).ToList())
+                        foreach (var bookAuthor in dbModel.BookAuthors.Where(ba => (ba.AuthorId == author.Id)).ToList())
                             books.AddRange(dbModel.Books.Where(b => b.Id ==
-                                bookAuthor.BookId).ToList());
+                                                                    bookAuthor.BookId).ToList());
                     }
+                    return AggregateBooksByIsbnAvailability(books);
                 }
-
+                catch (Exception)
+                {
+                    return null;
+                }
             }
-            return books;
+           
+        }
+
+
+        public Book GetAvailableBookByISBN(string isbn)
+        {
+            Book book = null;
+            using (var dbModel = new LMSDataModelEntities())
+            {
+                book = dbModel.Books.FirstOrDefault(b => b.Isbn.Equals(isbn, StringComparison.OrdinalIgnoreCase) && b.Available == true);
+            }
+            return book;
         }
 
         public void UpdateBook(Book bookToUpdate)
@@ -122,41 +182,83 @@ namespace LibraryManagementSystem.Utils
         
         public List<StudentBookLoan> GetDueStudentBookLoans()
         {
-            List<StudentBookLoan> dueStudentBookLoans = null;
+            
             using(var dbModel = new LMSDataModelEntities())
             {
-                dueStudentBookLoans = dbModel.StudentBookLoans.Where(loan => loan.DueDate >= DateTime.Now).ToList();
-                return dueStudentBookLoans;
+                try
+                {
+                    List<StudentBookLoan> dueStudentBookLoans = null;
+                    dueStudentBookLoans = dbModel.StudentBookLoans.Where(loan => loan.DueDate >= DateTime.Now).ToList();
+                    return dueStudentBookLoans;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
 
         public List<StudentBookLoan> GetCurrentStudentBookLoans()
         {
-            List<StudentBookLoan> studentBookLoans = null;
+           
             using (var dbModel = new LMSDataModelEntities())
-            {               
-                studentBookLoans = dbModel.StudentBookLoans.Where(loan => loan.ReturnDate == null || loan.DueDate >= DateTime.Now ).ToList();
-                return studentBookLoans;
+            {
+                try
+                {
+                    List<StudentBookLoan> studentBookLoans = null;
+                    studentBookLoans =
+                        dbModel.StudentBookLoans.Where(loan => loan.ReturnDate == null || loan.DueDate >= DateTime.Now).
+                            ToList();
+                    return studentBookLoans;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
 
         public List<StudentBookLoan> GetCurrentStudentBookLoansByISBN(string isbn)
         {
-            List<StudentBookLoan> studentBookLoans = null;
+           
             using (var dbModel = new LMSDataModelEntities())
             {
-                studentBookLoans = dbModel.StudentBookLoans.Where(loan => loan.book.Isbn.Equals(isbn, StringComparison.OrdinalIgnoreCase) && loan.ReturnDate == null).ToList();
-                return studentBookLoans;
+                try
+                {
+                    List<StudentBookLoan> studentBookLoans = null;
+                    studentBookLoans =
+                        dbModel.StudentBookLoans.Where(
+                            loan =>
+                            loan.book.Isbn.Equals(isbn, StringComparison.OrdinalIgnoreCase) && loan.ReturnDate == null).
+                            ToList();
+                    return studentBookLoans;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
 
         public List<StudentBookLoan> GetCurrentStudentBookLoansByStudentReg(string studentRegId)
         {
-            List<StudentBookLoan> studentBookLoans = null;
+           
             using (var dbModel = new LMSDataModelEntities())
             {
-                studentBookLoans = dbModel.StudentBookLoans.Where(loan => loan.student.RegistrationID.Equals(studentRegId, StringComparison.OrdinalIgnoreCase) && loan.ReturnDate == null).ToList();
-                return studentBookLoans;
+                try
+                {
+                    List<StudentBookLoan> studentBookLoans = null;
+                    studentBookLoans =
+                        dbModel.StudentBookLoans.Where(
+                            loan =>
+                            loan.student.RegistrationID.Equals(studentRegId, StringComparison.OrdinalIgnoreCase) &&
+                            loan.ReturnDate == null).ToList();
+                    return studentBookLoans;
+                }
+                catch (Exception)
+                {
+                    return null;
+                }
             }
         }
 
