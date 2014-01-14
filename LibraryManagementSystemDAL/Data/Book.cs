@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Book
+    public partial class book
     {
         #region Primitive Properties
     
@@ -37,7 +37,7 @@ namespace LibraryManagementSystemDAL.Data
             set;
         }
     
-        public virtual System.DateTime PublicationYear
+        public virtual System.DateTime PublicationDate
         {
             get;
             set;
@@ -109,13 +109,13 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<BookAuthor> bookauthors
+        public virtual ICollection<bookauthor> bookauthors
         {
             get
             {
                 if (_bookauthors == null)
                 {
-                    var newCollection = new FixupCollection<BookAuthor>();
+                    var newCollection = new FixupCollection<bookauthor>();
                     newCollection.CollectionChanged += Fixupbookauthors;
                     _bookauthors = newCollection;
                 }
@@ -125,13 +125,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_bookauthors, value))
                 {
-                    var previousValue = _bookauthors as FixupCollection<BookAuthor>;
+                    var previousValue = _bookauthors as FixupCollection<bookauthor>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupbookauthors;
                     }
                     _bookauthors = value;
-                    var newValue = value as FixupCollection<BookAuthor>;
+                    var newValue = value as FixupCollection<bookauthor>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupbookauthors;
@@ -139,9 +139,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<BookAuthor> _bookauthors;
+        private ICollection<bookauthor> _bookauthors;
     
-        public virtual Department department
+        public virtual department department
         {
             get { return _department; }
             set
@@ -154,9 +154,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Department _department;
+        private department _department;
     
-        public virtual Publisher publisher
+        public virtual publisher publisher
         {
             get { return _publisher; }
             set
@@ -169,9 +169,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Publisher _publisher;
+        private publisher _publisher;
     
-        public virtual SystemUser systemuser
+        public virtual systemuser systemuser
         {
             get { return _systemuser; }
             set
@@ -184,15 +184,15 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private SystemUser _systemuser;
+        private systemuser _systemuser;
     
-        public virtual ICollection<StudentBookLoan> studentbookloans
+        public virtual ICollection<studentbookloan> studentbookloans
         {
             get
             {
                 if (_studentbookloans == null)
                 {
-                    var newCollection = new FixupCollection<StudentBookLoan>();
+                    var newCollection = new FixupCollection<studentbookloan>();
                     newCollection.CollectionChanged += Fixupstudentbookloans;
                     _studentbookloans = newCollection;
                 }
@@ -202,13 +202,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_studentbookloans, value))
                 {
-                    var previousValue = _studentbookloans as FixupCollection<StudentBookLoan>;
+                    var previousValue = _studentbookloans as FixupCollection<studentbookloan>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupstudentbookloans;
                     }
                     _studentbookloans = value;
-                    var newValue = value as FixupCollection<StudentBookLoan>;
+                    var newValue = value as FixupCollection<studentbookloan>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupstudentbookloans;
@@ -216,12 +216,12 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<StudentBookLoan> _studentbookloans;
+        private ICollection<studentbookloan> _studentbookloans;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupdepartment(Department previousValue)
+        private void Fixupdepartment(department previousValue)
         {
             if (previousValue != null && previousValue.books.Contains(this))
             {
@@ -241,7 +241,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixuppublisher(Publisher previousValue)
+        private void Fixuppublisher(publisher previousValue)
         {
             if (previousValue != null && previousValue.books.Contains(this))
             {
@@ -261,7 +261,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixupsystemuser(SystemUser previousValue)
+        private void Fixupsystemuser(systemuser previousValue)
         {
             if (previousValue != null && previousValue.books.Contains(this))
             {
@@ -285,7 +285,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (BookAuthor item in e.NewItems)
+                foreach (bookauthor item in e.NewItems)
                 {
                     item.book = this;
                 }
@@ -293,7 +293,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (BookAuthor item in e.OldItems)
+                foreach (bookauthor item in e.OldItems)
                 {
                     if (ReferenceEquals(item.book, this))
                     {
@@ -307,7 +307,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (StudentBookLoan item in e.NewItems)
+                foreach (studentbookloan item in e.NewItems)
                 {
                     item.book = this;
                 }
@@ -315,7 +315,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (StudentBookLoan item in e.OldItems)
+                foreach (studentbookloan item in e.OldItems)
                 {
                     if (ReferenceEquals(item.book, this))
                     {

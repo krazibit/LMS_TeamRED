@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Student
+    public partial class student
     {
         #region Primitive Properties
     
@@ -116,7 +116,7 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual Department department
+        public virtual department department
         {
             get { return _department; }
             set
@@ -129,9 +129,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Department _department;
+        private department _department;
     
-        public virtual Sex sex
+        public virtual sex sex
         {
             get { return _sex; }
             set
@@ -144,15 +144,15 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Sex _sex;
+        private sex _sex;
     
-        public virtual ICollection<StudentBookLoan> studentbookloans
+        public virtual ICollection<studentbookloan> studentbookloans
         {
             get
             {
                 if (_studentbookloans == null)
                 {
-                    var newCollection = new FixupCollection<StudentBookLoan>();
+                    var newCollection = new FixupCollection<studentbookloan>();
                     newCollection.CollectionChanged += Fixupstudentbookloans;
                     _studentbookloans = newCollection;
                 }
@@ -162,13 +162,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_studentbookloans, value))
                 {
-                    var previousValue = _studentbookloans as FixupCollection<StudentBookLoan>;
+                    var previousValue = _studentbookloans as FixupCollection<studentbookloan>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupstudentbookloans;
                     }
                     _studentbookloans = value;
-                    var newValue = value as FixupCollection<StudentBookLoan>;
+                    var newValue = value as FixupCollection<studentbookloan>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupstudentbookloans;
@@ -176,12 +176,12 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<StudentBookLoan> _studentbookloans;
+        private ICollection<studentbookloan> _studentbookloans;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupdepartment(Department previousValue)
+        private void Fixupdepartment(department previousValue)
         {
             if (previousValue != null && previousValue.students.Contains(this))
             {
@@ -201,7 +201,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixupsex(Sex previousValue)
+        private void Fixupsex(sex previousValue)
         {
             if (previousValue != null && previousValue.students.Contains(this))
             {
@@ -225,7 +225,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (StudentBookLoan item in e.NewItems)
+                foreach (studentbookloan item in e.NewItems)
                 {
                     item.student = this;
                 }
@@ -233,7 +233,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (StudentBookLoan item in e.OldItems)
+                foreach (studentbookloan item in e.OldItems)
                 {
                     if (ReferenceEquals(item.student, this))
                     {

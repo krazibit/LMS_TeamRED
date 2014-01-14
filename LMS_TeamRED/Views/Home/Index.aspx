@@ -26,7 +26,7 @@
              </a>
           </td> 
           <td>
-              <a href="<% =Url.Action("ReturnBook", "Home")%>">
+              <a href="<% =Url.Action("Index", "ReturnBook")%>">
                   <img class="menuIcons" alt="Return Book" width="128" height="128" src="../../Assets/Images/Icons/returnBook.png"/>
                   <h4 class="menuIconText">Return Book</h4>
               </a>

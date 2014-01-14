@@ -35,9 +35,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -74,6 +71,8 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoanBookController.cs" />
+    <Compile Include="Controllers\ReturnBookController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -101,7 +100,9 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Home\AddBook.ascx" />
     <Content Include="Views\Home\CheckStudentStatus.ascx" />
-    <Content Include="Views\Home\ReturnBook.aspx" />
+    <Content Include="Views\LoanBook\Index.aspx" />
+    <Content Include="Views\ReturnBook\Index.aspx" />
+    <Content Include="Views\ReturnBook\ReturnProcessor.aspx" />
     <Content Include="Views\Search\BorrowedBooks.aspx" />
     <Content Include="Views\Search\DueBooks.aspx" />
     <Content Include="Views\Search\Index.aspx" />

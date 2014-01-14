@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class BookAuthor
+    public partial class bookauthor
     {
         #region Primitive Properties
     
@@ -62,7 +62,7 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual Author author
+        public virtual author author
         {
             get { return _author; }
             set
@@ -75,9 +75,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Author _author;
+        private author _author;
     
-        public virtual Book book
+        public virtual book book
         {
             get { return _book; }
             set
@@ -90,12 +90,12 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Book _book;
+        private book _book;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupauthor(Author previousValue)
+        private void Fixupauthor(author previousValue)
         {
             if (previousValue != null && previousValue.bookauthors.Contains(this))
             {
@@ -115,7 +115,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixupbook(Book previousValue)
+        private void Fixupbook(book previousValue)
         {
             if (previousValue != null && previousValue.bookauthors.Contains(this))
             {

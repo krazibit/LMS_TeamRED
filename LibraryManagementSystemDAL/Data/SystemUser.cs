@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class SystemUser
+    public partial class systemuser
     {
         #region Primitive Properties
     
@@ -98,13 +98,13 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<Book> books
+        public virtual ICollection<book> books
         {
             get
             {
                 if (_books == null)
                 {
-                    var newCollection = new FixupCollection<Book>();
+                    var newCollection = new FixupCollection<book>();
                     newCollection.CollectionChanged += Fixupbooks;
                     _books = newCollection;
                 }
@@ -114,13 +114,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_books, value))
                 {
-                    var previousValue = _books as FixupCollection<Book>;
+                    var previousValue = _books as FixupCollection<book>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupbooks;
                     }
                     _books = value;
-                    var newValue = value as FixupCollection<Book>;
+                    var newValue = value as FixupCollection<book>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupbooks;
@@ -128,15 +128,15 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<Book> _books;
+        private ICollection<book> _books;
     
-        public virtual ICollection<Session> sessions
+        public virtual ICollection<session> sessions
         {
             get
             {
                 if (_sessions == null)
                 {
-                    var newCollection = new FixupCollection<Session>();
+                    var newCollection = new FixupCollection<session>();
                     newCollection.CollectionChanged += Fixupsessions;
                     _sessions = newCollection;
                 }
@@ -146,13 +146,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_sessions, value))
                 {
-                    var previousValue = _sessions as FixupCollection<Session>;
+                    var previousValue = _sessions as FixupCollection<session>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupsessions;
                     }
                     _sessions = value;
-                    var newValue = value as FixupCollection<Session>;
+                    var newValue = value as FixupCollection<session>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupsessions;
@@ -160,9 +160,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<Session> _sessions;
+        private ICollection<session> _sessions;
     
-        public virtual Sex sex
+        public virtual sex sex
         {
             get { return _sex; }
             set
@@ -175,15 +175,15 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Sex _sex;
+        private sex _sex;
     
-        public virtual ICollection<StudentBookLoan> studentbookloans
+        public virtual ICollection<studentbookloan> studentbookloans
         {
             get
             {
                 if (_studentbookloans == null)
                 {
-                    var newCollection = new FixupCollection<StudentBookLoan>();
+                    var newCollection = new FixupCollection<studentbookloan>();
                     newCollection.CollectionChanged += Fixupstudentbookloans;
                     _studentbookloans = newCollection;
                 }
@@ -193,13 +193,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_studentbookloans, value))
                 {
-                    var previousValue = _studentbookloans as FixupCollection<StudentBookLoan>;
+                    var previousValue = _studentbookloans as FixupCollection<studentbookloan>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupstudentbookloans;
                     }
                     _studentbookloans = value;
-                    var newValue = value as FixupCollection<StudentBookLoan>;
+                    var newValue = value as FixupCollection<studentbookloan>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupstudentbookloans;
@@ -207,9 +207,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<StudentBookLoan> _studentbookloans;
+        private ICollection<studentbookloan> _studentbookloans;
     
-        public virtual UserRole userrole
+        public virtual userrole userrole
         {
             get { return _userrole; }
             set
@@ -222,12 +222,12 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private UserRole _userrole;
+        private userrole _userrole;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupsex(Sex previousValue)
+        private void Fixupsex(sex previousValue)
         {
             if (previousValue != null && previousValue.systemusers.Contains(this))
             {
@@ -247,7 +247,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixupuserrole(UserRole previousValue)
+        private void Fixupuserrole(userrole previousValue)
         {
             if (previousValue != null && previousValue.systemusers.Contains(this))
             {
@@ -271,7 +271,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (Book item in e.NewItems)
+                foreach (book item in e.NewItems)
                 {
                     item.systemuser = this;
                 }
@@ -279,7 +279,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (Book item in e.OldItems)
+                foreach (book item in e.OldItems)
                 {
                     if (ReferenceEquals(item.systemuser, this))
                     {
@@ -293,7 +293,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (Session item in e.NewItems)
+                foreach (session item in e.NewItems)
                 {
                     item.systemuser = this;
                 }
@@ -301,7 +301,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (Session item in e.OldItems)
+                foreach (session item in e.OldItems)
                 {
                     if (ReferenceEquals(item.systemuser, this))
                     {
@@ -315,7 +315,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (StudentBookLoan item in e.NewItems)
+                foreach (studentbookloan item in e.NewItems)
                 {
                     item.systemuser = this;
                 }
@@ -323,7 +323,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (StudentBookLoan item in e.OldItems)
+                foreach (studentbookloan item in e.OldItems)
                 {
                     if (ReferenceEquals(item.systemuser, this))
                     {

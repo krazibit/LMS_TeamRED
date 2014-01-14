@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Author
+    public partial class author
     {
         #region Primitive Properties
     
@@ -52,13 +52,13 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<BookAuthor> bookauthors
+        public virtual ICollection<bookauthor> bookauthors
         {
             get
             {
                 if (_bookauthors == null)
                 {
-                    var newCollection = new FixupCollection<BookAuthor>();
+                    var newCollection = new FixupCollection<bookauthor>();
                     newCollection.CollectionChanged += Fixupbookauthors;
                     _bookauthors = newCollection;
                 }
@@ -68,13 +68,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_bookauthors, value))
                 {
-                    var previousValue = _bookauthors as FixupCollection<BookAuthor>;
+                    var previousValue = _bookauthors as FixupCollection<bookauthor>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupbookauthors;
                     }
                     _bookauthors = value;
-                    var newValue = value as FixupCollection<BookAuthor>;
+                    var newValue = value as FixupCollection<bookauthor>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupbookauthors;
@@ -82,7 +82,7 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<BookAuthor> _bookauthors;
+        private ICollection<bookauthor> _bookauthors;
 
         #endregion
         #region Association Fixup
@@ -91,7 +91,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (BookAuthor item in e.NewItems)
+                foreach (bookauthor item in e.NewItems)
                 {
                     item.author = this;
                 }
@@ -99,7 +99,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (BookAuthor item in e.OldItems)
+                foreach (bookauthor item in e.OldItems)
                 {
                     if (ReferenceEquals(item.author, this))
                     {

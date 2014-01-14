@@ -26,11 +26,6 @@ namespace LibraryManagementSystem.Controllers
             return View();
         }
 
-        public ActionResult ReturnBook()
-        {
-            return View();
-        }
-
         public ActionResult CheckStudentStatus()
         {
             return View();

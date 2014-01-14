@@ -136,6 +136,7 @@ table#dashBoardTable td a{
     display: block;
 }
 
+
 .menuIcons {
     margin: 20px 0 10px ;
 }
@@ -153,17 +154,18 @@ input,select {
     font-size: 20px;
     vertical-align: text-bottom;
 }
-#searchBoxContainer,#searchContent 
+.searchBoxContainer
 {
     font-family: Georgia, Arial, Sans-Serif;
     font-size: 24px;
     width: 90%;
-    margin: 10px auto;
+    margin: 10px auto;  
     vertical-align: text-bottom;
 }
 
-#searchContent {
-
+.searchContent {
+    width: 90%;
+    margin: 10px auto;
     min-height: 150px;
 }
 
@@ -200,6 +202,79 @@ q.noResult {
     font-style: italic;
 }
 
+table.searchResults 
+{
+    width: 90%;
+    height: auto;
+    margin: 5px auto;
+    border-collapse: collapse;
+    
+}
+
+table.searchResults th {
+    color: #FFFFFF;
+    font-size: 20px;
+    border: 1px solid #FFFFFF;
+    padding:  5px 0 ;
+    background-color: rgba(0, 95, 129, 0.8);
+}
+
+table.searchResults td {
+    font-family: Arial, Sans-Serif;
+    border: 1px solid rgba(0, 95, 129, 0.8);
+    text-align: center;
+    padding: 5px 0;
+    vertical-align: middle;
+}
+
+table.bookList {
+    width: 90%;
+    height: auto;
+    margin: 5px auto;
+    border-collapse: collapse;
+}
+
+table.bookList th 
+{
+   font-family: Georgia, Lucida Grande, Serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-align: left;
+    background-color: #004158;
+    vertical-align: text-bottom;
+    padding: 7px 7px 2px 7px;
+    
+}
+
+table.bookList td 
+{
+    font-family: Arial, Segoe UI, sans-serif;
+    font-size: 18px;
+    font-stretch: 1px;
+    border-right: 1px solid #FFFFFF;
+    text-align: center;
+    padding :8px
+}
+
+ table.bookList tr:nth-child(even) {
+    background-color: #FF2BCCCC;
+}
+
+div#processLoan {
+    margin: 20px 50px;
+}
+.display-field input {
+    padding: 5px;
+    margin: 0 10px 10px 10px;
+}
+.display-label
+{
+    font-family: Georgia, Lucida Grande, serif;
+    color:  #004158;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 0px 0px 10px;
+}
 
 /*
 a:link
@@ -492,9 +567,9 @@ Styles for validation helpers
 
 Styles for editor and display helpers
 ----------------------------------------------------------
-.display-label,
+
 .editor-label,
-.display-field,
+
 .editor-field
 
     margin: 0.5em 0;

@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class UserRole
+    public partial class userrole
     {
         #region Primitive Properties
     
@@ -34,13 +34,13 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<SystemUser> systemusers
+        public virtual ICollection<systemuser> systemusers
         {
             get
             {
                 if (_systemusers == null)
                 {
-                    var newCollection = new FixupCollection<SystemUser>();
+                    var newCollection = new FixupCollection<systemuser>();
                     newCollection.CollectionChanged += Fixupsystemusers;
                     _systemusers = newCollection;
                 }
@@ -50,13 +50,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_systemusers, value))
                 {
-                    var previousValue = _systemusers as FixupCollection<SystemUser>;
+                    var previousValue = _systemusers as FixupCollection<systemuser>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupsystemusers;
                     }
                     _systemusers = value;
-                    var newValue = value as FixupCollection<SystemUser>;
+                    var newValue = value as FixupCollection<systemuser>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupsystemusers;
@@ -64,7 +64,7 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<SystemUser> _systemusers;
+        private ICollection<systemuser> _systemusers;
 
         #endregion
         #region Association Fixup
@@ -73,7 +73,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (SystemUser item in e.NewItems)
+                foreach (systemuser item in e.NewItems)
                 {
                     item.userrole = this;
                 }
@@ -81,7 +81,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (SystemUser item in e.OldItems)
+                foreach (systemuser item in e.OldItems)
                 {
                     if (ReferenceEquals(item.userrole, this))
                     {

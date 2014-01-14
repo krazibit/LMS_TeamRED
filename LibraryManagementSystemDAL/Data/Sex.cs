@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Sex
+    public partial class sex
     {
         #region Primitive Properties
     
@@ -34,13 +34,13 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual ICollection<Student> students
+        public virtual ICollection<student> students
         {
             get
             {
                 if (_students == null)
                 {
-                    var newCollection = new FixupCollection<Student>();
+                    var newCollection = new FixupCollection<student>();
                     newCollection.CollectionChanged += Fixupstudents;
                     _students = newCollection;
                 }
@@ -50,13 +50,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_students, value))
                 {
-                    var previousValue = _students as FixupCollection<Student>;
+                    var previousValue = _students as FixupCollection<student>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupstudents;
                     }
                     _students = value;
-                    var newValue = value as FixupCollection<Student>;
+                    var newValue = value as FixupCollection<student>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupstudents;
@@ -64,15 +64,15 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<Student> _students;
+        private ICollection<student> _students;
     
-        public virtual ICollection<SystemUser> systemusers
+        public virtual ICollection<systemuser> systemusers
         {
             get
             {
                 if (_systemusers == null)
                 {
-                    var newCollection = new FixupCollection<SystemUser>();
+                    var newCollection = new FixupCollection<systemuser>();
                     newCollection.CollectionChanged += Fixupsystemusers;
                     _systemusers = newCollection;
                 }
@@ -82,13 +82,13 @@ namespace LibraryManagementSystemDAL.Data
             {
                 if (!ReferenceEquals(_systemusers, value))
                 {
-                    var previousValue = _systemusers as FixupCollection<SystemUser>;
+                    var previousValue = _systemusers as FixupCollection<systemuser>;
                     if (previousValue != null)
                     {
                         previousValue.CollectionChanged -= Fixupsystemusers;
                     }
                     _systemusers = value;
-                    var newValue = value as FixupCollection<SystemUser>;
+                    var newValue = value as FixupCollection<systemuser>;
                     if (newValue != null)
                     {
                         newValue.CollectionChanged += Fixupsystemusers;
@@ -96,7 +96,7 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private ICollection<SystemUser> _systemusers;
+        private ICollection<systemuser> _systemusers;
 
         #endregion
         #region Association Fixup
@@ -105,7 +105,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (Student item in e.NewItems)
+                foreach (student item in e.NewItems)
                 {
                     item.sex = this;
                 }
@@ -113,7 +113,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (Student item in e.OldItems)
+                foreach (student item in e.OldItems)
                 {
                     if (ReferenceEquals(item.sex, this))
                     {
@@ -127,7 +127,7 @@ namespace LibraryManagementSystemDAL.Data
         {
             if (e.NewItems != null)
             {
-                foreach (SystemUser item in e.NewItems)
+                foreach (systemuser item in e.NewItems)
                 {
                     item.sex = this;
                 }
@@ -135,7 +135,7 @@ namespace LibraryManagementSystemDAL.Data
     
             if (e.OldItems != null)
             {
-                foreach (SystemUser item in e.OldItems)
+                foreach (systemuser item in e.OldItems)
                 {
                     if (ReferenceEquals(item.sex, this))
                     {

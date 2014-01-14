@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class StudentBookLoan
+    public partial class studentbookloan
     {
         #region Primitive Properties
     
@@ -97,7 +97,7 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual Book book
+        public virtual book book
         {
             get { return _book; }
             set
@@ -110,9 +110,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Book _book;
+        private book _book;
     
-        public virtual Student student
+        public virtual student student
         {
             get { return _student; }
             set
@@ -125,9 +125,9 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private Student _student;
+        private student _student;
     
-        public virtual SystemUser systemuser
+        public virtual systemuser systemuser
         {
             get { return _systemuser; }
             set
@@ -140,12 +140,12 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private SystemUser _systemuser;
+        private systemuser _systemuser;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupbook(Book previousValue)
+        private void Fixupbook(book previousValue)
         {
             if (previousValue != null && previousValue.studentbookloans.Contains(this))
             {
@@ -165,7 +165,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixupstudent(Student previousValue)
+        private void Fixupstudent(student previousValue)
         {
             if (previousValue != null && previousValue.studentbookloans.Contains(this))
             {
@@ -185,7 +185,7 @@ namespace LibraryManagementSystemDAL.Data
             }
         }
     
-        private void Fixupsystemuser(SystemUser previousValue)
+        private void Fixupsystemuser(systemuser previousValue)
         {
             if (previousValue != null && previousValue.studentbookloans.Contains(this))
             {

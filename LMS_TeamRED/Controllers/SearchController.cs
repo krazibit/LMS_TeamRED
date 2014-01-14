@@ -22,8 +22,8 @@ namespace LibraryManagementSystem.Controllers
         [HttpPost]
         public ActionResult Index(SearchBookModel model)
         {
-            var books = new Dictionary<Book, int>();
-            int searchType = (int) model.SearchType;
+            var books = new Dictionary<book, int>();
+            var searchType = (int) model.SearchType;
             switch (searchType)
             {
                 case (int) BookSearchType.Title:
@@ -61,7 +61,8 @@ namespace LibraryManagementSystem.Controllers
         [HttpGet]
         public ActionResult BorrowedBooks()
         {
-            return View();
+            var borrowedBooks = DBManager.Instance.GetCurrentStudentBookLoans();
+            return View(borrowedBooks);
         }
 
 
@@ -73,7 +74,8 @@ namespace LibraryManagementSystem.Controllers
 
         public ActionResult DueBooks()
         {
-            return View();
+            var dueBooks = DBManager.Instance.GetDueStudentBookLoans();
+            return View(dueBooks);
         }
     }
 }

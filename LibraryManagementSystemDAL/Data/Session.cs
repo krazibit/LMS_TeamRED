@@ -15,7 +15,7 @@ using System.Collections.Specialized;
 
 namespace LibraryManagementSystemDAL.Data
 {
-    public partial class Session
+    public partial class session
     {
         #region Primitive Properties
     
@@ -63,7 +63,7 @@ namespace LibraryManagementSystemDAL.Data
         #endregion
         #region Navigation Properties
     
-        public virtual SystemUser systemuser
+        public virtual systemuser systemuser
         {
             get { return _systemuser; }
             set
@@ -76,12 +76,12 @@ namespace LibraryManagementSystemDAL.Data
                 }
             }
         }
-        private SystemUser _systemuser;
+        private systemuser _systemuser;
 
         #endregion
         #region Association Fixup
     
-        private void Fixupsystemuser(SystemUser previousValue)
+        private void Fixupsystemuser(systemuser previousValue)
         {
             if (previousValue != null && previousValue.sessions.Contains(this))
             {

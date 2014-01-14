@@ -43,16 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\Author.cs">
+    <Compile Include="Data\author.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Book.cs">
+    <Compile Include="Data\book.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\BookAuthor.cs">
+    <Compile Include="Data\bookauthor.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Department.cs">
+    <Compile Include="Data\department.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Data\LMSDataModel.Context.cs">
@@ -65,25 +65,25 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Publisher.cs">
+    <Compile Include="Data\publisher.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Session.cs">
+    <Compile Include="Data\session.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Sex.cs">
+    <Compile Include="Data\sex.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\Student.cs">
+    <Compile Include="Data\student.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\StudentBookLoan.cs">
+    <Compile Include="Data\studentbookloan.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\SystemUser.cs">
+    <Compile Include="Data\systemuser.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\UserRole.cs">
+    <Compile Include="Data\userrole.cs">
       <DependentUpon>LMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,7 +91,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Data\LMSDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
