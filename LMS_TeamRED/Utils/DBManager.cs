@@ -259,10 +259,10 @@ namespace LibraryManagementSystem.Utils
                                                     Include(typeof(book).Name).
                                                     Include(typeof(student).Name).
                                                     Include(typeof(systemuser).Name).   
-                                                    Where(loan => loan.ReturnDate < DateTime.Now.AddYears(-10) || loan.DueDate <= DateTime.Now).ToList();
+                                                    Where(loan => loan.ReturnDate == DateTime.MinValue || loan.DueDate <= DateTime.Now).ToList();
                     return studentBookLoans;
                 }
-                catch (Exception)
+                catch (Exception Ex)
                 {
                     return null;
                 }

@@ -51,6 +51,7 @@ namespace LibraryManagementSystem.Controllers
                                                    BookId = loanBookModel.BookId,
                                                    DueDate = DateTime.Now.AddDays(7),
                                                    // Make Configurable parameter
+                                                   ReturnDate = DateTime.MinValue,
                                                    IssuerID = 1,
                                                    StudentID = loanee.Id,
                                                    IssueDate = DateTime.Now
